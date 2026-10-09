@@ -211,6 +211,8 @@ The kickoff has been converted into a searchable evidence package:
 | **[Three-experiment strategy](knowledge-base-kickoff/THREE_EXPERIMENTS_DATASET_STRATEGY.md)** | Dataset structure, hypotheses, baselines, risks, validation plans, and selection gate |
 | **[Complete transcripts](knowledge-base-kickoff/ALL_TRANSCRIPTS.md)** | Timestamped machine transcription of all eight kickoff recordings |
 | **[Photo context](knowledge-base-kickoff/ALL_IMAGE_CONTEXT.md)** | Detailed interpretation of all 27 photographed slides |
+| **[Official-resource audit](research/official-resource-audit/README.md)** | Full crawl of every public resource linked by the official event pages, with provenance, hashes, extracted evidence, access gaps, and follow-up queue |
+| **[Strategic don't-miss brief](research/official-resource-audit/STRATEGIC_DONT_MISS_BRIEF.md)** | Deadlines, dataset decisions, compute requests, Slack routing, live-test rules, competitive strategy, and authenticated blind spots |
 
 Machine transcripts are working notes, not quote-ready records. Check the source recording before attributing exact wording to a speaker.
 
@@ -225,6 +227,14 @@ Machine transcripts are working notes, not quote-ready records. Check the source
 │   ├── ALL_TRANSCRIPTS.md
 │   ├── THE_A_TEAM_KICKOFF_REPORT.md
 │   └── THREE_EXPERIMENTS_DATASET_STRATEGY.md
+├── research/
+│   └── official-resource-audit/
+│       ├── ACCESS_GAPS_AND_FOLLOW_UP.md
+│       ├── COMPREHENSIVE_RESOURCE_EVIDENCE.md
+│       ├── RESOURCE_INDEX.csv
+│       ├── RESOURCE_INDEX.json
+│       ├── STRATEGIC_DONT_MISS_BRIEF.md
+│       └── README.md
 └── README.md
 ```
 
