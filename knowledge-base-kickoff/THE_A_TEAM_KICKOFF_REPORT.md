@@ -103,10 +103,9 @@ One photographed kickoff slide says the project plan was due **Oct 13**. The cur
 
 ## Source package
 
-- [`Context about hackathon.txt`](Context%20about%20hackathon.txt) — saved official event article/context.
-- [`image_context/README.md`](image_context/README.md) — index to 27 detailed, image-specific Markdown notes.
-- [`transcripts_large_v3/`](transcripts_large_v3/) — higher-capacity Whisper Large v3 timestamped transcripts and structured segment JSON for all eight recordings.
-- [`transcripts/`](transcripts/) — an alternate small-model, beam-searched pass; useful for comparison where the distant-room audio is unclear.
+- [`THREE_EXPERIMENTS_DATASET_STRATEGY.md`](THREE_EXPERIMENTS_DATASET_STRATEGY.md) — detailed dataset comparison, hypotheses, baselines, validation protocols, risks, and selection gate.
+- [`ALL_IMAGE_CONTEXT.md`](ALL_IMAGE_CONTEXT.md) — combined context for all 27 photographed kickoff slides.
+- [`ALL_TRANSCRIPTS.md`](ALL_TRANSCRIPTS.md) — timestamped machine transcription of all eight recordings.
 
 ### Accuracy note
 
