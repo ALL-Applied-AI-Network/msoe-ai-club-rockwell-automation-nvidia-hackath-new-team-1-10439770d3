@@ -1,0 +1,4 @@
+# Intentionally empty: use the official default scene (eight screws and the
+# yellow bin) for all three commissioning rollouts. The organizer must confirm
+# that the declared open-gripper path is clear before approving the request.
+rollouts: []

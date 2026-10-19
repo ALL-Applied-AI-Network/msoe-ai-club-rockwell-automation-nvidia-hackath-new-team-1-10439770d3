@@ -130,6 +130,16 @@ The same day, the interactive A-Team workspace reproduced the setup end to end:
 This proves the bounded motion in the supplied digital twin. It does not prove
 collision-free transfer to the physical cell or authorize unattended motion.
 
+## First physical rollout
+
+The authorized next step is a supervised run through the official SIDC client,
+not a direct robot-controller connection. Follow
+[`../docs/PHYSICAL_ROLLOUT_RUNBOOK.md`](../docs/PHYSICAL_ROLLOUT_RUNBOOK.md).
+The included preparation script installs a three-rollout commissioning request
+without submitting it; the physical-slot script stays locked until the SIDC
+request is approved and a nearby human confirms the operator and E-stop are
+ready.
+
 The reusable job definition is [`jobs/isaac_sim_6_smoke.json`](jobs/isaac_sim_6_smoke.json).
 [`scripts/yaad_call.py`](scripts/yaad_call.py) provides a token-safe MCP client
 for setup sessions: it reads `YAAD_TOKEN` from the environment and never prints

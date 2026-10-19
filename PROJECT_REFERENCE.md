@@ -481,6 +481,10 @@ agree with the physical cell.
 **Exit criterion:** one operator-approved physical rollout with complete
 telemetry and no safety-boundary bypass.
 
+The exact preparation, submission, on-site execution, and evidence workflow is
+documented in
+[`docs/PHYSICAL_ROLLOUT_RUNBOOK.md`](docs/PHYSICAL_ROLLOUT_RUNBOOK.md).
+
 ### Gate 3 — Bounded Toolsmith experiment
 
 - Select 3–4 approved test objects: current-tool success, geometry-specific
@@ -576,6 +580,7 @@ Repository guide:
 | [`README.md`](README.md) | Public-facing project narrative and navigation |
 | [`PROJECT_REFERENCE.md`](PROJECT_REFERENCE.md) | This master state/history document |
 | [`docs/ACCESS_REFERENCE.md`](docs/ACCESS_REFERENCE.md) | SSH/VPN/YAAD/Git access map, public-key fingerprint, rotation, and recovery steps |
+| [`docs/PHYSICAL_ROLLOUT_RUNBOOK.md`](docs/PHYSICAL_ROLLOUT_RUNBOOK.md) | Exact official-client workflow for the first supervised physical motion |
 | [`knowledge-base-kickoff/`](knowledge-base-kickoff/) | Transcripts, photo context, kickoff report, dataset strategy |
 | [`research/official-resource-audit/`](research/official-resource-audit/) | Official public-resource archive and strategic analysis |
 | [`research/physical-ai-platform/`](research/physical-ai-platform/) | SIDC platform, hardware, policy, calibration, and implementation research |
