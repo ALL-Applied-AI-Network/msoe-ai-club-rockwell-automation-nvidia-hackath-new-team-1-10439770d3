@@ -34,6 +34,15 @@ The mock demo sends two valid open-gripper TCP targets:
 Units are millimetres/degrees in controller UF0. This only proves interface and
 limit compatibility; the mock contains no kinematics or collision physics.
 
+Verified on October 19, 2026:
+
+- the official SIDC client completed one mock rollout with 29 actions and zero
+  rejected actions, ending with `Ready for the real robot`;
+- the Dataset 3 host suite passed all 33 tests;
+- Dataset 3's calibrated ER-4iA inverse kinematics converged for both demo
+  endpoints after applying the documented 330 mm UF0/base-frame offset;
+- the MVP's five safety, state-machine, and live stdio-MCP tests passed.
+
 ## MCP tools
 
 - `robot_status`: envelope and recent plans.
