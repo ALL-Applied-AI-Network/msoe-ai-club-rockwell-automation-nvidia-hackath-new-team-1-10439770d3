@@ -78,19 +78,30 @@ Dataset 3 was validated on Linux, Isaac Sim 6.0, and an RTX A6000. The local RTX
 also has less than the 50 GB minimum free space. Use the provisioned DGX Spark or
 Brev GPU instead.
 
-After the captain creates the YAAD team and supplies the displayed SSH login:
+After the captain creates the YAAD team and configures an SSH alias such as
+`yaad-ateam`, upload a clean Dataset 3 source archive and the two deployment
+files. The SSH account's home directory is the persistent YAAD workspace:
 
 ```powershell
-scp -r "E:\Hackathon data\Datasets\fanuc_er4ia_hackathon_starter_v05\fanuc_er4ia_sim" YOUR_SSH_LOGIN:/workspace/
-scp ".\scripts\setup_dgx_spark.sh" YOUR_SSH_LOGIN:/workspace/
-ssh YOUR_SSH_LOGIN "bash /workspace/setup_dgx_spark.sh"
+tar.exe -czf fanuc_er4ia_sim_source.tar.gz `
+  --exclude=fanuc_er4ia_sim/.venv `
+  --exclude=fanuc_er4ia_sim/runs `
+  -C "E:\Hackathon data\Datasets\fanuc_er4ia_hackathon_starter_v05" `
+  fanuc_er4ia_sim
+scp fanuc_er4ia_sim_source.tar.gz yaad-ateam:
+scp .\scripts\setup_dgx_spark.sh yaad-ateam:
+ssh yaad-ateam "tar -xzf fanuc_er4ia_sim_source.tar.gz"
+scp .\simulation\isaac_point_to_point.py yaad-ateam:fanuc_er4ia_sim/
+ssh yaad-ateam "chmod +x setup_dgx_spark.sh && bash setup_dgx_spark.sh"
 ```
 
-The script pulls Isaac Sim, runs a headless application smoke test, and—when the
-starter is present—builds Dataset 3's USD stage at
-`/workspace/fanuc_er4ia_sim/runs/point_to_point_scene.usd`. Do not interpret a
-sim target as a physical target until the organizer verifies the tool frame,
-camera calibration, work surface, and installed fingers on the real cell.
+The script installs host Python when needed, runs Dataset 3's 33 host tests,
+pulls Isaac Sim 6.0, runs a headless application smoke test, builds the
+calibrated USD stage, executes the two-waypoint simulation and rejects the run
+unless the measured report passes. Persistent artifacts are under
+`~/fanuc_er4ia_sim/runs/`. Do not interpret a simulator target as a physical
+target until the organizer verifies the tool frame, camera calibration, work
+surface, installed fingers and collision envelope on the real cell.
 
 ### Verified DGX Spark result
 
@@ -99,6 +110,25 @@ successfully launched `nvcr.io/nvidia/isaac-sim:6.0.0` on the team's NVIDIA GB10
 Isaac Sim reached `app ready`, advanced a frame, printed
 `ATEAM_ISAAC_SIM_6_SMOKE_OK`, and exited with code 0. The runtime reported an
 ARM64 host and 120 GiB of unified GPU memory.
+
+The same day, the interactive A-Team workspace reproduced the setup end to end:
+
+- all 33 Dataset 3 host tests passed on the ARM64 Spark;
+- the scene exported to `runs/point_to_point_scene.usd` (7.3 MiB; SHA-256
+  `99a76b7dfa62c82846657b74b5d9cdfeec857c2a15562952815e5efbdb2cb470`);
+- the simulated open-gripper TCP moved from controller target
+  `[450, -70, -230]` to `[450, 70, -230]` mm after the documented UF0/base
+  conversion;
+- measured TCP errors were 0.231 mm and 0.220 mm; maximum joint tracking error
+  was 0.0212 degrees; both waypoints were verified;
+- [`evidence/point_to_point_report_2026-10-19.json`](evidence/point_to_point_report_2026-10-19.json)
+  preserves the exact measured values (repository-file SHA-256
+  `7944fb6fa6d5b1cc223566b047084085b04bbdad84cb850199500c3de86ea9fe`);
+  the raw Spark artifact SHA-256 is
+  `0ac4cd8eaf6aeceb0df333a1a4c293e7ddc3fde4be99e53f4fb8cc45e7151588`.
+
+This proves the bounded motion in the supplied digital twin. It does not prove
+collision-free transfer to the physical cell or authorize unattended motion.
 
 The reusable job definition is [`jobs/isaac_sim_6_smoke.json`](jobs/isaac_sim_6_smoke.json).
 [`scripts/yaad_call.py`](scripts/yaad_call.py) provides a token-safe MCP client
