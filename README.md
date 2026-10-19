@@ -103,6 +103,8 @@ A FANUC ER-4iA, SMC MHZL2-16D2 pneumatic parallel gripper with custom aluminium 
 
 **Why it is high-risk/high-reward:** it offers the most dramatic live demonstration, but integration, calibration, custom-hardware approval, and testbed scheduling can consume the project window. See the **[SIDC Lab platform intelligence report](research/physical-ai-platform/SIDCLAB_PLATFORM_INTELLIGENCE_REPORT.md)** for the exact policy interface, limits, calibration, scoring, CAD assets, and strategic implications.
 
+**Working point-to-point MVP:** [`robot-mvp/`](robot-mvp/) provides a tested local MCP planner, a separate human approval gate, a drop-in TCP policy for the official SIDC client, an official-mock demonstration, and the Isaac Sim 6.0 DGX Spark setup path. AI tools can draft and validate motion, but cannot approve or directly execute physical movement.
+
 ## Reference architecture
 
 ```mermaid

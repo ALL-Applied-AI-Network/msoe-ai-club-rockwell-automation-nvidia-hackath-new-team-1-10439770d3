@@ -1,0 +1,27 @@
+[project]
+name = "ateam-robot-mvp"
+version = "0.1.0"
+description = "Human-gated MCP and policy adapter for the A-Team FANUC point-to-point MVP"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=1.20,<2",
+    "numpy>=2,<3",
+]
+
+[project.scripts]
+ateam-robot = "robot_control.cli:main"
+ateam-robot-mcp = "robot_control.mcp_server:main"
+
+[dependency-groups]
+dev = ["pytest>=8,<10"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["robot_control"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
