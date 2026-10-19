@@ -11,7 +11,7 @@
 
 **An evidence-first Physical AI project for safer, more adaptive, and more trustworthy manufacturing.**
 
-[Mission](#mission) · [Experiments](#three-experiments-one-decision) · [Architecture](#reference-architecture) · [Evaluation](#how-we-will-measure-success) · [Roadmap](#execution-roadmap) · [Knowledge Base](#knowledge-base)
+[Master Reference](PROJECT_REFERENCE.md) · [Mission](#mission) · [Experiments](#three-experiments-one-decision) · [Architecture](#reference-architecture) · [Evaluation](#how-we-will-measure-success) · [Roadmap](#execution-roadmap) · [Knowledge Base](#knowledge-base)
 
 </div>
 
@@ -209,6 +209,8 @@ The kickoff has been converted into a searchable evidence package:
 
 | Entry | What it contains |
 |---|---|
+| **[Master project reference](PROJECT_REFERENCE.md)** | Complete project history, current status, verified evidence, CAD/hardware findings, infrastructure, security actions, and next milestones |
+| **[Access reference](docs/ACCESS_REFERENCE.md)** | Security-safe SSH, VPN, YAAD, Git, token-location, rotation, and recovery runbook |
 | **[Kickoff brief](knowledge-base-kickoff/THE_A_TEAM_KICKOFF_REPORT.md)** | Executive summary, resources, rules, deliverables, deadlines, and immediate actions |
 | **[Three-experiment strategy](knowledge-base-kickoff/THREE_EXPERIMENTS_DATASET_STRATEGY.md)** | Dataset structure, hypotheses, baselines, risks, validation plans, and selection gate |
 | **[Complete transcripts](knowledge-base-kickoff/ALL_TRANSCRIPTS.md)** | Timestamped machine transcription of all eight kickoff recordings |
@@ -223,6 +225,7 @@ Machine transcripts are working notes, not quote-ready records. Check the source
 
 ```text
 .
+├── PROJECT_REFERENCE.md
 ├── assets/
 │   └── a-team-hero.svg
 ├── knowledge-base-kickoff/

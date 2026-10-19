@@ -1,0 +1,5 @@
+# Machine-local access notes and secret material must never enter Git.
+PRIVATE_ACCESS_REFERENCE.local.md
+.secrets/
+*.private-key
+*.token
