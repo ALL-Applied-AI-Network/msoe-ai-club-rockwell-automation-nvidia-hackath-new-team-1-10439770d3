@@ -90,7 +90,7 @@ Three usable tanks feed one shared mixing path. Residual liquid from the previou
 
 ### Experiment 3 — Grasping and Sorting
 
-A FANUC ER-4iA, SCHUNK pneumatic gripper, two overhead cameras, and a wrist camera create a full closed-loop robotics task. The real objective is repeatable performance under variation, not one scripted successful pick.
+A FANUC ER-4iA, SMC MHZL2-16D2 pneumatic parallel gripper with custom aluminium fingers, and table, side, and wrist cameras create a full closed-loop robotics task. The public evaluation client also exposes optional table and wrist depth, calibrated camera-to-robot geometry, TCP or joint actions, and approved custom hardware. The real objective is repeatable whole-task performance under variation, not one scripted successful pick.
 
 **Minimum credible baseline**
 
@@ -101,7 +101,7 @@ A FANUC ER-4iA, SCHUNK pneumatic gripper, two overhead cameras, and a wrist came
 - Compare simulation with supervised physical trials.
 - Add re-observation and safe retry after a failed or uncertain grasp.
 
-**Why it is high-risk/high-reward:** it offers the most dramatic live demonstration, but integration, calibration, asset availability, and testbed scheduling can consume the project window.
+**Why it is high-risk/high-reward:** it offers the most dramatic live demonstration, but integration, calibration, custom-hardware approval, and testbed scheduling can consume the project window. See the **[SIDC Lab platform intelligence report](research/physical-ai-platform/SIDCLAB_PLATFORM_INTELLIGENCE_REPORT.md)** for the exact policy interface, limits, calibration, scoring, CAD assets, and strategic implications.
 
 ## Reference architecture
 
@@ -213,6 +213,7 @@ The kickoff has been converted into a searchable evidence package:
 | **[Photo context](knowledge-base-kickoff/ALL_IMAGE_CONTEXT.md)** | Detailed interpretation of all 27 photographed slides |
 | **[Official-resource audit](research/official-resource-audit/README.md)** | Full crawl of every public resource linked by the official event pages, with provenance, hashes, extracted evidence, access gaps, and follow-up queue |
 | **[Strategic don't-miss brief](research/official-resource-audit/STRATEGIC_DONT_MISS_BRIEF.md)** | Deadlines, dataset decisions, compute requests, Slack routing, live-test rules, competitive strategy, and authenticated blind spots |
+| **[Physical-AI platform audit](research/physical-ai-platform/README.md)** | FANUC/SMC hardware, policy API, safety envelope, calibration, custom-hardware rules, scoring, public CAD/media archive, and implementation brief |
 
 Machine transcripts are working notes, not quote-ready records. Check the source recording before attributing exact wording to a speaker.
 
@@ -228,13 +229,18 @@ Machine transcripts are working notes, not quote-ready records. Check the source
 │   ├── THE_A_TEAM_KICKOFF_REPORT.md
 │   └── THREE_EXPERIMENTS_DATASET_STRATEGY.md
 ├── research/
-│   └── official-resource-audit/
-│       ├── ACCESS_GAPS_AND_FOLLOW_UP.md
-│       ├── COMPREHENSIVE_RESOURCE_EVIDENCE.md
-│       ├── RESOURCE_INDEX.csv
-│       ├── RESOURCE_INDEX.json
-│       ├── STRATEGIC_DONT_MISS_BRIEF.md
-│       └── README.md
+│   ├── official-resource-audit/
+│   │   ├── ACCESS_GAPS_AND_FOLLOW_UP.md
+│   │   ├── COMPREHENSIVE_RESOURCE_EVIDENCE.md
+│   │   ├── RESOURCE_INDEX.csv
+│   │   ├── RESOURCE_INDEX.json
+│   │   ├── STRATEGIC_DONT_MISS_BRIEF.md
+│   │   └── README.md
+│   └── physical-ai-platform/
+│       ├── README.md
+│       ├── RESOURCE_MANIFEST.csv
+│       ├── SIDCLAB_PLATFORM_INTELLIGENCE_REPORT.md
+│       └── THE_A_TEAM_IMPLEMENTATION_BRIEF.md
 └── README.md
 ```
 
