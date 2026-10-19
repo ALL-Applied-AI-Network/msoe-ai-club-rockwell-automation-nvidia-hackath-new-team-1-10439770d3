@@ -91,3 +91,16 @@ starter is present—builds Dataset 3's USD stage at
 `/workspace/fanuc_er4ia_sim/runs/point_to_point_scene.usd`. Do not interpret a
 sim target as a physical target until the organizer verifies the tool frame,
 camera calibration, work surface, and installed fingers on the real cell.
+
+### Verified DGX Spark result
+
+On October 19, 2026, YAAD job `9e4fd737-6a10-40a6-8613-0fd046cdc394`
+successfully launched `nvcr.io/nvidia/isaac-sim:6.0.0` on the team's NVIDIA GB10.
+Isaac Sim reached `app ready`, advanced a frame, printed
+`ATEAM_ISAAC_SIM_6_SMOKE_OK`, and exited with code 0. The runtime reported an
+ARM64 host and 120 GiB of unified GPU memory.
+
+The reusable job definition is [`jobs/isaac_sim_6_smoke.json`](jobs/isaac_sim_6_smoke.json).
+[`scripts/yaad_call.py`](scripts/yaad_call.py) provides a token-safe MCP client
+for setup sessions: it reads `YAAD_TOKEN` from the environment and never prints
+the credential.

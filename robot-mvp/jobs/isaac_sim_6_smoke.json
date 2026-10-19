@@ -1,0 +1,15 @@
+{
+  "command": "set -euo pipefail\nmkdir -p /job/out\nnvidia-smi --query-gpu=name,memory.total,driver_version --format=csv,noheader > /job/out/gpu.csv\n/isaac-sim/python.sh - <<'PY' 2>&1 | tee /job/out/isaac_smoke.log\nfrom isaacsim import SimulationApp\napp = SimulationApp({'headless': True})\napp.update()\nprint('ATEAM_ISAAC_SIM_6_SMOKE_OK')\napp.close()\nPY\ntest ${PIPESTATUS[0]} -eq 0\nprintf 'image=nvcr.io/nvidia/isaac-sim:6.0.0\\nstatus=passed\\n' > /job/out/manifest.txt",
+  "memory_gb": 48,
+  "cpus": 8,
+  "gpu": true,
+  "max_minutes": 75,
+  "input_path": "",
+  "image": "nvcr.io/nvidia/isaac-sim:6.0.0",
+  "nodes": 1,
+  "env": {
+    "ACCEPT_EULA": "Y",
+    "PRIVACY_CONSENT": "Y"
+  },
+  "name": "ateam-isaac6-smoke"
+}
