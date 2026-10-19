@@ -64,7 +64,8 @@ This performs no submission and contacts no robot. It:
 
 - backs up the official client's current submission files;
 - installs the first-motion submission and placement templates; and
-- refreshes the official client's `policy.py`.
+- refreshes the official client's `policy.py` and its small local
+  `robot_control` dependency.
 
 Review the generated YAML with the mentor/operator. It requests three
 commissioning rollouts, no custom hardware, and the documented default scene.

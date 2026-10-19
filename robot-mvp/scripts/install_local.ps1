@@ -18,6 +18,10 @@ if (-not (Test-Path -LiteralPath (Join-Path $OfficialClient "run.py"))) {
 }
 
 Copy-Item -LiteralPath (Join-Path $MvpRoot "policy.py") -Destination (Join-Path $OfficialClient "policy.py") -Force
+$ClientPackage = Join-Path $OfficialClient "robot_control"
+New-Item -ItemType Directory -Path $ClientPackage -Force | Out-Null
+Get-ChildItem -LiteralPath (Join-Path $MvpRoot "robot_control") -Filter "*.py" -File |
+    Copy-Item -Destination $ClientPackage -Force
 
 $Python = Join-Path $MvpRoot ".venv\Scripts\python.exe"
 $Existing = codex mcp list 2>$null | Select-String -SimpleMatch "ateam-robot"
@@ -28,5 +32,5 @@ codex mcp add ateam-robot --env "ATEAM_MVP_ROOT=$MvpRoot" -- $Python -m robot_co
 
 Write-Host "Installed A-Team robot MVP and registered the ateam-robot MCP server."
 Write-Host "Official client: $OfficialClient"
+Write-Host "Vendored policy dependency: $ClientPackage"
 Write-Host "MCP database: $(Join-Path $MvpRoot 'runtime\robot_plans.sqlite3')"
-

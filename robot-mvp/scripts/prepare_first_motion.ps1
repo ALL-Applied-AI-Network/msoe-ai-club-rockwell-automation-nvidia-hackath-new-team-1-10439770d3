@@ -45,6 +45,10 @@ Copy-Item -LiteralPath (Join-Path $TemplateRoot "placement.yaml") `
     -Destination (Join-Path $SubmissionRoot "placement.yaml") -Force
 Copy-Item -LiteralPath (Join-Path $MvpRoot "policy.py") `
     -Destination (Join-Path $OfficialClient "policy.py") -Force
+$ClientPackage = Join-Path $OfficialClient "robot_control"
+New-Item -ItemType Directory -Path $ClientPackage -Force | Out-Null
+Get-ChildItem -LiteralPath (Join-Path $MvpRoot "robot_control") -Filter "*.py" -File |
+    Copy-Item -Destination $ClientPackage -Force
 
 Write-Host "Prepared the official SIDC client for ATeam-SafeMotion-v1."
 Write-Host "Previous submission files were backed up under: $BackupRoot"
@@ -53,6 +57,7 @@ Write-Host "No external request was submitted and no robot was contacted."
 Write-Host "Review these files with the assigned operator/mentor:"
 Write-Host "  $(Join-Path $SubmissionRoot 'submission.yaml')"
 Write-Host "  $(Join-Path $SubmissionRoot 'placement.yaml')"
+Write-Host "  $ClientPackage"
 Write-Host ""
 Write-Host "Declared TCP targets (UF0, mm/deg, open gripper):"
 Write-Host "  A = [450, -70, -230, -180, 0, 0, 0]"
