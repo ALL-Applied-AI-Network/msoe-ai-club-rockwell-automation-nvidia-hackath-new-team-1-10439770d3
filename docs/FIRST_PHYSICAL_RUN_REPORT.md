@@ -12,6 +12,12 @@ a complete A→B demonstration. In both recorded episodes, the arm came within
 approximately 2.54 mm of A. The policy required 2.00 mm or less before moving to
 B, so it continued holding A until the operator ended the rollout.
 
+The official results record scored both recorded rollouts as successful: 2/2,
+100% observed success, zero faults and zero interventions. The overall run is
+still marked incomplete because one of three planned trials was cancelled. The
+official success labels and the narrower A→B engineering acceptance criterion
+are both recorded; one must not be substituted for the other.
+
 ## Configuration
 
 | Item | Value |
@@ -40,8 +46,18 @@ name; the launcher now rejects this placeholder.
 ## Official and recorded run structure
 
 The approved run exposed three official trial identifiers. Trial `t00` was
-cancelled; `t01` and `t02` finished and were scored by the operator. The
+cancelled; `t01` and `t02` finished and were scored successful by the operator. The
 downloaded LeRobotDataset therefore contains two episodes.
+
+| Official metric | Result |
+|---|---:|
+| Successes | 2 / 2 recorded rollouts |
+| Observed success rate | 100% |
+| Faults | 0 |
+| Interventions | 0 |
+| Mean cycle time | 33.445 s |
+| Mean policy latency | 84.15 ms |
+| Run completion | Incomplete: 2 / 3 planned rollouts recorded |
 
 | Episode | Frames | Duration | Closest to A | First within 5 mm | Closest to B | Final TCP XYZ |
 |---:|---:|---:|---:|---:|---:|---|
@@ -96,8 +112,9 @@ use in a presentation.
 - No custom fingers or automatic tool-change hardware were installed.
 - The run does not authorize direct controller access, unattended motion or an
   AI bypass around the official operator workflow.
-- The client endpoint reports that both finished trials were scored, but the
-  exact success/failure labels are not present in the downloaded telemetry.
+- Official success was judged at the rollout level. It does not prove that the
+  intended two-waypoint engineering acceptance criterion was met; telemetry
+  shows B was not reached.
 
 ## Interpreting the warnings
 

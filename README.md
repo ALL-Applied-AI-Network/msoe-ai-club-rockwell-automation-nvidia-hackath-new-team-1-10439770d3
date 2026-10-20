@@ -35,7 +35,8 @@ Our goal is not to build a model that looks impressive on a laptop. We are build
 **Selected direction:** **The Adaptive Workcell: Show the Job, Generate the
 Tool**, built on Dataset 3. On October 20, the official supervised testbed
 executed our real FANUC policy twice and recorded complete camera and telemetry
-evidence. The first run verified home→A motion and exposed one measurable
+evidence, with an official 2/2 success score and zero faults or interventions.
+The first run verified home→A motion and exposed one measurable
 waypoint-tolerance issue before A→B; see the
 **[first physical run report](docs/FIRST_PHYSICAL_RUN_REPORT.md)**.
 

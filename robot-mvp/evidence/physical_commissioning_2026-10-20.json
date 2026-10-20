@@ -20,8 +20,19 @@
   },
   "official_trial_status": {
     "r20261020-5fea53-t00": "cancelled",
-    "r20261020-5fea53-t01": "done_and_scored",
-    "r20261020-5fea53-t02": "done_and_scored"
+    "r20261020-5fea53-t01": "success",
+    "r20261020-5fea53-t02": "success"
+  },
+  "official_score_summary": {
+    "run_complete": false,
+    "recorded_trials": 2,
+    "planned_trials": 3,
+    "successes": 2,
+    "success_rate_percent": 100.0,
+    "faults": 0,
+    "interventions": 0,
+    "mean_cycle_time_s": 33.445,
+    "mean_policy_latency_ms": 84.15
   },
   "recorded_episodes": [
     {
@@ -60,10 +71,11 @@
       "The official client connected to the cell during an approved supervised slot.",
       "The real robot executed the policy's conservative home-to-A TCP trajectory.",
       "The gripper remained open and the recorded views show no object contact.",
+      "The operator scored both recorded rollouts successful, with zero faults and zero interventions.",
       "The platform recorded two 10 Hz LeRobotDataset episodes with table, side and wrist video plus state, TCP pose and action telemetry."
     ],
     "not_verified": [
-      "The A-to-B leg did not execute.",
+      "The A-to-B leg did not execute even though both recorded rollouts received the official success label.",
       "The run does not validate grasping, perception, custom fingers, autonomous execution or unattended control."
     ],
     "root_cause_of_partial_path": "Both episodes approached A to approximately 2.54 mm, but the policy required 2.00 mm or less before advancing to B.",

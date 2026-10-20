@@ -457,7 +457,7 @@ This proves bounded motion in the supplied digital twin. It does **not** prove:
 | CADVector can generate a mechanically valid FANUC finger | Proposed | Integration and constraints not yet implemented |
 | Video + speech can produce a correct robot task graph | Proposed | Pipeline not yet implemented |
 | Generated tooling improves physical grasps | Not yet tested | Requires manufacture and repeated trials |
-| Physical FANUC executes our bounded policy | **Verified in supervised commissioning, home→A only** | Two scored physical episodes, three-camera video, TCP/state/action telemetry, no object contact |
+| Physical FANUC executes our bounded policy | **Verified in supervised commissioning, home→A only** | Official 2/2 success, 0 faults/interventions; three-camera video and TCP/state/action telemetry; A→B not completed |
 
 ## 12. Next milestones, in order
 
@@ -491,7 +491,10 @@ documented in
 **October 20 result:** A-Team request `q50c904` was approved and run
 `r20261020-5fea53` produced two scored physical episodes. The real FANUC moved
 from home to waypoint A twice with the gripper open and no observed object
-contact. Both episodes approached A to approximately 2.54 mm but did not enter
+contact. The operator scored both recorded rollouts successful (2/2, 100%, zero
+faults and zero interventions), although the run remained incomplete because
+the third planned trial was cancelled. Both episodes approached A to
+approximately 2.54 mm but did not enter
 the policy's 2 mm completion gate, so the A→B leg did not start. The
 non-contact commissioning tolerance is now 5 mm, while the 2 mm translation and
 1 degree rotation limits per 10 Hz row remain unchanged. See
