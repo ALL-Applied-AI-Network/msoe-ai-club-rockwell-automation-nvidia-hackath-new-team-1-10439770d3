@@ -83,7 +83,9 @@ The command prints a request ID and writes `.request.json`. The file contains a
 request secret, is already ignored by the official client's Git configuration,
 and must not be copied into this repository or an AI prompt.
 
-Post this in `#data-and-testbed-requests`:
+Open the SIDC website's **Calendar** tab, enter the printed request ID, and pick
+an available 30-minute Central Time slot. The organizers approve the request for
+that slot. If you also send a coordination note, use:
 
 > The A-Team requests a supervised 30-minute commissioning slot for request
 > `<REQUEST_ID>`. This first run uses no custom hardware and keeps the gripper
@@ -115,6 +117,12 @@ The script refuses to arm unless:
 - `run.py --status` reports `approved`;
 - a human types the exact physical confirmation phrase; and
 - the local plan passes the conservative envelope checks.
+
+The launcher creates and separately approves three identical local plans, one
+for each declared rollout. It converts the two high-level waypoints into 10 Hz
+TCP rows limited to 2 mm of translation and 1 degree of rotation per row
+(nominally 20 mm/s and 10 degrees/s) from the observed physical pose. It refuses
+physical motion if the cell does not provide `tcp_pose`.
 
 It enables physical mode only for the lifetime of the official client and
 removes the physical-mode environment variables afterward, including after an

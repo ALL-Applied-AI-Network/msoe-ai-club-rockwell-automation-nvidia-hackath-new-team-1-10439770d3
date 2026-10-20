@@ -2,6 +2,9 @@ param(
     [Parameter(Mandatory = $true)]
     [string]$Operator,
 
+    [ValidateRange(1, 10)]
+    [int]$Rollouts = 3,
+
     [string]$OfficialClient = "E:\Hackathon data\Hackathon main event\site_crawl\sidclab_2026-10-19\PhysicalAI-Hackathon-2026"
 )
 
@@ -55,10 +58,15 @@ $env:ATEAM_EXECUTION_MODE = "physical"
 $env:PYTHONUTF8 = "1"
 
 try {
-    $PlanJson = & $Cli draft-demo --label "A-Team supervised physical commissioning motion"
-    $Plan = $PlanJson | ConvertFrom-Json
-    & $Cli approve $Plan.id --mode physical --operator $Operator --confirm $RequiredPhrase | Out-Null
-    Write-Host "Approved local physical plan $($Plan.id). Waiting for the official cell operator..."
+    $PlanIds = @()
+    for ($Index = 1; $Index -le $Rollouts; $Index++) {
+        $PlanJson = & $Cli draft-demo --label "A-Team supervised physical commissioning motion $Index/$Rollouts"
+        $Plan = $PlanJson | ConvertFrom-Json
+        & $Cli approve $Plan.id --mode physical --operator $Operator --confirm $RequiredPhrase | Out-Null
+        $PlanIds += $Plan.id
+    }
+    Write-Host "Approved $Rollouts local physical plans: $($PlanIds -join ', ')"
+    Write-Host "Waiting for the official cell operator..."
 
     Push-Location $OfficialClient
     try {
@@ -67,6 +75,15 @@ try {
         Pop-Location
     }
 } finally {
+    if ($PlanIds) {
+        $Recent = & $Cli status | ConvertFrom-Json
+        foreach ($PlanId in $PlanIds) {
+            $Current = $Recent | Where-Object { $_.id -eq $PlanId } | Select-Object -First 1
+            if ($Current.status -in @("pending", "approved")) {
+                & $Cli cancel $PlanId | Out-Null
+            }
+        }
+    }
     Remove-Item Env:ATEAM_ALLOW_PHYSICAL -ErrorAction SilentlyContinue
     Remove-Item Env:ATEAM_EXECUTION_MODE -ErrorAction SilentlyContinue
     Write-Host "A-Team physical mode is disarmed."

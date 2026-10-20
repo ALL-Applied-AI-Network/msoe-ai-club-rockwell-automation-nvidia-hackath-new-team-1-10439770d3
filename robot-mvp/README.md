@@ -43,6 +43,11 @@ Verified on October 19, 2026:
   endpoints after applying the documented 330 mm UF0/base-frame offset;
 - the MVP's five safety, state-machine, and live stdio-MCP tests passed.
 
+Updated for the physical interface opened on October 20, 2026: the policy now
+interpolates from the observed physical TCP at 10 Hz, limits each row to 2 mm of
+translation and 1 degree of rotation, and requires one separately approved
+local plan per rollout. Seven local tests cover the resulting control path.
+
 ## MCP tools
 
 - `robot_status`: envelope and recent plans.

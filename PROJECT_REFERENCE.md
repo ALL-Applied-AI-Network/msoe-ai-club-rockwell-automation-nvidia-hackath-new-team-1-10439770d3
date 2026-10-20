@@ -485,6 +485,13 @@ The exact preparation, submission, on-site execution, and evidence workflow is
 documented in
 [`docs/PHYSICAL_ROLLOUT_RUNBOOK.md`](docs/PHYSICAL_ROLLOUT_RUNBOOK.md).
 
+**October 20 operational update:** the physical testing interface and Calendar
+opened. A-Team request `q50c904` is submitted and pending calendar booking and
+organizer approval. The installed client policy now converts the two reviewed
+waypoints into 10 Hz rows limited to 2 mm translation and 1 degree rotation per
+row from the observed physical TCP; it refuses unobserved physical motion and
+requires a separately human-approved local plan for each of the three rollouts.
+
 ### Gate 3 — Bounded Toolsmith experiment
 
 - Select 3–4 approved test objects: current-tool success, geometry-specific
