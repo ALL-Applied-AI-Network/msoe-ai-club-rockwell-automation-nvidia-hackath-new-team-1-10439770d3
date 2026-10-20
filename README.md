@@ -6,7 +6,7 @@
 
 [![Event](https://img.shields.io/badge/Event-Innovation_Lab_Fall_2026-76B900?style=for-the-badge)](#the-challenge)
 [![Focus](https://img.shields.io/badge/Focus-Physical_AI-22D3EE?style=for-the-badge)](#our-engineering-thesis)
-[![Status](https://img.shields.io/badge/Status-Discovery_%26_Baselines-A855F7?style=for-the-badge)](#execution-roadmap)
+[![Status](https://img.shields.io/badge/Status-Physical_MVP_Verified-76B900?style=for-the-badge)](#execution-roadmap)
 [![Team](https://img.shields.io/badge/Team-The_A--Team-111827?style=for-the-badge)](#the-a-team)
 
 **An evidence-first Physical AI project for safer, more adaptive, and more trustworthy manufacturing.**
@@ -31,6 +31,13 @@ Our goal is not to build a model that looks impressive on a laptop. We are build
 6. can plausibly transfer beyond one clean demonstration.
 
 > **Our standard:** inspect the real process, understand the cause, act safely, and prove the result.
+
+**Selected direction:** **The Adaptive Workcell: Show the Job, Generate the
+Tool**, built on Dataset 3. On October 20, the official supervised testbed
+executed our real FANUC policy twice and recorded complete camera and telemetry
+evidence. The first run verified home→A motion and exposed one measurable
+waypoint-tolerance issue before A→B; see the
+**[first physical run report](docs/FIRST_PHYSICAL_RUN_REPORT.md)**.
 
 ## The challenge
 
@@ -72,7 +79,10 @@ Two 30-position fixtures receive accepted and scrapped vials. The overhead syste
 - Add a fixture-level state machine using placement count or order completion.
 - Evaluate on untouched real scenes with per-class recall and explicit escaped-defect counts.
 
-**Why it is currently our recommended starting point:** the target is clear, the supporting assets are mature, the evaluation is defensible, and a baseline can be built early enough to leave time for synthetic-to-real iteration.
+**Why it remains a strong fallback:** the target is clear, the supporting assets
+are mature, and its evaluation is defensible. The team selected Dataset 3 for
+the main entry because it better supports the adaptive-workcell thesis and a
+physical demonstration.
 
 ### Experiment 2 — Fluid Mixing Station 3
 
@@ -103,7 +113,12 @@ A FANUC ER-4iA, SMC MHZL2-16D2 pneumatic parallel gripper with custom aluminium 
 
 **Why it is high-risk/high-reward:** it offers the most dramatic live demonstration, but integration, calibration, custom-hardware approval, and testbed scheduling can consume the project window. See the **[SIDC Lab platform intelligence report](research/physical-ai-platform/SIDCLAB_PLATFORM_INTELLIGENCE_REPORT.md)** for the exact policy interface, limits, calibration, scoring, CAD assets, and strategic implications.
 
-**Working point-to-point MVP:** [`robot-mvp/`](robot-mvp/) provides a tested local MCP planner, a separate human approval gate, a drop-in TCP policy for the official SIDC client, an official-mock demonstration, and the Isaac Sim 6.0 DGX Spark setup path. AI tools can draft and validate motion, but cannot approve or directly execute physical movement.
+**Working point-to-point MVP:** [`robot-mvp/`](robot-mvp/) provides a tested
+local MCP planner, a separate human approval gate, a drop-in TCP policy for the
+official SIDC client, Isaac Sim 6.0 evidence on DGX Spark, and the first
+supervised physical FANUC recording. AI tools can draft and validate motion,
+but cannot approve it or bypass the official operator-controlled execution
+path.
 
 ## Reference architecture
 
@@ -218,6 +233,7 @@ The kickoff has been converted into a searchable evidence package:
 | **[Official-resource audit](research/official-resource-audit/README.md)** | Full crawl of every public resource linked by the official event pages, with provenance, hashes, extracted evidence, access gaps, and follow-up queue |
 | **[Strategic don't-miss brief](research/official-resource-audit/STRATEGIC_DONT_MISS_BRIEF.md)** | Deadlines, dataset decisions, compute requests, Slack routing, live-test rules, competitive strategy, and authenticated blind spots |
 | **[Physical-AI platform audit](research/physical-ai-platform/README.md)** | FANUC/SMC hardware, policy API, safety envelope, calibration, custom-hardware rules, scoring, public CAD/media archive, and implementation brief |
+| **[First physical run](docs/FIRST_PHYSICAL_RUN_REPORT.md)** | Two recorded FANUC commissioning episodes, measured TCP residual, evidence boundary, correction, and next acceptance test |
 
 Machine transcripts are working notes, not quote-ready records. Check the source recording before attributing exact wording to a speaker.
 
@@ -246,10 +262,16 @@ Machine transcripts are working notes, not quote-ready records. Check the source
 │       ├── RESOURCE_MANIFEST.csv
 │       ├── SIDCLAB_PLATFORM_INTELLIGENCE_REPORT.md
 │       └── THE_A_TEAM_IMPLEMENTATION_BRIEF.md
+├── docs/
+│   ├── PHYSICAL_ROLLOUT_RUNBOOK.md
+│   └── FIRST_PHYSICAL_RUN_REPORT.md
+├── robot-mvp/
+│   ├── policy.py
+│   ├── robot_control/
+│   ├── tests/
+│   └── evidence/
 └── README.md
 ```
-
-Project code, experiment configurations, tests, model cards, and result artifacts will be added only after the dataset-selection gate so the repository structure reflects the chosen problem rather than assumptions.
 
 ## Working agreement
 

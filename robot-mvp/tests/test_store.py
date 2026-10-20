@@ -13,3 +13,14 @@ def test_plan_requires_human_approval(tmp_path):
     assert claimed["status"] == "executing"
     assert store.complete(plan["id"])["status"] == "completed"
 
+
+def test_executing_plan_can_be_closed_as_interrupted(tmp_path):
+    store = PlanStore(tmp_path / "plans.sqlite3")
+    plan = store.create("test", [{"x_mm": 450, "y_mm": 0, "z_mm": -230}])
+    store.approve(plan["id"], "physical", "Test Operator")
+    store.claim_next("physical")
+
+    interrupted = store.interrupt(plan["id"], "operator ended rollout")
+
+    assert interrupted["status"] == "interrupted"
+    assert interrupted["note"] == "operator ended rollout"

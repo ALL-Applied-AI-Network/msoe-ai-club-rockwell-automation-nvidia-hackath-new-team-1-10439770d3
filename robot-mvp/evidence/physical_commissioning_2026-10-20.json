@@ -1,0 +1,80 @@
+{
+  "evidence_type": "supervised_physical_commissioning",
+  "date_local": "2026-10-20",
+  "robot": "FANUC ER-4iA",
+  "run_id": "r20261020-5fea53",
+  "request_id": "q50c904",
+  "policy_action_mode": "tcp",
+  "controller_frame": "UF0",
+  "task": "Move the open gripper between two approved points above the default scene without contacting any object.",
+  "planned_waypoints": {
+    "A": [450.0, -70.0, -230.0, -180.0, 0.0, 0.0, 0.0],
+    "B": [450.0, 70.0, -230.0, -180.0, 0.0, 0.0, 0.0]
+  },
+  "motion_limits": {
+    "sample_period_s": 0.1,
+    "maximum_translation_per_action_mm": 2.0,
+    "maximum_rotation_per_action_deg": 1.0,
+    "position_completion_tolerance_used_mm": 2.0,
+    "gripper_command": "open"
+  },
+  "official_trial_status": {
+    "r20261020-5fea53-t00": "cancelled",
+    "r20261020-5fea53-t01": "done_and_scored",
+    "r20261020-5fea53-t02": "done_and_scored"
+  },
+  "recorded_episodes": [
+    {
+      "episode_index": 0,
+      "trial_id": "r20261020-5fea53-t01",
+      "frames": 517,
+      "duration_s": 51.6,
+      "start_tcp_xyz_mm": [299.99, -0.03, -90.1],
+      "final_tcp_xyz_mm": [450.0, -70.0, -234.58],
+      "minimum_distance_to_A_mm": 2.531,
+      "time_to_within_5_mm_of_A_s": 12.0,
+      "time_to_within_3_mm_of_A_s": 12.2,
+      "time_to_within_2_mm_of_A_s": null,
+      "minimum_distance_to_B_mm": 131.863,
+      "gripper_closed_frames": 0,
+      "end_reason": "operator"
+    },
+    {
+      "episode_index": 1,
+      "trial_id": "r20261020-5fea53-t02",
+      "frames": 153,
+      "duration_s": 15.2,
+      "start_tcp_xyz_mm": [299.99, -0.03, -90.1],
+      "final_tcp_xyz_mm": [450.0, -70.0, -234.2],
+      "minimum_distance_to_A_mm": 2.54,
+      "time_to_within_5_mm_of_A_s": 12.0,
+      "time_to_within_3_mm_of_A_s": 12.1,
+      "time_to_within_2_mm_of_A_s": null,
+      "minimum_distance_to_B_mm": 131.863,
+      "gripper_closed_frames": 0,
+      "end_reason": "operator"
+    }
+  ],
+  "conclusion": {
+    "verified": [
+      "The official client connected to the cell during an approved supervised slot.",
+      "The real robot executed the policy's conservative home-to-A TCP trajectory.",
+      "The gripper remained open and the recorded views show no object contact.",
+      "The platform recorded two 10 Hz LeRobotDataset episodes with table, side and wrist video plus state, TCP pose and action telemetry."
+    ],
+    "not_verified": [
+      "The A-to-B leg did not execute.",
+      "The run does not validate grasping, perception, custom fingers, autonomous execution or unattended control."
+    ],
+    "root_cause_of_partial_path": "Both episodes approached A to approximately 2.54 mm, but the policy required 2.00 mm or less before advancing to B.",
+    "corrective_action": "Use a 5 mm completion gate for this non-contact commissioning path, retain the 2 mm per-action motion limit, and calibrate task-specific tolerances before precision manipulation."
+  },
+  "local_source_hashes": {
+    "console_and_speaker_notes_txt_sha256": "aac8907946ef44854430e2f5a509b1e3f3c6612c1e3132d8316744e7d47663f8",
+    "episode_0_parquet_sha256": "a8b4a93cd190b7ee40bcdc2478c4167d891559755615f46c8e508abae5adf143",
+    "episode_1_parquet_sha256": "e90f8695822b6b8902a4db3d308eaeffe1153a2d5173ef3ba55ba9fca18458ca",
+    "manipbench_json_sha256": "48122196eb15bdce1c92a834b9b4f2a14f38dcda08e5a2cb69583558c7fc524a"
+  },
+  "privacy": "The private results URL, view key, request secret and run token are intentionally excluded.",
+  "data_quality_note": "The machine-local approved_by rows contain the literal placeholder OPERATOR NAME, so they are not valid operator-identity evidence. The launcher now rejects that placeholder."
+}

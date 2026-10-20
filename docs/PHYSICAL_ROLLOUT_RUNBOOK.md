@@ -108,7 +108,7 @@ arm, verify the current setup, and retain the stop controls. Then run:
 
 ```powershell
 cd "E:\Hackathon data\Hackathon main event\official-team-repository\robot-mvp"
-.\scripts\run_physical_slot.ps1 -Operator "OPERATOR NAME"
+.\scripts\run_physical_slot.ps1 -Operator "Actual Nearby Operator Name"
 ```
 
 The script refuses to arm unless:
@@ -118,6 +118,9 @@ The script refuses to arm unless:
 - a human types the exact physical confirmation phrase; and
 - the local plan passes the conservative envelope checks.
 
+The operator argument is part of the audit trail. The launcher rejects the
+literal placeholder `OPERATOR NAME`; enter the actual nearby operator's name.
+
 The launcher creates and separately approves three identical local plans, one
 for each declared rollout. It converts the two high-level waypoints into 10 Hz
 TCP rows limited to 2 mm of translation and 1 degree of rotation per row
@@ -126,7 +129,14 @@ physical motion if the cell does not provide `tcp_pose`.
 
 It enables physical mode only for the lifetime of the official client and
 removes the physical-mode environment variables afterward, including after an
-error.
+error. Any plan claimed by a rollout that ends before the final waypoint is
+recorded as `interrupted`, while unused plans are cancelled.
+
+The October 20 commissioning run showed that the real cell can settle roughly
+2.54 mm from a requested point. The commissioning policy therefore uses a 5 mm
+waypoint-completion gate while retaining the 2 mm per-row motion limit. That
+5 mm gate is for this open-gripper, non-contact path—not a general grasping
+accuracy specification.
 
 For each rollout, the SIDC operator—not the script—homes the arm, prepares the
 scene, and starts the motion. The operator can stop the rollout or handle a

@@ -34,6 +34,10 @@ def main() -> None:
     cancel = sub.add_parser("cancel", help="cancel a pending/approved plan")
     cancel.add_argument("plan_id")
 
+    interrupt = sub.add_parser("interrupt", help="close an executing plan without marking it completed")
+    interrupt.add_argument("plan_id")
+    interrupt.add_argument("--note", default="official rollout ended before local plan completion")
+
     args = parser.parse_args()
     store = PlanStore()
     if args.command == "status":
@@ -53,6 +57,9 @@ def main() -> None:
     if args.command == "cancel":
         print_json(store.cancel(args.plan_id))
         return
+    if args.command == "interrupt":
+        print_json(store.interrupt(args.plan_id, args.note))
+        return
     if args.command == "approve":
         if args.mode == "physical":
             if os.environ.get("ATEAM_ALLOW_PHYSICAL") != "YES":
@@ -64,4 +71,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

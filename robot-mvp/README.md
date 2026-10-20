@@ -46,7 +46,12 @@ Verified on October 19, 2026:
 Updated for the physical interface opened on October 20, 2026: the policy now
 interpolates from the observed physical TCP at 10 Hz, limits each row to 2 mm of
 translation and 1 degree of rotation, and requires one separately approved
-local plan per rollout. Seven local tests cover the resulting control path.
+local plan per rollout. The first supervised physical run then moved the real
+FANUC from home to waypoint A in two recorded episodes. Both settled about
+2.54 mm from A, exposing an overly strict 2 mm waypoint gate; the non-contact
+commissioning gate is now 5 mm and is covered by a physical-residual regression
+test. See
+[`../docs/FIRST_PHYSICAL_RUN_REPORT.md`](../docs/FIRST_PHYSICAL_RUN_REPORT.md).
 
 ## MCP tools
 
@@ -137,13 +142,19 @@ collision-free transfer to the physical cell or authorize unattended motion.
 
 ## First physical rollout
 
-The authorized next step is a supervised run through the official SIDC client,
-not a direct robot-controller connection. Follow
+The authorized path is a supervised run through the official SIDC client, not
+a direct robot-controller connection. Follow
 [`../docs/PHYSICAL_ROLLOUT_RUNBOOK.md`](../docs/PHYSICAL_ROLLOUT_RUNBOOK.md).
 The included preparation script installs a three-rollout commissioning request
 without submitting it; the physical-slot script stays locked until the SIDC
 request is approved and a nearby human confirms the operator and E-stop are
 ready.
+
+The first approved run on October 20 verified end-to-end physical motion to A,
+camera/telemetry recording and the human safety gate. It did not complete the
+A→B leg because of the now-corrected waypoint tolerance. The exact measured
+evidence is stored in
+[`evidence/physical_commissioning_2026-10-20.json`](evidence/physical_commissioning_2026-10-20.json).
 
 The reusable job definition is [`jobs/isaac_sim_6_smoke.json`](jobs/isaac_sim_6_smoke.json).
 [`scripts/yaad_call.py`](scripts/yaad_call.py) provides a token-safe MCP client

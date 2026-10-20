@@ -25,7 +25,12 @@ DT_SECONDS = 0.1
 MAX_TRANSLATION_STEP_MM = 2.0
 MAX_ROTATION_STEP_DEG = 1.0
 MAX_CHUNK_ACTIONS = 100
-POSITION_TOLERANCE_MM = 2.0
+# The first physical commissioning run settled 2.53-2.54 mm from waypoint A
+# in both recorded episodes. A 5 mm gate is still conservative for the
+# non-contact commissioning path and prevents that repeatable servo/calibration
+# residual from blocking the next waypoint. Precision manipulation should use
+# a task-specific tolerance after physical calibration.
+POSITION_TOLERANCE_MM = 5.0
 ROTATION_TOLERANCE_DEG = 2.0
 
 

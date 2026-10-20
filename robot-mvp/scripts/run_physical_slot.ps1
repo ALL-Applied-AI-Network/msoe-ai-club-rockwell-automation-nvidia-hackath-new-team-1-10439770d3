@@ -23,6 +23,9 @@ if (-not (Test-Path -LiteralPath (Join-Path $OfficialClient "run.py"))) {
 if (-not (Test-Path -LiteralPath $Request)) {
     throw "No private SIDC request file exists. Prepare, submit, and obtain approval before a physical slot."
 }
+if ([string]::IsNullOrWhiteSpace($Operator) -or $Operator.Trim() -eq "OPERATOR NAME") {
+    throw 'Pass the nearby cell operator''s actual name with -Operator "Name"; placeholders are not accepted.'
+}
 
 Push-Location $OfficialClient
 try {
@@ -30,7 +33,8 @@ try {
 } finally {
     Pop-Location
 }
-Write-Host $Status.Trim()
+$SafeStatus = $Status -replace 'https://hackathon\.sidclab\.org/#key=\S+', '[private results link redacted]'
+Write-Host $SafeStatus.Trim()
 if ($Status -notmatch "(?im)^request\s+\S+:\s+approved") {
     throw "The SIDC request is not approved. This script will not arm physical mode."
 }
@@ -81,6 +85,8 @@ try {
             $Current = $Recent | Where-Object { $_.id -eq $PlanId } | Select-Object -First 1
             if ($Current.status -in @("pending", "approved")) {
                 & $Cli cancel $PlanId | Out-Null
+            } elseif ($Current.status -eq "executing") {
+                & $Cli interrupt $PlanId --note "official rollout ended before local plan completion acknowledgement" | Out-Null
             }
         }
     }

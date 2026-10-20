@@ -126,6 +126,19 @@ class PlanStore:
             )
         return self.get(plan_id)
 
+    def interrupt(self, plan_id: str, note: str = "rollout ended before plan completion") -> dict:
+        """Close an executing plan without claiming its final target was reached."""
+        with self.connect() as connection:
+            changed = connection.execute(
+                "UPDATE plans SET status='interrupted', completed_at=?, note=? "
+                "WHERE id=? AND status='executing'",
+                (utc_now(), note, plan_id),
+            ).rowcount
+        if not changed:
+            current = self.get(plan_id)
+            raise ValueError(f"plan {plan_id} cannot be interrupted while {current['status']}")
+        return self.get(plan_id)
+
     def cancel(self, plan_id: str, note: str = "cancelled before execution") -> dict:
         with self.connect() as connection:
             changed = connection.execute(
@@ -137,4 +150,3 @@ class PlanStore:
             current = self.get(plan_id)
             raise ValueError(f"plan {plan_id} cannot be cancelled while {current['status']}")
         return self.get(plan_id)
-

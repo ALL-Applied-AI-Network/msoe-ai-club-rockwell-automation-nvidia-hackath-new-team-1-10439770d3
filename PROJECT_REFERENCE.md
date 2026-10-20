@@ -4,7 +4,7 @@
 > A-Team has researched, decided, built, and verified for the Rockwell
 > Automation + NVIDIA Physical AI Hackathon.
 >
-> **Current through:** October 19, 2026
+> **Current through:** October 20, 2026
 >
 > **Team:** The A-Team
 >
@@ -32,11 +32,14 @@ direction. We now have:
 - a working A-Team DGX Spark environment with Dataset 3 deployed;
 - Isaac Sim 6.0 running on the Spark; and
 - measured proof that the supplied FANUC ER-4iA digital twin can execute our
-  bounded two-waypoint motion to sub-millimetre TCP error.
+  bounded two-waypoint motion to sub-millimetre TCP error; and
+- a first approved physical commissioning run in which the real FANUC executed
+  the policy's conservative home→A trajectory twice with complete camera and
+  telemetry recording.
 
-The key boundary is equally important: **we have not moved the physical FANUC
-robot yet**. The present result proves the software path and simulated motion,
-not physical-cell safety, calibration, collision clearance, or authorization.
+The key boundary is equally important: the physical run verified only the
+supervised home→A portion of a non-contact path. It did not execute A→B or prove
+perception, grasping, custom tooling, autonomous safety, or unattended control.
 
 ## 2. Project thesis
 
@@ -447,14 +450,14 @@ This proves bounded motion in the supplied digital twin. It does **not** prove:
 | Dataset 3 exists locally and remotely | Verified | Local dataset path and Spark deployment |
 | FANUC starter host suite works | Verified | 33/33 tests locally and on Spark |
 | Official SIDC client accepts our bounded policy | Verified in mock | One rollout, 29 actions, zero rejections |
-| Human-gated MCP planner works | Verified locally | 5/5 tests and stdio protocol test |
+| Human-gated MCP planner works | Verified locally | Local safety/state-machine tests and stdio protocol test |
 | Isaac Sim 6.0 runs on DGX Spark | Verified | Headless smoke and job evidence |
 | FANUC twin executes A→B accurately | Verified in simulation | JSON report and USD stage |
 | Existing custom blade fits the real SMC jaw | **Not established; current reconstruction indicates mismatch** | CAD comparison and missing measurements |
 | CADVector can generate a mechanically valid FANUC finger | Proposed | Integration and constraints not yet implemented |
 | Video + speech can produce a correct robot task graph | Proposed | Pipeline not yet implemented |
 | Generated tooling improves physical grasps | Not yet tested | Requires manufacture and repeated trials |
-| Physical FANUC executes our policy safely | Not yet tested | Requires official supervised evaluation |
+| Physical FANUC executes our bounded policy | **Verified in supervised commissioning, home→A only** | Two scored physical episodes, three-camera video, TCP/state/action telemetry, no object contact |
 
 ## 12. Next milestones, in order
 
@@ -485,12 +488,14 @@ The exact preparation, submission, on-site execution, and evidence workflow is
 documented in
 [`docs/PHYSICAL_ROLLOUT_RUNBOOK.md`](docs/PHYSICAL_ROLLOUT_RUNBOOK.md).
 
-**October 20 operational update:** the physical testing interface and Calendar
-opened. A-Team request `q50c904` is submitted and pending calendar booking and
-organizer approval. The installed client policy now converts the two reviewed
-waypoints into 10 Hz rows limited to 2 mm translation and 1 degree rotation per
-row from the observed physical TCP; it refuses unobserved physical motion and
-requires a separately human-approved local plan for each of the three rollouts.
+**October 20 result:** A-Team request `q50c904` was approved and run
+`r20261020-5fea53` produced two scored physical episodes. The real FANUC moved
+from home to waypoint A twice with the gripper open and no observed object
+contact. Both episodes approached A to approximately 2.54 mm but did not enter
+the policy's 2 mm completion gate, so the A→B leg did not start. The
+non-contact commissioning tolerance is now 5 mm, while the 2 mm translation and
+1 degree rotation limits per 10 Hz row remain unchanged. See
+[`docs/FIRST_PHYSICAL_RUN_REPORT.md`](docs/FIRST_PHYSICAL_RUN_REPORT.md).
 
 ### Gate 3 — Bounded Toolsmith experiment
 
@@ -588,6 +593,7 @@ Repository guide:
 | [`PROJECT_REFERENCE.md`](PROJECT_REFERENCE.md) | This master state/history document |
 | [`docs/ACCESS_REFERENCE.md`](docs/ACCESS_REFERENCE.md) | SSH/VPN/YAAD/Git access map, public-key fingerprint, rotation, and recovery steps |
 | [`docs/PHYSICAL_ROLLOUT_RUNBOOK.md`](docs/PHYSICAL_ROLLOUT_RUNBOOK.md) | Exact official-client workflow for the first supervised physical motion |
+| [`docs/FIRST_PHYSICAL_RUN_REPORT.md`](docs/FIRST_PHYSICAL_RUN_REPORT.md) | Measured first physical FANUC commissioning outcome, limits, and next correction |
 | [`knowledge-base-kickoff/`](knowledge-base-kickoff/) | Transcripts, photo context, kickoff report, dataset strategy |
 | [`research/official-resource-audit/`](research/official-resource-audit/) | Official public-resource archive and strategic analysis |
 | [`research/physical-ai-platform/`](research/physical-ai-platform/) | SIDC platform, hardware, policy, calibration, and implementation research |
@@ -622,7 +628,9 @@ These commits preserve the major milestones through this reference date:
 ---
 
 **Current bottom line:** The A-Team has a strong concept, a substantial evidence
-base, a working human-gated control path, and a reproducible simulated FANUC
-motion on NVIDIA hardware. The next decisive evidence is physical: measure the
-real gripper, perform a supervised rollout, and prove one bounded adaptive
-tooling or demonstration-learning improvement through repeated trials.
+base, a working human-gated control path, a reproducible simulated FANUC motion
+on NVIDIA hardware, and first evidence that the same policy stack moves the
+real FANUC under official supervision. The immediate next step is to repeat the
+non-contact A→B path with the corrected tolerance, then measure the real gripper
+and prove one bounded adaptive-tooling or demonstration-learning improvement
+through repeated trials.
