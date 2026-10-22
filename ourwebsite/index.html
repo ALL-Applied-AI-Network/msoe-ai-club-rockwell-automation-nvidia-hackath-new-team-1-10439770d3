@@ -28,6 +28,7 @@
     <nav class="nav-links" aria-label="Sections">
       <a href="#show">Show the Job</a>
       <a href="#tool">Generate the Tool</a>
+      <a href="#move">Drag to Move</a>
       <a href="#evidence">Evidence</a>
       <a href="#team">Team</a>
     </nav>
@@ -40,11 +41,9 @@
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-inner">
         <p class="eyebrow">Rockwell Automation × NVIDIA Innovation Lab · Fall 2026 · Dataset 3</p>
-        <h1>Show the job.<br /><span class="accent-text">Generate the tool.</span></h1>
         <p class="lede">
-          An adaptive workcell for the FANUC ER-4iA. A worker records the task once on video; we turn it into
-          safe, reviewable robot instructions. They photograph the part; we rebuild it in 3D so custom fingers
-          and fixtures can be designed around it.
+          Three live demos for the FANUC ER-4iA cell: turn a recorded demonstration into robot instructions,
+          rebuild a part in 3D from photos, or drag an object in a replica of the cell and watch the arm move it.
         </p>
       </div>
 
@@ -87,6 +86,30 @@
             <p>Drop photos or a walk-around video of a part and get a measurable 3D model in mm, ready to export as STL for custom fingers and fixtures.</p>
             <div class="chips"><span>Photos</span><i aria-hidden="true">→</i><span>Point cloud</span><i aria-hidden="true">→</i><span>Mesh</span><i aria-hidden="true">→</i><span class="chip-hot">STL</span></div>
             <span class="choice-cta">Open photo → 3D demo <b aria-hidden="true">↓</b></span>
+          </div>
+        </a>
+        <a class="choice" href="#move">
+          <div class="choice-media choice-media-3d">
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <defs>
+                <linearGradient id="cg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#76b900" /><stop offset="1" stop-color="#22d3ee" /></linearGradient>
+              </defs>
+              <path d="M30 150 L160 120 L300 150 L170 178 Z" fill="#132236" stroke="#2a4262" />
+              <g transform="translate(78 112)"><path d="M0 10 l16 -6 l16 6 l-16 6z" fill="#e0524b" /><path d="M0 10 v16 l16 6 v-16z" fill="#a8332e" /><path d="M32 10 v16 l-16 6 v-16z" fill="#c4423c" /></g>
+              <g transform="translate(218 112)" fill="none" stroke="#22d3ee" stroke-width="1.6" stroke-dasharray="3 3"><path d="M0 10 l16 -6 l16 6 l-16 6z" /><path d="M0 10 v16 l16 6 v-16z" /><path d="M32 10 v16 l-16 6 v-16z" /></g>
+              <path d="M118 118 Q 170 70 214 116" fill="none" stroke="url(#cg3)" stroke-width="2" stroke-dasharray="5 4" />
+              <path d="M206 112 l9 5 l-3 -10" fill="none" stroke="#22d3ee" stroke-width="2" />
+              <g stroke="#e8b923" stroke-width="10" stroke-linecap="round" fill="none"><path d="M160 22 L132 58 L168 84" /></g>
+              <rect x="161" y="82" width="14" height="16" rx="2" fill="#9aa4ae" />
+              <path d="M163 98 v10 M173 98 v10" stroke="#cfd6de" stroke-width="3" />
+            </svg>
+            <span class="choice-tag">03 · Live demo</span>
+          </div>
+          <div class="choice-body">
+            <h2>Drag to Move</h2>
+            <p>Drag a cube or screw in a 3D replica of the cell. A ghost marks the target, and the arm plans and carries out the real pick-and-place.</p>
+            <div class="chips"><span>Drag</span><i aria-hidden="true">→</i><span>Ghost</span><i aria-hidden="true">→</i><span>Plan</span><i aria-hidden="true">→</i><span class="chip-hot">Move</span></div>
+            <span class="choice-cta">Open drag → move demo <b aria-hidden="true">↓</b></span>
           </div>
         </a>
       </div>
@@ -262,10 +285,63 @@
       </div>
     </section>
 
+    <!-- ───────────────────────── Demo 3 ───────────────────────── -->
+    <section class="demo" id="move">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <div>
+          <h2>Drag to Move</h2>
+          <p>A lightweight replica of the cell, built from the official SIDC CAD models. Drag a part to a new spot; a ghost holds the target until the arm has moved it.</p>
+        </div>
+        <span class="badge" title="Kinematic replica only: simplified arm geometry, analytic IK, no physics. Moves are not sent to the real robot.">Demo mode · not connected to the robot</span>
+      </div>
+
+      <div class="demo-grid demo-grid-twin">
+        <div class="panel panel-viewer">
+          <div class="panel-bar">
+            <span class="panel-title">Cell replica</span>
+            <div class="seg" role="group" aria-label="Simulation speed">
+              <button class="seg-btn" data-speed="1" type="button">1×</button>
+              <button class="seg-btn is-active" data-speed="4" type="button">4×</button>
+              <button class="seg-btn" data-speed="10" type="button">10×</button>
+            </div>
+          </div>
+          <div class="viewer viewer-twin" id="twin">
+            <div class="viewer-hud mono">
+              <span>TCP <b id="tTcp">—</b> mm</span>
+              <span>grip <b id="tGrip">open</b></span>
+              <span id="tState">idle</span>
+            </div>
+            <div class="viewer-hint">drag a part to move it · drag empty space to orbit</div>
+            <div class="twin-loading mono" id="twinLoading">loading CAD models…</div>
+          </div>
+          <div class="viewer-actions">
+            <label class="check"><input type="checkbox" id="tAuto" checked /> Auto-approve moves (sim only)</label>
+            <button class="btn btn-ghost btn-sm" id="tReset" type="button">Reset scene</button>
+            <span class="muted" id="tStatus">Drag a red cube into the yellow bin to start.</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-bar"><span class="panel-title">Move queue</span><span class="muted mono" id="tCount">0 queued</span></div>
+          <ol class="queue" id="tQueue"><li class="empty">No moves yet. Drag a part in the replica.</li></ol>
+
+          <div class="sub-head"><span>Joint angles</span><span class="muted">analytic IK</span></div>
+          <div class="joints mono" id="tJoints">
+            <div><span>J1</span><b>0.0°</b></div><div><span>J2</span><b>0.0°</b></div><div><span>J3</span><b>0.0°</b></div><div><span>J5</span><b>0.0°</b></div>
+          </div>
+
+          <div class="sub-head"><span>Generated TCP commands</span><span class="muted" id="tCmdInfo">cell frame · mm</span></div>
+          <pre class="code code-log" id="tLog">// waypoints for the active move appear here</pre>
+          <button class="btn btn-ghost btn-sm btn-block" id="tExport" type="button" disabled>Download moves as plan.json</button>
+        </div>
+      </div>
+    </section>
+
     <!-- ───────────────────────── How it works ───────────────────────── -->
     <section class="how">
       <div class="section-head">
-        <span class="section-num">03</span>
+        <span class="section-num">04</span>
         <div>
           <h2>Built for a real cell, not a laptop</h2>
           <p>The two halves meet at the robot: the video tells it what to do, the model tells us what it's holding.</p>
@@ -294,7 +370,7 @@
     <!-- ───────────────────────── Team ───────────────────────── -->
     <section class="team" id="team">
       <div class="section-head">
-        <span class="section-num">04</span>
+        <span class="section-num">05</span>
         <div>
           <h2>The A-Team</h2>
           <p>MSOE AI Club × UWM Connected Systems Institute × Rockwell Automation × NVIDIA</p>
@@ -317,5 +393,6 @@
 
   <script src="video-demo.js"></script>
   <script type="module" src="recon-demo.js"></script>
+  <script type="module" src="twin-demo.js"></script>
 </body>
 </html>
