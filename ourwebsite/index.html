@@ -1,1 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The A-Team · Adaptive Workcell</title>
+  <meta name="description" content="The A-Team's Physical AI project for the Rockwell Automation + NVIDIA Innovation Lab: turn a recorded demonstration into FANUC policy instructions, and reconstruct 3D tooling from photos and video." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%2376b900%22/%3E%3Ctext x=%2216%22 y=%2223%22 font-family=%22Arial%22 font-weight=%22900%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22%230a1400%22%3EA%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="The A-Team home">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span class="brand-text">The A-Team</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#show">Show the Job</a>
+      <a href="#tool">Generate the Tool</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#team">Team</a>
+    </nav>
+    <a class="nav-cta" href="https://github.com/ALL-Applied-AI-Network/msoe-ai-club-rockwell-automation-nvidia-hackath-new-team-1-10439770d3" target="_blank" rel="noopener">Repository ↗</a>
+  </header>
 
+  <main id="top">
+    <!-- ───────────────────────── Hero ───────────────────────── -->
+    <section class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="eyebrow">Rockwell Automation × NVIDIA Innovation Lab · Fall 2026 · Dataset 3</p>
+        <h1>Show the job.<br /><span class="accent-text">Generate the tool.</span></h1>
+        <p class="lede">
+          An adaptive workcell for the FANUC ER-4iA. A worker records the task once on video; we turn it into
+          safe, reviewable robot instructions. They photograph the part; we rebuild it in 3D so custom fingers
+          and fixtures can be designed around it.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#show">Try the video → policy demo</a>
+          <a class="btn btn-ghost" href="#tool">Try the photo → 3D demo</a>
+        </div>
+      </div>
+
+      <div class="hero-flow" aria-label="System overview">
+        <div class="flow-node"><span class="flow-k">INPUT</span><span>Instructional video</span></div>
+        <div class="flow-arrow" aria-hidden="true"></div>
+        <div class="flow-node"><span class="flow-k">PARSE</span><span>Steps · objects · targets</span></div>
+        <div class="flow-arrow" aria-hidden="true"></div>
+        <div class="flow-node"><span class="flow-k">GATE</span><span>Human approval</span></div>
+        <div class="flow-arrow" aria-hidden="true"></div>
+        <div class="flow-node flow-node-hot"><span class="flow-k">ACT</span><span>FANUC TCP policy</span></div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Evidence strip ───────────────────────── -->
+    <section class="stats" id="evidence" aria-label="Physical run results">
+      <div class="stats-head">
+        <h2>Already on real steel</h2>
+        <p>Supervised commissioning run <code>r20261020-5fea53</code> on the official FANUC testbed, Oct 20, 2026.</p>
+      </div>
+      <dl class="stat-row">
+        <div class="stat"><dt>Official score</dt><dd>2<span>/2</span></dd></div>
+        <div class="stat"><dt>Faults</dt><dd>0</dd></div>
+        <div class="stat"><dt>Interventions</dt><dd>0</dd></div>
+        <div class="stat"><dt>Policy latency</dt><dd>84<span> ms</span></dd></div>
+        <div class="stat"><dt>Mean cycle</dt><dd>33.4<span> s</span></dd></div>
+      </dl>
+      <p class="stats-note">
+        Honest boundary: home→A was verified (settled 2.53 mm from target). The A→B leg did not execute because the
+        waypoint tolerance was tighter than the measured servo residual; the gate is now 5 mm and A→B is the next acceptance test.
+      </p>
+    </section>
+
+    <!-- ───────────────────────── Demo 1 ───────────────────────── -->
+    <section class="demo" id="show">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <div>
+          <h2>Show the Job</h2>
+          <p>Recorded demonstration → machine policy instructions for the FANUC ER-4iA.</p>
+        </div>
+        <span class="badge" title="The model backend is not connected yet. Frame sampling and motion analysis run for real in your browser; the step parser and policy output are simulated.">Demo mode · simulated backend</span>
+      </div>
+
+      <div class="demo-grid">
+        <!-- Left: input -->
+        <div class="panel">
+          <div class="panel-bar">
+            <span class="panel-title">Input recording</span>
+            <div class="seg" role="group" aria-label="Video source">
+              <button class="seg-btn is-active" id="vSample" type="button">Sample</button>
+              <label class="seg-btn" for="vFile">Upload video</label>
+              <input id="vFile" type="file" accept="video/*" hidden />
+            </div>
+          </div>
+          <div class="video-wrap">
+            <video id="vPlayer" src="assets/testbed-demo.mp4" poster="assets/testbed-poster.jpg" muted playsinline controls preload="auto"></video>
+            <canvas id="vOverlay" class="video-overlay" aria-hidden="true"></canvas>
+          </div>
+          <p class="caption" id="vCaption">Sample: official testbed side camera, Oct 19 trial (operator-ended). Upload any phone video of a pick-and-place to try your own.</p>
+
+          <div class="sub-head">
+            <span>Motion energy</span>
+            <span class="muted" id="energyInfo">computed in your browser</span>
+          </div>
+          <canvas id="energy" class="energy" height="90" aria-label="Motion energy over time with detected steps"></canvas>
+
+          <div class="sub-head"><span>Keyframes</span><span class="muted" id="kfInfo">—</span></div>
+          <div class="filmstrip" id="filmstrip"></div>
+
+          <button class="btn btn-primary btn-block" id="vRun" type="button">▶ Convert to robot instructions</button>
+        </div>
+
+        <!-- Right: output -->
+        <div class="panel">
+          <div class="panel-bar"><span class="panel-title">Pipeline</span><span class="muted mono" id="vClock">idle</span></div>
+          <ol class="stages" id="vStages">
+            <li data-stage="sample"><span class="dot"></span><span class="stage-name">Sample frames</span><span class="stage-meta">48 frames</span></li>
+            <li data-stage="segment"><span class="dot"></span><span class="stage-name">Segment actions</span><span class="stage-meta">motion energy</span></li>
+            <li data-stage="ground"><span class="dot"></span><span class="stage-name">Ground objects &amp; targets</span><span class="stage-meta">color blob → UF0</span></li>
+            <li data-stage="plan"><span class="dot"></span><span class="stage-name">Plan TCP waypoints</span><span class="stage-meta">≤2 mm / 0.1 s</span></li>
+            <li data-stage="safety"><span class="dot"></span><span class="stage-name">Safety envelope check</span><span class="stage-meta">workspace · speed</span></li>
+            <li data-stage="gate"><span class="dot"></span><span class="stage-name">Await human approval</span><span class="stage-meta">never auto-executes</span></li>
+          </ol>
+
+          <div class="tabs" role="tablist" aria-label="Generated output">
+            <button role="tab" class="tab is-active" data-tab="steps" aria-selected="true">Instructions</button>
+            <button role="tab" class="tab" data-tab="waypoints" aria-selected="false">Waypoints</button>
+            <button role="tab" class="tab" data-tab="plan" aria-selected="false">plan.json</button>
+            <button role="tab" class="tab" data-tab="tp" aria-selected="false">FANUC TP</button>
+          </div>
+          <div class="tab-body">
+            <div class="tab-pane is-active" data-pane="steps">
+              <ol class="steps" id="outSteps"><li class="empty">Run the conversion to generate step-by-step instructions.</li></ol>
+            </div>
+            <div class="tab-pane" data-pane="waypoints">
+              <div class="table-wrap">
+                <table class="wp-table">
+                  <thead><tr><th>#</th><th>Step</th><th>X</th><th>Y</th><th>Z</th><th>W</th><th>P</th><th>R</th><th>Grip</th></tr></thead>
+                  <tbody id="outWaypoints"><tr><td colspan="9" class="empty">No waypoints yet.</td></tr></tbody>
+                </table>
+              </div>
+              <canvas id="topView" class="topview" height="220" aria-label="Top-down view of planned TCP path"></canvas>
+            </div>
+            <div class="tab-pane" data-pane="plan"><pre class="code" id="outPlan">// plan appears here</pre></div>
+            <div class="tab-pane" data-pane="tp"><pre class="code" id="outTP">! TP program appears here</pre></div>
+          </div>
+
+          <div class="gate" id="vGate" hidden>
+            <div>
+              <strong>Plan drafted — pending operator approval.</strong>
+              <span>AI drafts and validates motion. Only a human in the official SIDC client can approve and run it.</span>
+            </div>
+            <button class="btn btn-ghost btn-sm" id="vDownload" type="button">Download plan.json</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Demo 2 ───────────────────────── -->
+    <section class="demo" id="tool">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <div>
+          <h2>Generate the Tool</h2>
+          <p>Photos or a walk-around video → a measurable 3D model you can design fingers and fixtures against.</p>
+        </div>
+        <span class="badge" title="The reconstruction backend is not connected yet. Frame extraction, the 3D viewer, measurement and STL export are real; the reconstruction result is a stand-in model.">Demo mode · simulated backend</span>
+      </div>
+
+      <div class="demo-grid demo-grid-wide">
+        <div class="panel">
+          <div class="panel-bar">
+            <span class="panel-title">Capture set</span>
+            <div class="seg" role="group" aria-label="Capture source">
+              <button class="seg-btn is-active" id="rSample" type="button">Sample</button>
+              <label class="seg-btn" for="rFile">Upload photos / video</label>
+              <input id="rFile" type="file" accept="image/*,video/*" multiple hidden />
+            </div>
+          </div>
+          <label class="drop" id="rDrop" for="rFile">
+            <span class="drop-icon" aria-hidden="true">⬡</span>
+            <span><strong>Drop 8–40 photos</strong> or a short orbit video of the part.</span>
+            <span class="muted">Even lighting, matte surface, 60–80% overlap between views.</span>
+          </label>
+          <div class="thumbs" id="rThumbs"></div>
+          <p class="caption" id="rCaption">Sample: 12 views of a custom parallel-gripper finger.</p>
+
+          <ol class="stages" id="rStages">
+            <li data-stage="features"><span class="dot"></span><span class="stage-name">Extract features</span><span class="stage-meta" id="rFeat">—</span></li>
+            <li data-stage="match"><span class="dot"></span><span class="stage-name">Match &amp; solve camera poses</span><span class="stage-meta">SfM</span></li>
+            <li data-stage="sparse"><span class="dot"></span><span class="stage-name">Sparse point cloud</span><span class="stage-meta" id="rSparse">—</span></li>
+            <li data-stage="dense"><span class="dot"></span><span class="stage-name">Dense reconstruction</span><span class="stage-meta" id="rDense">—</span></li>
+            <li data-stage="mesh"><span class="dot"></span><span class="stage-name">Mesh, scale &amp; clean</span><span class="stage-meta">mm, watertight</span></li>
+          </ol>
+          <button class="btn btn-primary btn-block" id="rRun" type="button">▶ Reconstruct 3D model</button>
+        </div>
+
+        <div class="panel panel-viewer">
+          <div class="panel-bar">
+            <span class="panel-title">3D result</span>
+            <div class="seg" role="group" aria-label="Display mode">
+              <button class="seg-btn" data-view="points" type="button">Points</button>
+              <button class="seg-btn is-active" data-view="solid" type="button">Solid</button>
+              <button class="seg-btn" data-view="wire" type="button">Wire</button>
+            </div>
+          </div>
+          <div class="viewer" id="viewer">
+            <div class="viewer-hud mono" id="hud">
+              <span>bbox <b id="dimX">—</b> × <b id="dimY">—</b> × <b id="dimZ">—</b> mm</span>
+              <span>pts <b id="ptCount">0</b></span>
+            </div>
+            <div class="viewer-hint">drag to orbit · scroll to zoom</div>
+          </div>
+          <div class="viewer-actions">
+            <button class="btn btn-ghost btn-sm" id="rExport" type="button" disabled>Export STL</button>
+            <label class="btn btn-ghost btn-sm" for="stlFile">Open your own STL</label>
+            <input id="stlFile" type="file" accept=".stl" hidden />
+            <span class="muted" id="rStatus">Ready.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── How it works ───────────────────────── -->
+    <section class="how">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <div>
+          <h2>Built for a real cell, not a laptop</h2>
+          <p>The two halves meet at the robot: the video tells it what to do, the model tells us what it's holding.</p>
+        </div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Safety stays outside the AI</h3>
+          <p>Generated plans are drafts. A separate human approval gate and the operator-controlled SIDC client are the only path to motion. The policy defaults to mock mode.</p>
+        </article>
+        <article class="card">
+          <h3>The cell's real interface</h3>
+          <p>Output is the testbed's native format: 7-D TCP actions <code>[x, y, z, w, p, r, grip]</code> in UF0, 10 Hz, capped at 2 mm and 1° per action.</p>
+        </article>
+        <article class="card">
+          <h3>Tooling from the part</h3>
+          <p>A scaled mesh of the workpiece lets us design custom aluminium fingers for the SMC MHZL2-16D2 gripper and verify the grasp in Isaac Sim before cutting metal.</p>
+        </article>
+        <article class="card">
+          <h3>Evidence first</h3>
+          <p>Every claim carries a run ID, a baseline and a failure analysis. We show what didn't work alongside what did.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Team ───────────────────────── -->
+    <section class="team" id="team">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <div>
+          <h2>The A-Team</h2>
+          <p>MSOE AI Club × UWM Connected Systems Institute × Rockwell Automation × NVIDIA</p>
+        </div>
+      </div>
+      <ul class="people">
+        <li><span class="avatar" aria-hidden="true">AB</span><div><strong>Abdallah Benelmadjat</strong><span>Lead · integration</span></div></li>
+        <li><span class="avatar" aria-hidden="true">PC</span><div><strong>Pablo Camarillo</strong><span>Team member</span></div></li>
+        <li><span class="avatar" aria-hidden="true">BH</span><div><strong>Benjamin Hess</strong><span>Team member</span></div></li>
+        <li><span class="avatar" aria-hidden="true">TM</span><div><strong>Tar Meh</strong><span>Team member</span></div></li>
+        <li><span class="avatar" aria-hidden="true">NB</span><div><strong>Nathan Baker</strong><span>Team member</span></div></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>The A-Team · Innovation Lab Fall 2026</span>
+    <span class="muted">Demos run in demo mode until the model backends are connected.</span>
+  </footer>
+
+  <script src="video-demo.js"></script>
+  <script type="module" src="recon-demo.js"></script>
+</body>
+</html>
