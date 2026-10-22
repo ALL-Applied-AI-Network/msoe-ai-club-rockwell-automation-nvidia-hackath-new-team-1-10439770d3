@@ -135,7 +135,13 @@ code { background: var(--panel-2); border: 1px solid var(--line); padding: 0.05e
   opacity: 0.55;
   pointer-events: none;
 }
-.hero-inner { position: relative; max-width: 1040px; }
+.hero-inner { position: relative; }
+.hero-head { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: end; gap: 12px 56px; }
+.hero-title {
+  font-size: clamp(56px, 9vw, 132px); line-height: 0.86; margin: 0;
+  font-weight: 800; font-stretch: 118%; letter-spacing: -0.045em; white-space: nowrap;
+}
+.hero-head .lede { max-width: 520px; justify-self: end; padding-bottom: 6px; }
 .hero .eyebrow { margin-bottom: 12px; }
 .eyebrow { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); margin: 0 0 18px; }
 h1 {
@@ -150,7 +156,7 @@ h1 {
 .choices {
   position: relative;
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;
-  margin-top: 28px;
+  margin-top: 40px;
 }
 .choice {
   display: flex; flex-direction: column;
@@ -388,6 +394,8 @@ section { padding: clamp(48px, 7vw, 88px) clamp(16px, 4vw, 48px); }
 
 /* ───────── Responsive ───────── */
 @media (max-width: 1100px) {
+  .hero-head { grid-template-columns: minmax(0, 1fr); }
+  .hero-head .lede { justify-self: start; max-width: 680px; padding-bottom: 0; }
   .choices { grid-template-columns: minmax(0, 1fr); }
   .choice { flex-direction: row; }
   .choice-media { aspect-ratio: auto; flex: 0 0 38%; min-height: 170px; }
@@ -397,6 +405,7 @@ section { padding: clamp(48px, 7vw, 88px) clamp(16px, 4vw, 48px); }
   .stat-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 720px) {
+  .hero-title { font-size: clamp(52px, 17vw, 76px); }
   .nav-links { display: none; }
   .nav-cta { margin-left: auto; }
   .choice { flex-direction: column; }
@@ -417,6 +426,7 @@ section { padding: clamp(48px, 7vw, 88px) clamp(16px, 4vw, 48px); }
 }
 @media (min-width: 721px) and (max-height: 820px) {
   .hero { padding-top: 24px; padding-bottom: 32px; }
+  .hero-title { font-size: clamp(52px, 7.4vw, 104px); }
   .choices { margin-top: 20px; }
   .choice-media { aspect-ratio: 16 / 7; }
   .choice-body { padding: 14px 18px; gap: 8px; }
