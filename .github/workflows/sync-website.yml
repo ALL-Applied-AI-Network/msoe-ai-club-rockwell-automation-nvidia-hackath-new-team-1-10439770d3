@@ -1,0 +1,40 @@
+name: Sync website
+
+# Mirrors ourwebsite/ to abdallah-benelmadjat/ateam-website (served by Railway).
+on:
+  push:
+    branches: [main]
+    paths: ["ourwebsite/**", ".github/workflows/sync-website.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: sync-website
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Push ourwebsite/ to the mirror repo
+        env:
+          DEPLOY_KEY: ${{ secrets.WEBSITE_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
+
+          git clone git@github.com:abdallah-benelmadjat/ateam-website.git mirror
+          rsync -a --delete --exclude .git ourwebsite/ mirror/
+          cd mirror
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Mirror already up to date."
+          else
+            git commit -m "Sync from ${GITHUB_REPOSITORY}@${GITHUB_SHA::7}"
+            git push origin HEAD:main
+          fi
