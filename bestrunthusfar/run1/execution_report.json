@@ -1,0 +1,1439 @@
+{
+  "task_complete": true,
+  "scope": "Isaac Sim measured-CAD footprint-safe experiment; no physical-robot transport",
+  "seed": 20261023,
+  "selected_colours": [
+    "red",
+    "orange",
+    "blue"
+  ],
+  "source_manifest": {
+    "coordinate_units": "source CAD millimetres; Isaac metres",
+    "measured_geometry": {
+      "cube_mm": [
+        12.0,
+        12.0,
+        12.0
+      ],
+      "bin_outer_mm": [
+        50.0,
+        50.0,
+        54.0
+      ],
+      "bin_pocket_mm": [
+        35.0,
+        35.0
+      ],
+      "bin_floor_height_mm": 26.5,
+      "bin_top_funnel_height_mm": 2.0,
+      "bin_top_opening_mm": [
+        47.0,
+        47.0
+      ],
+      "finger_length_mm": 76.2,
+      "useful_open_gap_mm": {
+        "upper": 15.0,
+        "distal_tip": 18.0
+      },
+      "truck_stl_bounds_mm": {
+        "minimum": [
+          -2.18864918,
+          -1.04467499,
+          0.0
+        ],
+        "maximum": [
+          253.46431,
+          231.580811,
+          92.6482086
+        ],
+        "deck_z": 33.5,
+        "deck_xy_bounds": [
+          [
+            17.25,
+            141.27
+          ],
+          [
+            98.88,
+            210.62
+          ]
+        ]
+      }
+    },
+    "files": {
+      "cube_step": {
+        "source_name": "Any_small_Cube_AnyColor.STEP",
+        "bytes": 13381,
+        "sha256": "72063b226f4fc47cdffe39658c2ec477cc96b695bb60b1ee0e18311f4285e3e2"
+      },
+      "bin_step": {
+        "source_name": "Orange box.STEP",
+        "bytes": 53092,
+        "sha256": "3cd4ba8c1340d70f443bd78e67d56a8d875613d26ba3b4a41f675e69301e727f"
+      },
+      "left_finger_step": {
+        "source_name": "Left_finger.STEP",
+        "bytes": 68569,
+        "sha256": "b2cbb84ec41c12646df87187d648de2d66425a3adcc5d5494fe5c3e92fc7fcaa"
+      },
+      "right_finger_step": {
+        "source_name": "Right_finger.STEP",
+        "bytes": 82268,
+        "sha256": "cc1f8ad10803e866bbbe98d3389e3e26b187ecd5ff6e5b98a0ab29fc26910922"
+      },
+      "truck_3mf": {
+        "source_name": "Truck.3mf",
+        "bytes": 4665039,
+        "sha256": "29647ed838d18c0acb1f9911fa3dc6e29a2a57fd327303db9691a683b1af631a"
+      },
+      "truck_stl": {
+        "source_name": "Truck.stl",
+        "bytes": 18629584,
+        "sha256": "b10b233dd50a68493bda30f7ed1ffdac1cde96545314983bb6ac4c795a134f36"
+      },
+      "generated:bin_50x50x54.stl": {
+        "bytes": 61378,
+        "sha256": "2decad9fa206629786f4eb9a6f238f8d68dd7f51f5f3e04e429924b82ef3c816"
+      },
+      "generated:cube_12mm.stl": {
+        "bytes": 3138,
+        "sha256": "ca751278d4846e4e1445bb456e330ef24a2aaab52e5c62f7ab8a9b0a29caa325"
+      },
+      "generated:left_finger.stl": {
+        "bytes": 83218,
+        "sha256": "39f155c2614e6f8ec5349146e7b3329ff02b1044bceebf29c23bf6970329d731"
+      },
+      "generated:right_finger.stl": {
+        "bytes": 111298,
+        "sha256": "cc4c6f5c7fbd896146acef06ebcf657154959428858add6a055d3f141731a6ce"
+      },
+      "generated:truck.3mf": {
+        "bytes": 4665039,
+        "sha256": "29647ed838d18c0acb1f9911fa3dc6e29a2a57fd327303db9691a683b1af631a"
+      },
+      "generated:truck.stl": {
+        "bytes": 18629584,
+        "sha256": "b10b233dd50a68493bda30f7ed1ffdac1cde96545314983bb6ac4c795a134f36"
+      }
+    }
+  },
+  "random_layout": {
+    "bins": {
+      "red": {
+        "xy": [
+          0.277784770904709,
+          -0.13422748871440493
+        ],
+        "yaw_deg": 7.201520200335214
+      },
+      "orange": {
+        "xy": [
+          0.37779660678139015,
+          -0.13145689718624956
+        ],
+        "yaw_deg": -3.810624633124883
+      },
+      "blue": {
+        "xy": [
+          0.4760441849330915,
+          -0.13217202525857633
+        ],
+        "yaw_deg": 7.035678347001358
+      }
+    },
+    "cubes": [
+      {
+        "name": "Cube00",
+        "colour": "red",
+        "xy": [
+          0.35697985595855286,
+          -0.19898322179805714
+        ],
+        "yaw_deg": -23.975406800943198
+      },
+      {
+        "name": "Cube01",
+        "colour": "red",
+        "xy": [
+          0.24302505742854613,
+          -0.24278086573987803
+        ],
+        "yaw_deg": -5.277360188010604
+      },
+      {
+        "name": "Cube02",
+        "colour": "red",
+        "xy": [
+          0.36472305512654596,
+          -0.24331262039420148
+        ],
+        "yaw_deg": -3.253068860345124
+      },
+      {
+        "name": "Cube03",
+        "colour": "red",
+        "xy": [
+          0.42489501008144676,
+          -0.20657791376605922
+        ],
+        "yaw_deg": -28.34594257064901
+      },
+      {
+        "name": "Cube04",
+        "colour": "orange",
+        "xy": [
+          0.24194531828502916,
+          -0.2933290171404915
+        ],
+        "yaw_deg": -38.92045521810273
+      },
+      {
+        "name": "Cube05",
+        "colour": "orange",
+        "xy": [
+          0.29726846528195205,
+          -0.29471765906738123
+        ],
+        "yaw_deg": 26.42932653992213
+      },
+      {
+        "name": "Cube06",
+        "colour": "orange",
+        "xy": [
+          0.29968092987311856,
+          -0.25008429505708174
+        ],
+        "yaw_deg": -30.523449030482414
+      },
+      {
+        "name": "Cube07",
+        "colour": "orange",
+        "xy": [
+          0.41629953610063847,
+          -0.2951548211267475
+        ],
+        "yaw_deg": -28.027740769400072
+      },
+      {
+        "name": "Cube08",
+        "colour": "blue",
+        "xy": [
+          0.35630121286089744,
+          -0.289066771849167
+        ],
+        "yaw_deg": -22.084784773405673
+      },
+      {
+        "name": "Cube09",
+        "colour": "blue",
+        "xy": [
+          0.236778191678708,
+          -0.20192997349559935
+        ],
+        "yaw_deg": 20.56834546860992
+      },
+      {
+        "name": "Cube10",
+        "colour": "blue",
+        "xy": [
+          0.3023790673798718,
+          -0.20245386680531105
+        ],
+        "yaw_deg": 3.7118621613006084
+      },
+      {
+        "name": "Cube11",
+        "colour": "blue",
+        "xy": [
+          0.41645718371657464,
+          -0.2472128158318772
+        ],
+        "yaw_deg": 12.350366999899748
+      }
+    ],
+    "truck_origin_world_m": [
+      0.351,
+      -0.085,
+      0.8949
+    ],
+    "truck_deck_z_world_m": 0.9284,
+    "truck_zones_world_m": {
+      "red": [
+        0.3894648318384295,
+        0.10683060032394602
+      ],
+      "orange": [
+        0.43229196,
+        0.06921628
+      ],
+      "blue": [
+        0.47511908816157045,
+        0.03160195967605399
+      ]
+    },
+    "truck_deck_frame": {
+      "centre_local_m": [
+        0.08129196,
+        0.15421628
+      ],
+      "length_m": 0.18085018,
+      "width_m": 0.04709631,
+      "yaw_deg": -41.29227386
+    },
+    "required_longitudinal_edge_clearance_mm": 3.0,
+    "maximum_lateral_overhang_mm": 3.75,
+    "lateral_centre_tolerance_mm": 1.5,
+    "required_bin_pair_clearance_mm": 3.0,
+    "truck_target_yaw_deg": -41.29227386
+  },
+  "cube_events": [
+    {
+      "cube": "Cube00",
+      "colour": "red",
+      "pickup_lift_mm": 74.87565279006958,
+      "pickup_attempts": 1,
+      "after_carry_origin_world_m": [
+        0.2682611048221588,
+        -0.13508406281471252,
+        1.0013930797576904
+      ],
+      "after_carry_tilt_deg": 0.19046920470556003,
+      "after_lower_origin_world_m": [
+        0.268087238073349,
+        -0.13499324023723602,
+        0.921663761138916
+      ],
+      "after_lower_tilt_deg": 0.21998785890302644,
+      "measured_held_offset_xy_mm": [
+        0.23444081397011596,
+        0.13755494345038533
+      ],
+      "measured_support_cube": null,
+      "destination_slot_local_m": [
+        -0.0095,
+        0.0,
+        0
+      ],
+      "final_relative_xy_m": [
+        -0.009646892547607422,
+        -0.001197531819343567
+      ],
+      "final_local_xy_m": [
+        -0.00972091389818437,
+        2.1243057921641224e-05
+      ],
+      "slot_error_mm": 0.22193291310861607,
+      "final_relative_origin_z_m": 0.026499569416046143,
+      "final_tilt_deg": 0.003838971816339209,
+      "placed_in_matching_bin": true
+    },
+    {
+      "cube": "Cube01",
+      "colour": "red",
+      "pickup_lift_mm": 74.837327003479,
+      "pickup_attempts": 1,
+      "after_carry_origin_world_m": [
+        0.28698551654815674,
+        -0.1331024467945099,
+        1.0013453960418701
+      ],
+      "after_carry_tilt_deg": 0.1799092056093718,
+      "after_lower_origin_world_m": [
+        0.2870030999183655,
+        -0.1329936534166336,
+        0.9215863943099976
+      ],
+      "after_lower_tilt_deg": 0.1752383788795006,
+      "measured_held_offset_xy_mm": [
+        0.13094814457889625,
+        0.484972347128243
+      ],
+      "measured_support_cube": null,
+      "destination_slot_local_m": [
+        0.0095,
+        0.0,
+        0
+      ],
+      "final_relative_xy_m": [
+        0.009256333112716675,
+        0.0008296966552734375
+      ],
+      "final_local_xy_m": [
+        0.009287323968774647,
+        -0.0003372131853457543
+      ],
+      "slot_error_mm": 0.3986775973500356,
+      "final_relative_origin_z_m": 0.02650010585784912,
+      "final_tilt_deg": 0.004568074387418343,
+      "placed_in_matching_bin": true
+    },
+    {
+      "cube": "Cube02",
+      "colour": "red",
+      "pickup_lift_mm": 74.8632550239563,
+      "pickup_attempts": 1,
+      "after_carry_origin_world_m": [
+        0.2681047022342682,
+        -0.13552121818065643,
+        1.0133905410766602
+      ],
+      "after_carry_tilt_deg": 0.17288030131165982,
+      "after_lower_origin_world_m": [
+        0.2679435908794403,
+        -0.13535477221012115,
+        0.9336927533149719
+      ],
+      "after_lower_tilt_deg": 0.20110575969892167,
+      "measured_held_offset_xy_mm": [
+        0.15327388407782028,
+        0.4893546769865753
+      ],
+      "measured_support_cube": "Cube00",
+      "destination_slot_local_m": [
+        -0.0095,
+        0.0,
+        1
+      ],
+      "final_relative_xy_m": [
+        -0.00979575514793396,
+        -0.001524999737739563
+      ],
+      "final_local_xy_m": [
+        -0.009909653359026714,
+        -0.00028497968754102074
+      ],
+      "slot_error_mm": 0.49902835277451685,
+      "final_relative_origin_z_m": 0.038502395153045654,
+      "final_tilt_deg": 0.04853833533706539,
+      "placed_in_matching_bin": true
+    },
+    {
+      "cube": "Cube03",
+      "colour": "red",
+      "pickup_lift_mm": 74.87863302230835,
+      "pickup_attempts": 1,
+      "after_carry_origin_world_m": [
+        0.2868836522102356,
+        -0.1332860141992569,
+        1.0134294033050537
+      ],
+      "after_carry_tilt_deg": 0.17751519778415273,
+      "after_lower_origin_world_m": [
+        0.2866543233394623,
+        -0.13319168984889984,
+        0.9337314367294312
+      ],
+      "after_lower_tilt_deg": 0.20403246013430884,
+      "measured_held_offset_xy_mm": [
+        0.38536849634490666,
+        0.3576521741735228
+      ],
+      "measured_support_cube": "Cube01",
+      "destination_slot_local_m": [
+        0.0095,
+        0.0,
+        1
+      ],
+      "final_relative_xy_m": [
+        0.008917123079299927,
+        0.0005981773138046265
+      ],
+      "final_local_xy_m": [
+        0.008921766977957102,
+        -0.0005243797299363454
+      ],
+      "slot_error_mm": 0.7805943434005763,
+      "final_relative_origin_z_m": 0.03849995136260986,
+      "final_tilt_deg": 0.009663966005127885,
+      "placed_in_matching_bin": true
+    },
+    {
+      "cube": "Cube04",
+      "colour": "orange",
+      "pickup_lift_mm": 74.85240697860718,
+      "pickup_attempts": 1,
+      "after_carry_origin_world_m": [
+        0.36792197823524475,
+        -0.13072815537452698,
+        1.0013420581817627
+      ],
+      "after_carry_tilt_deg": 0.19713906422550734,
+      "after_lower_origin_world_m": [
+        0.3679775297641754,
+        -0.13060685992240906,
+        0.9215607047080994
+      ],
+      "after_lower_tilt_deg": 0.10868291091921224,
+      "measured_held_offset_xy_mm": [
+        0.37470434855835233,
+        0.26768261800558246
+      ],
+      "measured_support_cube": null,
+      "destination_slot_local_m": [
+        -0.0095,
+        0.0,
+        0
+      ],
+      "final_relative_xy_m": [
+        -0.009850770235061646,
+        0.00044836103916168213
+      ],
+      "final_local_xy_m": [
+        -0.009858789743788976,
+        -0.00020728394336247137
+      ],
+      "slot_error_mm": 0.414363021303851,
+      "final_relative_origin_z_m": 0.02649974822998047,
+      "final_tilt_deg": 0.00412209405518527,
+      "placed_in_matching_bin": true
+    },
+    {
+      "cube": "Cube05",
+      "colour": "orange",
+      "pickup_lift_mm": 74.84817504882812,
+      "pickup_attempts": 1,
+      "after_carry_origin_world_m": [
+        0.38788118958473206,
+        -0.13230164349079132,
+        1.000683069229126
+      ],
+      "after_carry_tilt_deg": 19.767013040026487,
+      "after_lower_origin_world_m": [
+        0.38727447390556335,
+        -0.13216066360473633,
+        0.9216750860214233
+      ],
+      "after_lower_tilt_deg": 3.177246296481466,
+      "measured_held_offset_xy_mm": [
+        -0.1508440463259264,
+        0.39780767025110464
+      ],
+      "measured_support_cube": null,
+      "destination_slot_local_m": [
+        0.0095,
+        0.0,
+        0
+      ],
+      "final_relative_xy_m": [
+        0.009369581937789917,
+        -0.0007785409688949585
+      ],
+      "final_local_xy_m": [
+        0.00940060798261008,
+        -0.00015414696394859767
+      ],
+      "slot_error_mm": 0.18341226680734402,
+      "final_relative_origin_z_m": 0.02649974822998047,
+      "final_tilt_deg": 0.0013196838655946353,
+      "placed_in_matching_bin": true
+    },
+    {
+      "cube": "Cube06",
+      "colour": "orange",
+      "pickup_lift_mm": 74.87648725509644,
+      "pickup_attempts": 1,
+      "after_carry_origin_world_m": [
+        0.3677064776420593,
+        -0.13093312084674835,
+        1.01334547996521
+      ],
+      "after_carry_tilt_deg": 0.3937507682287296,
+      "after_lower_origin_world_m": [
+        0.3677482604980469,
+        -0.13087588548660278,
+        0.933583676815033
+      ],
+      "after_lower_tilt_deg": 0.42792274949496417,
+      "measured_held_offset_xy_mm": [
+        0.24520666973903982,
+        0.10867187444346671
+      ],
+      "measured_support_cube": "Cube04",
+      "destination_slot_local_m": [
+        -0.0095,
+        0.0,
+        1
+      ],
+      "final_relative_xy_m": [
+        -0.010071158409118652,
+        0.0004826486110687256
+      ],
+      "final_local_xy_m": [
+        -0.010080969462811843,
+        -0.000187712741131341
+      ],
+      "slot_error_mm": 0.6105420459746598,
+      "final_relative_origin_z_m": 0.03850167989730835,
+      "final_tilt_deg": 0.042568142658284805,
+      "placed_in_matching_bin": true
+    },
+    {
+      "cube": "Cube07",
+      "colour": "orange",
+      "pickup_lift_mm": 74.8753547668457,
+      "pickup_attempts": 1,
+      "after_carry_origin_world_m": [
+        0.3869401514530182,
+        -0.1322486698627472,
+        1.0134750604629517
+      ],
+      "after_carry_tilt_deg": 0.1652671407276802,
+      "after_lower_origin_world_m": [
+        0.386861115694046,
+        -0.13205145299434662,
+        0.9337199926376343
+      ],
+      "after_lower_tilt_deg": 0.2169951928053995,
+      "measured_held_offset_xy_mm": [
+        0.41914598669950953,
+        0.34076873930866114
+      ],
+      "measured_support_cube": "Cube05",
+      "destination_slot_local_m": [
+        0.0095,
+        0.0,
+        1
+      ],
+      "final_relative_xy_m": [
+        0.009034901857376099,
+        -0.0010108202695846558
+      ],
+      "final_local_xy_m": [
+        0.009082104573332105,
+        -0.00040814912578779
+      ],
+      "slot_error_mm": 0.5841423597987732,
+      "final_relative_origin_z_m": 0.03849989175796509,
+      "final_tilt_deg": 0.019274166559701805,
+      "placed_in_matching_bin": true
+    },
+    {
+      "cube": "Cube08",
+      "colour": "blue",
+      "pickup_lift_mm": 74.8710036277771,
+      "pickup_attempts": 1,
+      "after_carry_origin_world_m": [
+        0.4662361145019531,
+        -0.13309603929519653,
+        1.0013095140457153
+      ],
+      "after_carry_tilt_deg": 0.16316456138004626,
+      "after_lower_origin_world_m": [
+        0.46626847982406616,
+        -0.13294918835163116,
+        0.9215143918991089
+      ],
+      "after_lower_tilt_deg": 0.1765894414618422,
+      "measured_held_offset_xy_mm": [
+        0.26233341629755547,
+        0.17657308284158013
+      ],
+      "measured_support_cube": null,
+      "destination_slot_local_m": [
+        -0.0095,
+        0.0,
+        0
+      ],
+      "final_relative_xy_m": [
+        -0.009729176759719849,
+        -0.0011332184076309204
+      ],
+      "final_local_xy_m": [
+        -0.009794721645460166,
+        6.702439272758694e-05
+      ],
+      "slot_error_mm": 0.30224678248618203,
+      "final_relative_origin_z_m": 0.02650010585784912,
+      "final_tilt_deg": 0.005796292552127492,
+      "placed_in_matching_bin": true
+    },
+    {
+      "cube": "Cube09",
+      "colour": "blue",
+      "pickup_lift_mm": 74.82510805130005,
+      "pickup_attempts": 1,
+      "after_carry_origin_world_m": [
+        0.485219269990921,
+        -0.13110515475273132,
+        1.0011348724365234
+      ],
+      "after_carry_tilt_deg": 0.26714738400401467,
+      "after_lower_origin_world_m": [
+        0.48539337515830994,
+        -0.13105076551437378,
+        0.9213989973068237
+      ],
+      "after_lower_tilt_deg": 0.06044178585369883,
+      "measured_held_offset_xy_mm": [
+        -0.09037437149106431,
+        0.3857393642145157
+      ],
+      "measured_support_cube": null,
+      "destination_slot_local_m": [
+        0.0095,
+        0.0,
+        0
+      ],
+      "final_relative_xy_m": [
+        0.009372025728225708,
+        0.001000910997390747
+      ],
+      "final_local_xy_m": [
+        0.009424053834758826,
+        -0.0001545910566294723
+      ],
+      "slot_error_mm": 0.172238830710895,
+      "final_relative_origin_z_m": 0.026500284671783447,
+      "final_tilt_deg": 0.0027102360931485613,
+      "placed_in_matching_bin": true
+    },
+    {
+      "cube": "Cube10",
+      "colour": "blue",
+      "pickup_lift_mm": 74.84787702560425,
+      "pickup_attempts": 1,
+      "after_carry_origin_world_m": [
+        0.46602803468704224,
+        -0.1333266645669937,
+        1.0131953954696655
+      ],
+      "after_carry_tilt_deg": 0.14906359151152762,
+      "after_lower_origin_world_m": [
+        0.46611911058425903,
+        -0.13325650990009308,
+        0.9334134459495544
+      ],
+      "after_lower_tilt_deg": 0.14635305108899277,
+      "measured_held_offset_xy_mm": [
+        0.048737883220739686,
+        0.501713565046441
+      ],
+      "measured_support_cube": "Cube08",
+      "destination_slot_local_m": [
+        -0.0095,
+        0.0,
+        1
+      ],
+      "final_relative_xy_m": [
+        -0.009870350360870361,
+        -0.00143374502658844
+      ],
+      "final_local_xy_m": [
+        -0.00997164318265056,
+        -0.0002139469221544381
+      ],
+      "slot_error_mm": 0.5179001614598194,
+      "final_relative_origin_z_m": 0.03850066661834717,
+      "final_tilt_deg": 0.019531250387344313,
+      "placed_in_matching_bin": true
+    },
+    {
+      "cube": "Cube11",
+      "colour": "blue",
+      "pickup_lift_mm": 74.8630166053772,
+      "pickup_attempts": 1,
+      "after_carry_origin_world_m": [
+        0.48527687788009644,
+        -0.1312389373779297,
+        1.0133029222488403
+      ],
+      "after_carry_tilt_deg": 0.15720189879698743,
+      "after_lower_origin_world_m": [
+        0.4852756857872009,
+        -0.13112768530845642,
+        0.9335178732872009
+      ],
+      "after_lower_tilt_deg": 0.1665163255933667,
+      "measured_held_offset_xy_mm": [
+        0.014331943870127262,
+        0.5133148254514164
+      ],
+      "measured_support_cube": "Cube09",
+      "destination_slot_local_m": [
+        0.0095,
+        0.0,
+        1
+      ],
+      "final_relative_xy_m": [
+        0.009274721145629883,
+        0.0006661564111709595
+      ],
+      "final_local_xy_m": [
+        0.009286478742842146,
+        -0.00047489920201995717
+      ],
+      "slot_error_mm": 0.5206924037639327,
+      "final_relative_origin_z_m": 0.038499534130096436,
+      "final_tilt_deg": 0.019940377168344035,
+      "placed_in_matching_bin": true
+    }
+  ],
+  "bin_events": [
+    {
+      "bin": "Bin_blue",
+      "colour": "blue",
+      "initial_tilt_deg": 0.0006883089035923887,
+      "measured_lift_mm": 15.139162540435791,
+      "lifted_tilt_deg": 0.7609707523238097,
+      "measured_held_offset_xy_mm": [
+        -3.027110073771988,
+        24.483674976291226
+      ],
+      "rotated_held_offset_xy_mm": [
+        16.06933866813554,
+        18.718709638010974
+      ],
+      "closed_loop_corrections": [
+        {
+          "iteration": 1,
+          "observed_world_xy_m": [
+            0.4763619005680084,
+            0.028602110221982002
+          ],
+          "observed_yaw_deg": -41.08026562951309,
+          "xy_error_mm": [
+            0.21578045280978841,
+            0.7205936827836095
+          ],
+          "yaw_error_deg": -0.42299176951308937
+        },
+        {
+          "iteration": 2,
+          "observed_world_xy_m": [
+            0.47640618681907654,
+            0.0305338054895401
+          ],
+          "observed_yaw_deg": -39.82704148074153,
+          "xy_error_mm": [
+            0.17149420174167318,
+            -1.2111015847744884
+          ],
+          "yaw_error_deg": 0.8302323792584616
+        },
+        {
+          "iteration": 3,
+          "observed_world_xy_m": [
+            0.4770253896713257,
+            0.028091205283999443
+          ],
+          "observed_yaw_deg": -41.068592707458336,
+          "xy_error_mm": [
+            -0.4477086505074723,
+            1.2314986207661687
+          ],
+          "yaw_error_deg": -0.4113188474583467
+        },
+        {
+          "iteration": "near_deck",
+          "observed_world_xy_m": [
+            0.4764755964279175,
+            0.0299435555934906
+          ],
+          "observed_yaw_deg": -40.48735033810925,
+          "xy_error_mm": [
+            0.1020845929007308,
+            -0.6208516887249889
+          ],
+          "yaw_error_deg": 0.16992352189075177
+        }
+      ],
+      "release_precompensation_xy_mm": [
+        1.458592859247784,
+        -2.2792557712883768
+      ],
+      "release_precompensation_yaw_offset_deg": 0.635,
+      "pre_release_target_yaw_deg": -40.657273860000004,
+      "pre_release_target_world_xy_m": [
+        0.4765776810208182,
+        0.02932270390476561
+      ],
+      "pre_release_world_position_m": [
+        0.4768291711807251,
+        0.033161453902721405,
+        0.9285567998886108
+      ],
+      "pre_release_yaw_deg": -42.0575737478529,
+      "pre_release_tilt_deg": 0.36492664966797994,
+      "post_release_world_position_m": [
+        0.47522810101509094,
+        0.031912706792354584,
+        0.9283998012542725
+      ],
+      "post_release_yaw_deg": -42.03753358161259,
+      "post_release_tilt_deg": 9.460335962564075e-05,
+      "post_withdraw_world_position_m": [
+        0.47522810101509094,
+        0.031912706792354584,
+        0.9283998012542725
+      ],
+      "post_withdraw_yaw_deg": -42.03753358161259,
+      "post_withdraw_tilt_deg": 9.460335962564075e-05,
+      "placement_retries": [
+        {
+          "retry": 1,
+          "input_position_error_mm": 4.344094066520675,
+          "input_yaw_error_deg": 1.1606812452107533,
+          "measured_release_delta_xy_mm": [
+            -1.8716156482696533,
+            -1.9856449216604233
+          ],
+          "measured_release_delta_yaw_deg": 0.3136030162184511,
+          "desired_pre_release_world_xy_m": [
+            0.4769907038098401,
+            0.03358760459771441
+          ],
+          "desired_pre_release_yaw_deg": -41.60587687621845
+        },
+        {
+          "retry": 2,
+          "input_position_error_mm": 2.9515274012984607,
+          "input_yaw_error_deg": -2.7608345950239084,
+          "measured_release_delta_xy_mm": [
+            -1.1272132396697998,
+            0.4057176411151886
+          ],
+          "measured_release_delta_yaw_deg": -0.04871939706643502,
+          "desired_pre_release_world_xy_m": [
+            0.47624630140124025,
+            0.0311962420349388
+          ],
+          "desired_pre_release_yaw_deg": -41.24355446293357
+        },
+        {
+          "retry": 3,
+          "input_position_error_mm": 2.290268298302517,
+          "input_yaw_error_deg": 0.6664079259110167,
+          "measured_release_delta_xy_mm": [
+            -1.7668604850769043,
+            -1.8078479915857315
+          ],
+          "measured_release_delta_yaw_deg": 0.6819119150370909,
+          "desired_pre_release_world_xy_m": [
+            0.47688594864664735,
+            0.03340980766763972
+          ],
+          "desired_pre_release_yaw_deg": -41.97418577503709
+        }
+      ],
+      "truck_zone_world_xy_m": [
+        0.47511908816157045,
+        0.03160195967605399
+      ],
+      "final_world_position_m": [
+        0.47522810101509094,
+        0.031912706792354584,
+        0.9283998012542725
+      ],
+      "final_yaw_deg": -42.03753358161259,
+      "final_yaw_error_deg": -0.745259721612598,
+      "final_tilt_deg": 9.460335962564075e-05,
+      "placement_error_mm": 0.3293137903608292,
+      "base_height_error_mm": 0.0001987457275420823,
+      "deck_footprint": {
+        "corners_local_m": [
+          [
+            0.08892001065565586,
+            0.1150854807061885
+          ],
+          [
+            0.12240087492892487,
+            0.1522207971517897
+          ],
+          [
+            0.15953619137452607,
+            0.11873993287852068
+          ],
+          [
+            0.12605532710125705,
+            0.08160461643291948
+          ]
+        ],
+        "corners_deck_frame_m": [
+          [
+            0.03155378810916126,
+            -0.024367295010730358
+          ],
+          [
+            0.032204131566626056,
+            0.025628475344244013
+          ],
+          [
+            0.08219990192160043,
+            0.024978131886779196
+          ],
+          [
+            0.08154955846413561,
+            -0.025017638468195165
+          ]
+        ],
+        "deck_frame_center_m": [
+          0.056876845015380845,
+          0.0003054184380244171
+        ],
+        "edge_margins_mm": {
+          "long_rear": 121.97887810916126,
+          "long_front": 8.225188078399572,
+          "lat_left": -1.4694834681951638,
+          "lat_right": -2.080320344244012
+        },
+        "minimum_edge_clearance_mm": 8.225188078399572,
+        "minimum_longitudinal_clearance_mm": 8.225188078399572,
+        "lateral_center_error_mm": 0.3054184380244171,
+        "maximum_lateral_overhang_mm": 2.080320344244012,
+        "support_fraction_width": 0.9419262,
+        "support_passed": true,
+        "unavoidable_overhang_note": "The measured 50 mm bin is 2.904 mm wider than the measured 47.096 mm flatbed; a centered bin overhangs 1.452 mm per side."
+      },
+      "pairwise_clearance": [],
+      "contents": [
+        {
+          "cube": "Cube08",
+          "travel_with_bin_mm": 14.76356103315518,
+          "inside_xy": true,
+          "above_bin_floor": true,
+          "tilt_deg": 0.003180162662011906,
+          "cube_orientation_symmetry_note": "90-degree rotations are equivalent for a cube"
+        },
+        {
+          "cube": "Cube09",
+          "travel_with_bin_mm": 7.2040986657113475,
+          "inside_xy": true,
+          "above_bin_floor": true,
+          "tilt_deg": 0.010297814587626358,
+          "cube_orientation_symmetry_note": "90-degree rotations are equivalent for a cube"
+        },
+        {
+          "cube": "Cube10",
+          "travel_with_bin_mm": 13.105242850603053,
+          "inside_xy": true,
+          "above_bin_floor": true,
+          "tilt_deg": 0.01694424297226966,
+          "cube_orientation_symmetry_note": "90-degree rotations are equivalent for a cube"
+        },
+        {
+          "cube": "Cube11",
+          "travel_with_bin_mm": 1.800023578720198,
+          "inside_xy": true,
+          "above_bin_floor": true,
+          "tilt_deg": 16.01267064848067,
+          "cube_orientation_symmetry_note": "90-degree rotations are equivalent for a cube"
+        }
+      ],
+      "placed_on_truck": true
+    },
+    {
+      "bin": "Bin_red",
+      "colour": "red",
+      "initial_tilt_deg": 0.00031043801496415796,
+      "measured_lift_mm": 15.18172025680542,
+      "lifted_tilt_deg": 0.9071669503728457,
+      "measured_held_offset_xy_mm": [
+        -3.271776948466143,
+        24.539410892782413
+      ],
+      "rotated_held_offset_xy_mm": [
+        15.99722672816544,
+        18.893807143426436
+      ],
+      "closed_loop_corrections": [
+        {
+          "iteration": 1,
+          "observed_world_xy_m": [
+            0.39084964990615845,
+            0.10405847430229187
+          ],
+          "observed_yaw_deg": -40.82654822552405,
+          "xy_error_mm": [
+            -0.13307126166867134,
+            1.0605098457788786
+          ],
+          "yaw_error_deg": -0.17927436552406562
+        },
+        {
+          "iteration": 2,
+          "observed_world_xy_m": [
+            0.39080291986465454,
+            0.10536504536867142
+          ],
+          "observed_yaw_deg": -40.70236583263583,
+          "xy_error_mm": [
+            -0.08634122016476509,
+            -0.24606122060066848
+          ],
+          "yaw_error_deg": -0.05509197263583587
+        },
+        {
+          "iteration": "near_deck",
+          "observed_world_xy_m": [
+            0.39082300662994385,
+            0.10527551174163818
+          ],
+          "observed_yaw_deg": -40.71094998058092,
+          "xy_error_mm": [
+            -0.10642798545407173,
+            -0.15652759356743484
+          ],
+          "yaw_error_deg": -0.06367612058090799
+        }
+      ],
+      "release_precompensation_xy_mm": [
+        1.251746806060275,
+        -1.7116161758752748
+      ],
+      "release_precompensation_yaw_offset_deg": 0.645,
+      "pre_release_target_yaw_deg": -40.64727386,
+      "pre_release_target_world_xy_m": [
+        0.3907165786444898,
+        0.10511898414807075
+      ],
+      "pre_release_world_position_m": [
+        0.3902222514152527,
+        0.10780869424343109,
+        0.9286487102508545
+      ],
+      "pre_release_yaw_deg": -41.83246298258585,
+      "pre_release_tilt_deg": 0.45851695540583576,
+      "post_release_world_position_m": [
+        0.3883237838745117,
+        0.10621784627437592,
+        0.9284000992774963
+      ],
+      "post_release_yaw_deg": -41.712723887129265,
+      "post_release_tilt_deg": 0.00018894070590338868,
+      "post_withdraw_world_position_m": [
+        0.3883237838745117,
+        0.10621784627437592,
+        0.9284000992774963
+      ],
+      "post_withdraw_yaw_deg": -41.712723887129265,
+      "post_withdraw_tilt_deg": 0.00018894070590338868,
+      "placement_retries": [
+        {
+          "retry": 1,
+          "input_position_error_mm": 2.531656977925616,
+          "input_yaw_error_deg": 1.0696642068159008,
+          "measured_release_delta_xy_mm": [
+            -1.06009840965271,
+            -0.7993727922439575
+          ],
+          "measured_release_delta_yaw_deg": 0.5658777138620508,
+          "desired_pre_release_world_xy_m": [
+            0.3905249302480822,
+            0.10762997311618998
+          ],
+          "desired_pre_release_yaw_deg": -41.85815157386205
+        }
+      ],
+      "truck_zone_world_xy_m": [
+        0.3894648318384295,
+        0.10683060032394602
+      ],
+      "final_world_position_m": [
+        0.3883237838745117,
+        0.10621784627437592,
+        0.9284000992774963
+      ],
+      "final_yaw_deg": -41.712723887129265,
+      "final_yaw_error_deg": -0.42045002712927726,
+      "final_tilt_deg": 0.00018894070590338868,
+      "placement_error_mm": 1.295167163429295,
+      "base_height_error_mm": 9.927749633487082e-05,
+      "deck_footprint": {
+        "corners_local_m": [
+          [
+            0.0020266193578948113,
+            0.1891904891063173
+          ],
+          [
+            0.03529642670645311,
+            0.22651501079099287
+          ],
+          [
+            0.07262094839112868,
+            0.19324520344243457
+          ],
+          [
+            0.03935114104257037,
+            0.155920681757759
+          ]
+        ],
+        "corners_deck_frame_m": [
+          [
+            -0.0826357545061696,
+            -0.026029245223737302
+          ],
+          [
+            -0.08226884593350277,
+            0.023969408539132195
+          ],
+          [
+            -0.03227019217063327,
+            0.02360249996646537
+          ],
+          [
+            -0.0326371007433001,
+            -0.02639615379640413
+          ]
+        ],
+        "deck_frame_center_m": [
+          -0.057452973338401436,
+          -0.001213372628635967
+        ],
+        "edge_margins_mm": {
+          "long_rear": 7.789335493830402,
+          "long_front": 122.69528217063328,
+          "lat_left": -2.8479987964041276,
+          "lat_right": -0.42125353913219366
+        },
+        "minimum_edge_clearance_mm": 7.789335493830402,
+        "minimum_longitudinal_clearance_mm": 7.789335493830402,
+        "lateral_center_error_mm": 1.213372628635967,
+        "maximum_lateral_overhang_mm": 2.8479987964041276,
+        "support_fraction_width": 0.9419262,
+        "support_passed": true,
+        "unavoidable_overhang_note": "The measured 50 mm bin is 2.904 mm wider than the measured 47.096 mm flatbed; a centered bin overhangs 1.452 mm per side."
+      },
+      "pairwise_clearance": [
+        {
+          "other_bin": "Bin_blue",
+          "separating_axis_gap_mm": 64.17427241567722,
+          "clearance_passed": true
+        }
+      ],
+      "contents": [
+        {
+          "cube": "Cube00",
+          "travel_with_bin_mm": 5.1823727162343065,
+          "inside_xy": true,
+          "above_bin_floor": true,
+          "tilt_deg": 0.05351895897172267,
+          "cube_orientation_symmetry_note": "90-degree rotations are equivalent for a cube"
+        },
+        {
+          "cube": "Cube01",
+          "travel_with_bin_mm": 17.500865990546625,
+          "inside_xy": true,
+          "above_bin_floor": true,
+          "tilt_deg": 0.005124606462546084,
+          "cube_orientation_symmetry_note": "90-degree rotations are equivalent for a cube"
+        },
+        {
+          "cube": "Cube02",
+          "travel_with_bin_mm": 4.610297635053523,
+          "inside_xy": true,
+          "above_bin_floor": true,
+          "tilt_deg": 0.04382377466799825,
+          "cube_orientation_symmetry_note": "90-degree rotations are equivalent for a cube"
+        },
+        {
+          "cube": "Cube03",
+          "travel_with_bin_mm": 15.615206014454074,
+          "inside_xy": true,
+          "above_bin_floor": true,
+          "tilt_deg": 0.010056666149793843,
+          "cube_orientation_symmetry_note": "90-degree rotations are equivalent for a cube"
+        }
+      ],
+      "placed_on_truck": true
+    },
+    {
+      "bin": "Bin_orange",
+      "colour": "orange",
+      "initial_tilt_deg": 0.0005280381213375112,
+      "measured_lift_mm": 15.242040157318115,
+      "lifted_tilt_deg": 0.8966194276519004,
+      "measured_held_offset_xy_mm": [
+        1.6879910436920498,
+        24.771485780612444
+      ],
+      "rotated_held_offset_xy_mm": [
+        16.827779052700734,
+        18.25655152804482
+      ],
+      "closed_loop_corrections": [
+        {
+          "iteration": 1,
+          "observed_world_xy_m": [
+            0.43418869376182556,
+            0.07060074806213379
+          ],
+          "observed_yaw_deg": -42.36295049174807,
+          "xy_error_mm": [
+            0.007562664602889235,
+            0.2836611655616522
+          ],
+          "yaw_error_deg": 0.21732336825192533
+        },
+        {
+          "iteration": "near_deck",
+          "observed_world_xy_m": [
+            0.43410563468933105,
+            0.07099554687738419
+          ],
+          "observed_yaw_deg": -42.295572684728654,
+          "xy_error_mm": [
+            0.09062173709739607,
+            -0.11113764968874451
+          ],
+          "yaw_error_deg": 0.2847011752713513
+        }
+      ],
+      "release_precompensation_xy_mm": [
+        1.9042964264284696,
+        1.6681292276954325
+      ],
+      "release_precompensation_yaw_offset_deg": -1.288,
+      "pre_release_target_yaw_deg": -42.58027386,
+      "pre_release_target_world_xy_m": [
+        0.43419625642642845,
+        0.07088440922769544
+      ],
+      "pre_release_world_position_m": [
+        0.43423768877983093,
+        0.07080063223838806,
+        0.9287126660346985
+      ],
+      "pre_release_yaw_deg": -42.55400570168779,
+      "pre_release_tilt_deg": 0.7151176225303841,
+      "post_release_world_position_m": [
+        0.4321014881134033,
+        0.06863200664520264,
+        0.928399920463562
+      ],
+      "post_release_yaw_deg": -42.02353036125047,
+      "post_release_tilt_deg": 0.00018068964988163642,
+      "post_withdraw_world_position_m": [
+        0.4321014881134033,
+        0.06863200664520264,
+        0.928399920463562
+      ],
+      "post_withdraw_yaw_deg": -42.02353036125047,
+      "post_withdraw_tilt_deg": 0.00018068964988163642,
+      "placement_retries": [],
+      "truck_zone_world_xy_m": [
+        0.43229196,
+        0.06921628
+      ],
+      "final_world_position_m": [
+        0.4321014881134033,
+        0.06863200664520264,
+        0.928399920463562
+      ],
+      "final_yaw_deg": -42.02353036125047,
+      "final_yaw_error_deg": -0.7312565012504706,
+      "final_tilt_deg": 0.00018068964988163642,
+      "placement_error_mm": 0.6145363233445688,
+      "base_height_error_mm": 7.953643799130106e-05,
+      "deck_footprint": {
+        "corners_local_m": [
+          [
+            0.04579384538674404,
+            0.15179615123516
+          ],
+          [
+            0.07926563270336066,
+            0.18893964937186197
+          ],
+          [
+            0.11640913084006264,
+            0.15546786205524532
+          ],
+          [
+            0.08293734352344602,
+            0.11832436391854335
+          ]
+        ],
+        "corners_deck_frame_m": [
+          [
+            -0.025074575534213012,
+            -0.025243589802429217
+          ],
+          [
+            -0.02443645117737497,
+            0.024752338004795354
+          ],
+          [
+            0.025559476629849615,
+            0.024114213647957287
+          ],
+          [
+            0.024921352273011562,
+            -0.02588171415926727
+          ]
+        ],
+        "deck_frame_center_m": [
+          0.00024245054781830175,
+          -0.0005646880772359635
+        ],
+        "edge_margins_mm": {
+          "long_rear": 65.35051446578699,
+          "long_front": 64.86561337015038,
+          "lat_left": -2.3335591592672684,
+          "lat_right": -1.2041830047953526
+        },
+        "minimum_edge_clearance_mm": 64.86561337015038,
+        "minimum_longitudinal_clearance_mm": 64.86561337015038,
+        "lateral_center_error_mm": 0.5646880772359636,
+        "maximum_lateral_overhang_mm": 2.3335591592672684,
+        "support_fraction_width": 0.9419262,
+        "support_passed": true,
+        "unavoidable_overhang_note": "The measured 50 mm bin is 2.904 mm wider than the measured 47.096 mm flatbed; a centered bin overhangs 1.452 mm per side."
+      },
+      "pairwise_clearance": [
+        {
+          "other_bin": "Bin_blue",
+          "separating_axis_gap_mm": 6.612567910100921,
+          "clearance_passed": true
+        },
+        {
+          "other_bin": "Bin_red",
+          "separating_axis_gap_mm": 7.553863877843625,
+          "clearance_passed": true
+        }
+      ],
+      "contents": [
+        {
+          "cube": "Cube04",
+          "travel_with_bin_mm": 2.6827330448262536,
+          "inside_xy": true,
+          "above_bin_floor": true,
+          "tilt_deg": 0.036564214750259116,
+          "cube_orientation_symmetry_note": "90-degree rotations are equivalent for a cube"
+        },
+        {
+          "cube": "Cube05",
+          "travel_with_bin_mm": 13.856862438010694,
+          "inside_xy": true,
+          "above_bin_floor": true,
+          "tilt_deg": 0.035576147742069124,
+          "cube_orientation_symmetry_note": "90-degree rotations are equivalent for a cube"
+        },
+        {
+          "cube": "Cube06",
+          "travel_with_bin_mm": 3.841282525562936,
+          "inside_xy": true,
+          "above_bin_floor": true,
+          "tilt_deg": 0.036751528352504864,
+          "cube_orientation_symmetry_note": "90-degree rotations are equivalent for a cube"
+        },
+        {
+          "cube": "Cube07",
+          "travel_with_bin_mm": 12.626616568042706,
+          "inside_xy": true,
+          "above_bin_floor": true,
+          "tilt_deg": 0.09082794336494424,
+          "cube_orientation_symmetry_note": "90-degree rotations are equivalent for a cube"
+        }
+      ],
+      "placed_on_truck": true
+    }
+  ],
+  "frames": 2030,
+  "error": null,
+  "render_fps": 12.0,
+  "acceptance": {
+    "cube_placements": 12,
+    "cube_placements_passed": 12,
+    "filled_bin_placements": 3,
+    "filled_bin_placements_passed": 3
+  }
+}
