@@ -1,0 +1,594 @@
+{
+  "schema": "ateam.brewers_badge_assets.v1",
+  "units": "millimetres",
+  "source_directory": "cad/brewers-badge",
+  "assembly_order": [
+    "stand",
+    "base",
+    "emblem",
+    "detail",
+    "nameplate"
+  ],
+  "assembly_offsets_mm": {
+    "stand": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "base": [
+      0.0,
+      0.0,
+      3.0
+    ],
+    "emblem": [
+      0.0,
+      0.0,
+      4.3
+    ],
+    "detail": [
+      0.0,
+      0.0,
+      4.3
+    ],
+    "nameplate": [
+      0.0,
+      0.0,
+      3.8
+    ]
+  },
+  "parts": {
+    "stand": {
+      "source_file": "Stand.3mf",
+      "source_sha256": "4d4d9469a6f408ba8c5a829a09bbabab8679117b7bdc64942ff8af3c92679345",
+      "asset_file": "stand.stl",
+      "asset_sha256": "862fc979a3abfb66f0901287a290ccbc02b098012b3b7a2f1536b037b71855df",
+      "assembly_offset_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 4350,
+      "triangles": 8696,
+      "connected_components": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -54.65,
+          -76.65,
+          0.0
+        ],
+        [
+          54.65,
+          54.65,
+          19.49
+        ]
+      ],
+      "extents_mm": [
+        109.3,
+        131.3,
+        19.49
+      ],
+      "centroid_mm": [
+        -0.715701,
+        -16.199489,
+        2.167581
+      ],
+      "volume_mm3": 45161.127783,
+      "colour_regions": {
+        "navy": {
+          "name": "navy",
+          "material_index": 1,
+          "material_label": "Color 1",
+          "display_colour": "#13294B00",
+          "asset_file": "stand_navy.stl",
+          "asset_sha256": "5516c8f6eb2ce62fa3945d268f89b6d9c6f99e1a44543f939378a67809522abf",
+          "vertices": 4161,
+          "triangles": 8133,
+          "connected_components": 2,
+          "watertight": false,
+          "bounds_mm": [
+            [
+              -54.65,
+              -76.65,
+              0.0
+            ],
+            [
+              54.65,
+              54.65,
+              19.49
+            ]
+          ],
+          "extents_mm": [
+            109.3,
+            131.3,
+            19.49
+          ]
+        },
+        "gold": {
+          "name": "gold",
+          "material_index": 2,
+          "material_label": "Color 2",
+          "display_colour": "#FFC52F00",
+          "asset_file": "stand_gold.stl",
+          "asset_sha256": "5777bbcea6e5491ba89818d7df24fb3c8aff137ad2fe007c9cd6acf08e73b3bd",
+          "vertices": 378,
+          "triangles": 563,
+          "connected_components": 3,
+          "watertight": false,
+          "bounds_mm": [
+            [
+              -53.35,
+              -53.35,
+              5.0
+            ],
+            [
+              53.35,
+              53.35,
+              5.6
+            ]
+          ],
+          "extents_mm": [
+            106.7,
+            106.7,
+            0.6
+          ]
+        }
+      }
+    },
+    "base": {
+      "source_file": "Navybase.3mf",
+      "source_sha256": "ebed92ebc898c1f2af2348b7868f152b865a9b7f642c7117aee77d190dd4f779",
+      "asset_file": "base.stl",
+      "asset_sha256": "a767971af6117e60445eba4dc83d66c71abeec5a0a879f83c2ebc2257f436d4b",
+      "assembly_offset_mm": [
+        0.0,
+        0.0,
+        3.0
+      ],
+      "vertices": 2209,
+      "triangles": 4414,
+      "connected_components": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -50.0,
+          -50.0,
+          0.0
+        ],
+        [
+          50.0,
+          50.0,
+          16.49
+        ]
+      ],
+      "extents_mm": [
+        100.0,
+        100.0,
+        16.49
+      ],
+      "centroid_mm": [
+        -1.586635,
+        0.036947,
+        1.172978
+      ],
+      "volume_mm3": 13295.847135,
+      "colour_regions": {
+        "navy": {
+          "name": "navy",
+          "material_index": 1,
+          "material_label": "Color 1",
+          "display_colour": "#13294B00",
+          "asset_file": "base_navy.stl",
+          "asset_sha256": "a767971af6117e60445eba4dc83d66c71abeec5a0a879f83c2ebc2257f436d4b",
+          "vertices": 2209,
+          "triangles": 4414,
+          "connected_components": 1,
+          "watertight": true,
+          "bounds_mm": [
+            [
+              -50.0,
+              -50.0,
+              0.0
+            ],
+            [
+              50.0,
+              50.0,
+              16.49
+            ]
+          ],
+          "extents_mm": [
+            100.0,
+            100.0,
+            16.49
+          ]
+        }
+      }
+    },
+    "emblem": {
+      "source_file": "Gloveemblem.3mf",
+      "source_sha256": "13881ff86b1c20a024796dfea16fd0d0491cf1f12493089f55b5a6ad56139ad4",
+      "asset_file": "emblem.stl",
+      "asset_sha256": "9c70e71ee5a02a63ae704a1bba2f3799cd6e293def01840748c09020bbc711dd",
+      "assembly_offset_mm": [
+        0.0,
+        0.0,
+        4.3
+      ],
+      "vertices": 2818,
+      "triangles": 5632,
+      "connected_components": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -25.8,
+          -26.0,
+          0.0
+        ],
+        [
+          22.5,
+          27.9,
+          15.19
+        ]
+      ],
+      "extents_mm": [
+        48.3,
+        53.9,
+        15.19
+      ],
+      "centroid_mm": [
+        -0.321111,
+        3.638873,
+        2.24237
+      ],
+      "volume_mm3": 5515.716794,
+      "colour_regions": {
+        "navy": {
+          "name": "navy",
+          "material_index": 1,
+          "material_label": "Color 1",
+          "display_colour": "#13294B00",
+          "asset_file": "emblem_navy.stl",
+          "asset_sha256": "7ea45c81935ac1831d1c79b038cb62f0181b3dec88cecccc10036ae49958d4cc",
+          "vertices": 1624,
+          "triangles": 2584,
+          "connected_components": 6,
+          "watertight": false,
+          "bounds_mm": [
+            [
+              -25.8,
+              -26.0,
+              0.0
+            ],
+            [
+              22.5,
+              27.9,
+              1.2
+            ]
+          ],
+          "extents_mm": [
+            48.3,
+            53.9,
+            1.2
+          ]
+        },
+        "gold": {
+          "name": "gold",
+          "material_index": 2,
+          "material_label": "Color 2",
+          "display_colour": "#FFC52F00",
+          "asset_file": "emblem_gold.stl",
+          "asset_sha256": "a2356601113cef7972e1f5c87d401abd49ecb04f329510eacc0e3dd51eb08856",
+          "vertices": 1752,
+          "triangles": 2742,
+          "connected_components": 10,
+          "watertight": false,
+          "bounds_mm": [
+            [
+              -25.8,
+              -26.0,
+              1.19
+            ],
+            [
+              22.5,
+              27.9,
+              15.19
+            ]
+          ],
+          "extents_mm": [
+            48.3,
+            53.9,
+            14.0
+          ]
+        },
+        "white": {
+          "name": "white",
+          "material_index": 3,
+          "material_label": "Color 3",
+          "display_colour": "#FFFFFF00",
+          "asset_file": "emblem_white.stl",
+          "asset_sha256": "dc1feac32dbf70b7173963562d88c48a03b2e58a6c94992b7fff8dcd7c0647fd",
+          "vertices": 226,
+          "triangles": 306,
+          "connected_components": 3,
+          "watertight": false,
+          "bounds_mm": [
+            [
+              -6.1,
+              -17.1,
+              1.2
+            ],
+            [
+              7.3,
+              -3.7,
+              3.7
+            ]
+          ],
+          "extents_mm": [
+            13.4,
+            13.4,
+            2.5
+          ]
+        }
+      }
+    },
+    "detail": {
+      "source_file": "Rim and lettering.3mf",
+      "source_sha256": "f321ac9edeebdd5868be83378d1813f17d1f452c6434bdda13a6840b80978a65",
+      "asset_file": "detail.stl",
+      "asset_sha256": "6df833a9149a9880a3d34131089b050cebb56f89eca081af0c17ace2335e0ea6",
+      "assembly_offset_mm": [
+        0.0,
+        0.0,
+        4.3
+      ],
+      "vertices": 4059,
+      "triangles": 8366,
+      "connected_components": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -50.0,
+          -50.0,
+          0.0
+        ],
+        [
+          50.0,
+          50.0,
+          15.19
+        ]
+      ],
+      "extents_mm": [
+        100.0,
+        100.0,
+        15.19
+      ],
+      "centroid_mm": [
+        1.128077,
+        1.835696,
+        1.683749
+      ],
+      "volume_mm3": 9639.081499,
+      "colour_regions": {
+        "navy": {
+          "name": "navy",
+          "material_index": 1,
+          "material_label": "Color 1",
+          "display_colour": "#13294B00",
+          "asset_file": "detail_navy.stl",
+          "asset_sha256": "56695c3f0882b67586167dbaec97c5ce9ef994d8001f674357c1df2a7c81a76c",
+          "vertices": 1832,
+          "triangles": 2263,
+          "connected_components": 6,
+          "watertight": false,
+          "bounds_mm": [
+            [
+              -47.81,
+              -47.81,
+              0.0
+            ],
+            [
+              47.81,
+              47.81,
+              1.2
+            ]
+          ],
+          "extents_mm": [
+            95.62,
+            95.62,
+            1.2
+          ]
+        },
+        "gold": {
+          "name": "gold",
+          "material_index": 2,
+          "material_label": "Color 2",
+          "display_colour": "#FFC52F00",
+          "asset_file": "detail_gold.stl",
+          "asset_sha256": "1a87372d4b30e4d82b7cfd7fa77118e3ffe211c91f6c8d1e184701048eeb1cd1",
+          "vertices": 1987,
+          "triangles": 3449,
+          "connected_components": 1,
+          "watertight": false,
+          "bounds_mm": [
+            [
+              -50.0,
+              -50.0,
+              0.0
+            ],
+            [
+              50.0,
+              50.0,
+              15.19
+            ]
+          ],
+          "extents_mm": [
+            100.0,
+            100.0,
+            15.19
+          ]
+        },
+        "white": {
+          "name": "white",
+          "material_index": 3,
+          "material_label": "Color 3",
+          "display_colour": "#FFFFFF00",
+          "asset_file": "detail_white.stl",
+          "asset_sha256": "da05eb80de968a44a8a84453de2ec27e534bb6cb14968f18629dcfb6db68491c",
+          "vertices": 1787,
+          "triangles": 2654,
+          "connected_components": 17,
+          "watertight": false,
+          "bounds_mm": [
+            [
+              -39.44646,
+              -41.146684,
+              1.19
+            ],
+            [
+              38.743412,
+              40.6,
+              3.2
+            ]
+          ],
+          "extents_mm": [
+            78.189872,
+            81.746684,
+            2.01
+          ]
+        }
+      }
+    },
+    "nameplate": {
+      "source_file": "Nameplate.3mf",
+      "source_sha256": "287f4483e912f36559d82ef1dfcc7ff0036ba883b0846caf89eba8460808ccce",
+      "asset_file": "nameplate.stl",
+      "asset_sha256": "9e8c20a656f0db97cdb1d096e2cb476e25c58660a48d26c5e63418f9ac015be0",
+      "assembly_offset_mm": [
+        0.0,
+        0.0,
+        3.8
+      ],
+      "vertices": 2262,
+      "triangles": 4520,
+      "connected_components": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -27.0,
+          -72.65,
+          0.0
+        ],
+        [
+          45.0,
+          -58.65,
+          15.69
+        ]
+      ],
+      "extents_mm": [
+        72.0,
+        14.0,
+        15.69
+      ],
+      "centroid_mm": [
+        12.701361,
+        -65.646087,
+        3.255844
+      ],
+      "volume_mm3": 4200.841714,
+      "colour_regions": {
+        "navy": {
+          "name": "navy",
+          "material_index": 1,
+          "material_label": "Color 1",
+          "display_colour": "#13294B00",
+          "asset_file": "nameplate_navy.stl",
+          "asset_sha256": "23e4be31ec2553aaf5e1875e0c40c1f14efa42362c473814836f3e748971dc31",
+          "vertices": 1369,
+          "triangles": 1853,
+          "connected_components": 6,
+          "watertight": false,
+          "bounds_mm": [
+            [
+              -27.0,
+              -72.65,
+              0.0
+            ],
+            [
+              45.0,
+              -58.65,
+              15.69
+            ]
+          ],
+          "extents_mm": [
+            72.0,
+            14.0,
+            15.69
+          ]
+        },
+        "gold": {
+          "name": "gold",
+          "material_index": 2,
+          "material_label": "Color 2",
+          "display_colour": "#FFC52F00",
+          "asset_file": "nameplate_gold.stl",
+          "asset_sha256": "ed58983d5a7fc1332fdabfb30e6b13c2715599b07fb1795ed47f5d1658735e58",
+          "vertices": 528,
+          "triangles": 792,
+          "connected_components": 3,
+          "watertight": false,
+          "bounds_mm": [
+            [
+              -26.1,
+              -71.75,
+              2.4
+            ],
+            [
+              26.1,
+              -59.55,
+              3.2
+            ]
+          ],
+          "extents_mm": [
+            52.2,
+            12.2,
+            0.8
+          ]
+        },
+        "white": {
+          "name": "white",
+          "material_index": 3,
+          "material_label": "Color 3",
+          "display_colour": "#FFFFFF00",
+          "asset_file": "nameplate_white.stl",
+          "asset_sha256": "d759ec5b97783d264cd050c4caf1a41f227587da4903c15ba328a42cd21f82f8",
+          "vertices": 1258,
+          "triangles": 1875,
+          "connected_components": 8,
+          "watertight": false,
+          "bounds_mm": [
+            [
+              -18.037648,
+              -68.476816,
+              2.4
+            ],
+            [
+              17.962352,
+              -62.822372,
+              3.2
+            ]
+          ],
+          "extents_mm": [
+            36.0,
+            5.654444,
+            0.8
+          ]
+        }
+      }
+    }
+  }
+}

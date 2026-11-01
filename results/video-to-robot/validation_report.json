@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "checks": {
+    "six_sources": true,
+    "six_grounded_videos": true,
+    "four_placements_each": true,
+    "task_has_safety_gates": true,
+    "task_marks_unobserved_metric_3d": true,
+    "behavior_tree_present": true,
+    "contact_graph_present": true,
+    "all_videos_h264_aac": true,
+    "durations_preserved": true
+  },
+  "media": [
+    {
+      "video": "PXL_20261020_165201912_grounded.mp4",
+      "h264_video": true,
+      "aac_audio": true,
+      "duration_delta_s": -0.0459
+    },
+    {
+      "video": "PXL_20261020_165226075_grounded.mp4",
+      "h264_video": true,
+      "aac_audio": true,
+      "duration_delta_s": -0.0346
+    },
+    {
+      "video": "PXL_20261020_165240667_grounded.mp4",
+      "h264_video": true,
+      "aac_audio": true,
+      "duration_delta_s": -0.0302
+    },
+    {
+      "video": "PXL_20261020_165311341_grounded.mp4",
+      "h264_video": true,
+      "aac_audio": true,
+      "duration_delta_s": -0.0439
+    },
+    {
+      "video": "PXL_20261020_165355671_grounded.mp4",
+      "h264_video": true,
+      "aac_audio": true,
+      "duration_delta_s": -0.0299
+    },
+    {
+      "video": "PXL_20261020_165414567_grounded.mp4",
+      "h264_video": true,
+      "aac_audio": true,
+      "duration_delta_s": -0.0507
+    }
+  ]
+}

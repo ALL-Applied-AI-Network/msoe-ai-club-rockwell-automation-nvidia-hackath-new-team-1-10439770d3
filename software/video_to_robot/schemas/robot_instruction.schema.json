@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ateam.local/schemas/robot_instruction.schema.json",
+  "title": "Evidence-grounded robot instruction",
+  "type": "object",
+  "required": ["task_id", "evidence_scope", "objects", "steps", "safety_gates"],
+  "properties": {
+    "task_id": {"type": "string"},
+    "evidence_scope": {
+      "type": "object",
+      "required": ["observed", "not_observed"],
+      "properties": {
+        "observed": {"type": "array", "items": {"type": "string"}},
+        "not_observed": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "objects": {"type": "array", "items": {"type": "object"}},
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "primitive", "preconditions", "observed_evidence", "robot_parameters", "verification", "confidence"],
+        "properties": {
+          "id": {"type": "string"},
+          "primitive": {"enum": ["observe", "approach", "grasp", "lift", "transfer", "insert", "release", "retract", "verify", "repeat"]},
+          "preconditions": {"type": "array", "items": {"type": "string"}},
+          "observed_evidence": {"type": "array", "items": {"type": "object"}},
+          "robot_parameters": {"type": "object"},
+          "verification": {"type": "object"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "requires_calibration": {"type": "boolean"}
+        }
+      }
+    },
+    "safety_gates": {"type": "array", "items": {"type": "object"}}
+  }
+}
+

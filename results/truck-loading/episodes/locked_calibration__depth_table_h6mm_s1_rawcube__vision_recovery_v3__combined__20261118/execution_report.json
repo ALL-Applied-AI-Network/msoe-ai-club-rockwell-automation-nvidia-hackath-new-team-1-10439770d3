@@ -1,0 +1,2426 @@
+{
+  "task_complete": true,
+  "policy": "locked_calibration__depth_table_h6mm_s1_rawcube",
+  "controller": "vision_recovery_v3",
+  "variation": "combined",
+  "seed": 20261118,
+  "boundary": {
+    "policy_inputs": [
+      "table_rgbd",
+      "side_rgbd",
+      "wrist_rgbd",
+      "reported_calibration",
+      "joint_state",
+      "timestamp"
+    ],
+    "simulator_pose_available_to_controller": false,
+    "plan_frozen_before_motion": false,
+    "camera_only_replanning": true,
+    "residual_cube_recovery": true,
+    "recovery_pass_limit": 2,
+    "loaded_bin_transport_guard": true,
+    "camera_refresh_render_steps": 3,
+    "evaluator_reads_state_after_motion_only": true
+  },
+  "actions": [
+    {
+      "label": "red cube 1/4 approach",
+      "target_tip_m": [
+        0.3585435748100281,
+        -0.30037203431129456,
+        0.0824
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "red cube 1/4 descend",
+      "target_tip_m": [
+        0.3585435748100281,
+        -0.30037203431129456,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.55
+    },
+    {
+      "label": "red cube 1/4 close",
+      "target_tip_m": [
+        0.3585435748100281,
+        -0.30037203431129456,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "red cube 1/4 lift",
+      "target_tip_m": [
+        0.3585435748100281,
+        -0.30037203431129456,
+        0.0824
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "red cube 1/4 carry",
+      "target_tip_m": [
+        0.25741132818349804,
+        -0.12498766140757935,
+        0.1089
+      ],
+      "duration_s": 1.1
+    },
+    {
+      "label": "red cube 1/4 lower",
+      "target_tip_m": [
+        0.25741132818349804,
+        -0.12498766140757935,
+        0.023899999999999998
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "red cube 1/4 release",
+      "target_tip_m": [
+        0.25741132818349804,
+        -0.12498766140757935,
+        0.023899999999999998
+      ],
+      "duration_s": 0.5
+    },
+    {
+      "label": "red cube 1/4 withdraw",
+      "target_tip_m": [
+        0.25741132818349804,
+        -0.12498766140757935,
+        0.1089
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "red cube 1/4 fully open",
+      "target_tip_m": [
+        0.25741132818349804,
+        -0.12498766140757935,
+        0.1089
+      ],
+      "duration_s": 0.2
+    },
+    {
+      "label": "red cube 2/4 approach",
+      "target_tip_m": [
+        0.42850345373153687,
+        -0.24553999304771423,
+        0.0824
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "red cube 2/4 descend",
+      "target_tip_m": [
+        0.42850345373153687,
+        -0.24553999304771423,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.55
+    },
+    {
+      "label": "red cube 2/4 close",
+      "target_tip_m": [
+        0.42850345373153687,
+        -0.24553999304771423,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "red cube 2/4 lift",
+      "target_tip_m": [
+        0.42850345373153687,
+        -0.24553999304771423,
+        0.0824
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "red cube 2/4 carry",
+      "target_tip_m": [
+        0.26874114712911096,
+        -0.1302683055595395,
+        0.1089
+      ],
+      "duration_s": 1.1
+    },
+    {
+      "label": "red cube 2/4 lower",
+      "target_tip_m": [
+        0.26874114712911096,
+        -0.1302683055595395,
+        0.023899999999999998
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "red cube 2/4 release",
+      "target_tip_m": [
+        0.26874114712911096,
+        -0.1302683055595395,
+        0.023899999999999998
+      ],
+      "duration_s": 0.5
+    },
+    {
+      "label": "red cube 2/4 withdraw",
+      "target_tip_m": [
+        0.26874114712911096,
+        -0.1302683055595395,
+        0.1089
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "red cube 2/4 fully open",
+      "target_tip_m": [
+        0.26874114712911096,
+        -0.1302683055595395,
+        0.1089
+      ],
+      "duration_s": 0.2
+    },
+    {
+      "label": "red cube 3/4 approach",
+      "target_tip_m": [
+        0.3729180693626404,
+        -0.2131902426481247,
+        0.0824
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "red cube 3/4 descend",
+      "target_tip_m": [
+        0.3729180693626404,
+        -0.2131902426481247,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.55
+    },
+    {
+      "label": "red cube 3/4 close",
+      "target_tip_m": [
+        0.3729180693626404,
+        -0.2131902426481247,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "red cube 3/4 lift",
+      "target_tip_m": [
+        0.3729180693626404,
+        -0.2131902426481247,
+        0.0824
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "red cube 3/4 carry",
+      "target_tip_m": [
+        0.25741132818349804,
+        -0.12498766140757935,
+        0.12090000000000001
+      ],
+      "duration_s": 1.1
+    },
+    {
+      "label": "red cube 3/4 lower",
+      "target_tip_m": [
+        0.25741132818349804,
+        -0.12498766140757935,
+        0.0359
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "red cube 3/4 release",
+      "target_tip_m": [
+        0.25741132818349804,
+        -0.12498766140757935,
+        0.0359
+      ],
+      "duration_s": 0.5
+    },
+    {
+      "label": "red cube 3/4 withdraw",
+      "target_tip_m": [
+        0.25741132818349804,
+        -0.12498766140757935,
+        0.12090000000000001
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "red cube 3/4 fully open",
+      "target_tip_m": [
+        0.25741132818349804,
+        -0.12498766140757935,
+        0.12090000000000001
+      ],
+      "duration_s": 0.2
+    },
+    {
+      "label": "red cube 4/4 approach",
+      "target_tip_m": [
+        0.3026101589202881,
+        -0.20661844313144684,
+        0.0824
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "red cube 4/4 descend",
+      "target_tip_m": [
+        0.3026101589202881,
+        -0.20661844313144684,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.55
+    },
+    {
+      "label": "red cube 4/4 close",
+      "target_tip_m": [
+        0.3026101589202881,
+        -0.20661844313144684,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "red cube 4/4 lift",
+      "target_tip_m": [
+        0.3026101589202881,
+        -0.20661844313144684,
+        0.0824
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "red cube 4/4 carry",
+      "target_tip_m": [
+        0.26874114712911096,
+        -0.1302683055595395,
+        0.12090000000000001
+      ],
+      "duration_s": 1.1
+    },
+    {
+      "label": "red cube 4/4 lower",
+      "target_tip_m": [
+        0.26874114712911096,
+        -0.1302683055595395,
+        0.0359
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "red cube 4/4 release",
+      "target_tip_m": [
+        0.26874114712911096,
+        -0.1302683055595395,
+        0.0359
+      ],
+      "duration_s": 0.5
+    },
+    {
+      "label": "red cube 4/4 withdraw",
+      "target_tip_m": [
+        0.26874114712911096,
+        -0.1302683055595395,
+        0.12090000000000001
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "red cube 4/4 fully open",
+      "target_tip_m": [
+        0.26874114712911096,
+        -0.1302683055595395,
+        0.12090000000000001
+      ],
+      "duration_s": 0.2
+    },
+    {
+      "label": "orange cube 1/4 approach",
+      "target_tip_m": [
+        0.4357188642024994,
+        -0.30171918869018555,
+        0.0824
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "orange cube 1/4 descend",
+      "target_tip_m": [
+        0.4357188642024994,
+        -0.30171918869018555,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.55
+    },
+    {
+      "label": "orange cube 1/4 close",
+      "target_tip_m": [
+        0.4357188642024994,
+        -0.30171918869018555,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "orange cube 1/4 lift",
+      "target_tip_m": [
+        0.4357188642024994,
+        -0.30171918869018555,
+        0.0824
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "orange cube 1/4 carry",
+      "target_tip_m": [
+        0.4875842020066764,
+        -0.1295197988586596,
+        0.1089
+      ],
+      "duration_s": 1.1
+    },
+    {
+      "label": "orange cube 1/4 lower",
+      "target_tip_m": [
+        0.4875842020066764,
+        -0.1295197988586596,
+        0.023899999999999998
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "orange cube 1/4 release",
+      "target_tip_m": [
+        0.4875842020066764,
+        -0.1295197988586596,
+        0.023899999999999998
+      ],
+      "duration_s": 0.5
+    },
+    {
+      "label": "orange cube 1/4 withdraw",
+      "target_tip_m": [
+        0.4875842020066764,
+        -0.1295197988586596,
+        0.1089
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "orange cube 1/4 fully open",
+      "target_tip_m": [
+        0.4875842020066764,
+        -0.1295197988586596,
+        0.1089
+      ],
+      "duration_s": 0.2
+    },
+    {
+      "label": "orange cube 2/4 approach",
+      "target_tip_m": [
+        0.22922071814537048,
+        -0.25420570373535156,
+        0.0824
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "orange cube 2/4 descend",
+      "target_tip_m": [
+        0.22922071814537048,
+        -0.25420570373535156,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.55
+    },
+    {
+      "label": "orange cube 2/4 close",
+      "target_tip_m": [
+        0.22922071814537048,
+        -0.25420570373535156,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "orange cube 2/4 lift",
+      "target_tip_m": [
+        0.22922071814537048,
+        -0.25420570373535156,
+        0.0824
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "orange cube 2/4 carry",
+      "target_tip_m": [
+        0.4980751870394462,
+        -0.12272353274834576,
+        0.1089
+      ],
+      "duration_s": 1.1
+    },
+    {
+      "label": "orange cube 2/4 lower",
+      "target_tip_m": [
+        0.4980751870394462,
+        -0.12272353274834576,
+        0.023899999999999998
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "orange cube 2/4 release",
+      "target_tip_m": [
+        0.4980751870394462,
+        -0.12272353274834576,
+        0.023899999999999998
+      ],
+      "duration_s": 0.5
+    },
+    {
+      "label": "orange cube 2/4 withdraw",
+      "target_tip_m": [
+        0.4980751870394462,
+        -0.12272353274834576,
+        0.1089
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "orange cube 2/4 fully open",
+      "target_tip_m": [
+        0.4980751870394462,
+        -0.12272353274834576,
+        0.1089
+      ],
+      "duration_s": 0.2
+    },
+    {
+      "label": "orange cube 3/4 approach",
+      "target_tip_m": [
+        0.4315417408943176,
+        -0.21208614110946655,
+        0.0824
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "orange cube 3/4 descend",
+      "target_tip_m": [
+        0.4315417408943176,
+        -0.21208614110946655,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.55
+    },
+    {
+      "label": "orange cube 3/4 close",
+      "target_tip_m": [
+        0.4315417408943176,
+        -0.21208614110946655,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "orange cube 3/4 lift",
+      "target_tip_m": [
+        0.4315417408943176,
+        -0.21208614110946655,
+        0.0824
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "orange cube 3/4 carry",
+      "target_tip_m": [
+        0.4875842020066764,
+        -0.1295197988586596,
+        0.12090000000000001
+      ],
+      "duration_s": 1.1
+    },
+    {
+      "label": "orange cube 3/4 lower",
+      "target_tip_m": [
+        0.4875842020066764,
+        -0.1295197988586596,
+        0.0359
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "orange cube 3/4 release",
+      "target_tip_m": [
+        0.4875842020066764,
+        -0.1295197988586596,
+        0.0359
+      ],
+      "duration_s": 0.5
+    },
+    {
+      "label": "orange cube 3/4 withdraw",
+      "target_tip_m": [
+        0.4875842020066764,
+        -0.1295197988586596,
+        0.12090000000000001
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "orange cube 3/4 fully open",
+      "target_tip_m": [
+        0.4875842020066764,
+        -0.1295197988586596,
+        0.12090000000000001
+      ],
+      "duration_s": 0.2
+    },
+    {
+      "label": "orange cube 4/4 approach",
+      "target_tip_m": [
+        0.23629702627658844,
+        -0.20439861714839935,
+        0.0824
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "orange cube 4/4 descend",
+      "target_tip_m": [
+        0.23629702627658844,
+        -0.20439861714839935,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.55
+    },
+    {
+      "label": "orange cube 4/4 close",
+      "target_tip_m": [
+        0.23629702627658844,
+        -0.20439861714839935,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "orange cube 4/4 lift",
+      "target_tip_m": [
+        0.23629702627658844,
+        -0.20439861714839935,
+        0.0824
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "orange cube 4/4 carry",
+      "target_tip_m": [
+        0.4980751870394462,
+        -0.12272353274834576,
+        0.12090000000000001
+      ],
+      "duration_s": 1.1
+    },
+    {
+      "label": "orange cube 4/4 lower",
+      "target_tip_m": [
+        0.4980751870394462,
+        -0.12272353274834576,
+        0.0359
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "orange cube 4/4 release",
+      "target_tip_m": [
+        0.4980751870394462,
+        -0.12272353274834576,
+        0.0359
+      ],
+      "duration_s": 0.5
+    },
+    {
+      "label": "orange cube 4/4 withdraw",
+      "target_tip_m": [
+        0.4980751870394462,
+        -0.12272353274834576,
+        0.12090000000000001
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "orange cube 4/4 fully open",
+      "target_tip_m": [
+        0.4980751870394462,
+        -0.12272353274834576,
+        0.12090000000000001
+      ],
+      "duration_s": 0.2
+    },
+    {
+      "label": "blue cube 1/4 approach",
+      "target_tip_m": [
+        0.303195059299469,
+        -0.3080897331237793,
+        0.0824
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "blue cube 1/4 descend",
+      "target_tip_m": [
+        0.303195059299469,
+        -0.3080897331237793,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.55
+    },
+    {
+      "label": "blue cube 1/4 close",
+      "target_tip_m": [
+        0.303195059299469,
+        -0.3080897331237793,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "blue cube 1/4 lift",
+      "target_tip_m": [
+        0.303195059299469,
+        -0.3080897331237793,
+        0.0824
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "blue cube 1/4 carry",
+      "target_tip_m": [
+        0.3825967196701765,
+        -0.12595355144697246,
+        0.1089
+      ],
+      "duration_s": 1.1
+    },
+    {
+      "label": "blue cube 1/4 lower",
+      "target_tip_m": [
+        0.3825967196701765,
+        -0.12595355144697246,
+        0.023899999999999998
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "blue cube 1/4 release",
+      "target_tip_m": [
+        0.3825967196701765,
+        -0.12595355144697246,
+        0.023899999999999998
+      ],
+      "duration_s": 0.5
+    },
+    {
+      "label": "blue cube 1/4 withdraw",
+      "target_tip_m": [
+        0.3825967196701765,
+        -0.12595355144697246,
+        0.1089
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "blue cube 1/4 fully open",
+      "target_tip_m": [
+        0.3825967196701765,
+        -0.12595355144697246,
+        0.1089
+      ],
+      "duration_s": 0.2
+    },
+    {
+      "label": "blue cube 2/4 approach",
+      "target_tip_m": [
+        0.23328465223312378,
+        -0.3015604615211487,
+        0.0824
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "blue cube 2/4 descend",
+      "target_tip_m": [
+        0.23328465223312378,
+        -0.3015604615211487,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.55
+    },
+    {
+      "label": "blue cube 2/4 close",
+      "target_tip_m": [
+        0.23328465223312378,
+        -0.3015604615211487,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "blue cube 2/4 lift",
+      "target_tip_m": [
+        0.23328465223312378,
+        -0.3015604615211487,
+        0.0824
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "blue cube 2/4 carry",
+      "target_tip_m": [
+        0.3939229578080192,
+        -0.1312418715625552,
+        0.1089
+      ],
+      "duration_s": 1.1
+    },
+    {
+      "label": "blue cube 2/4 lower",
+      "target_tip_m": [
+        0.3939229578080192,
+        -0.1312418715625552,
+        0.023899999999999998
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "blue cube 2/4 release",
+      "target_tip_m": [
+        0.3939229578080192,
+        -0.1312418715625552,
+        0.023899999999999998
+      ],
+      "duration_s": 0.5
+    },
+    {
+      "label": "blue cube 2/4 withdraw",
+      "target_tip_m": [
+        0.3939229578080192,
+        -0.1312418715625552,
+        0.1089
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "blue cube 2/4 fully open",
+      "target_tip_m": [
+        0.3939229578080192,
+        -0.1312418715625552,
+        0.1089
+      ],
+      "duration_s": 0.2
+    },
+    {
+      "label": "blue cube 3/4 approach",
+      "target_tip_m": [
+        0.30488792061805725,
+        -0.2598682641983032,
+        0.0824
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "blue cube 3/4 descend",
+      "target_tip_m": [
+        0.30488792061805725,
+        -0.2598682641983032,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.55
+    },
+    {
+      "label": "blue cube 3/4 close",
+      "target_tip_m": [
+        0.30488792061805725,
+        -0.2598682641983032,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "blue cube 3/4 lift",
+      "target_tip_m": [
+        0.30488792061805725,
+        -0.2598682641983032,
+        0.0824
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "blue cube 3/4 carry",
+      "target_tip_m": [
+        0.3825967196701765,
+        -0.12595355144697246,
+        0.12090000000000001
+      ],
+      "duration_s": 1.1
+    },
+    {
+      "label": "blue cube 3/4 lower",
+      "target_tip_m": [
+        0.3825967196701765,
+        -0.12595355144697246,
+        0.0359
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "blue cube 3/4 release",
+      "target_tip_m": [
+        0.3825967196701765,
+        -0.12595355144697246,
+        0.0359
+      ],
+      "duration_s": 0.5
+    },
+    {
+      "label": "blue cube 3/4 withdraw",
+      "target_tip_m": [
+        0.3825967196701765,
+        -0.12595355144697246,
+        0.12090000000000001
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "blue cube 3/4 fully open",
+      "target_tip_m": [
+        0.3825967196701765,
+        -0.12595355144697246,
+        0.12090000000000001
+      ],
+      "duration_s": 0.2
+    },
+    {
+      "label": "blue cube 4/4 approach",
+      "target_tip_m": [
+        0.36948323249816895,
+        -0.25558170676231384,
+        0.0824
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "blue cube 4/4 descend",
+      "target_tip_m": [
+        0.36948323249816895,
+        -0.25558170676231384,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.55
+    },
+    {
+      "label": "blue cube 4/4 close",
+      "target_tip_m": [
+        0.36948323249816895,
+        -0.25558170676231384,
+        -0.0026000000000000003
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "blue cube 4/4 lift",
+      "target_tip_m": [
+        0.36948323249816895,
+        -0.25558170676231384,
+        0.0824
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "blue cube 4/4 carry",
+      "target_tip_m": [
+        0.3939229578080192,
+        -0.1312418715625552,
+        0.12090000000000001
+      ],
+      "duration_s": 1.1
+    },
+    {
+      "label": "blue cube 4/4 lower",
+      "target_tip_m": [
+        0.3939229578080192,
+        -0.1312418715625552,
+        0.0359
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "blue cube 4/4 release",
+      "target_tip_m": [
+        0.3939229578080192,
+        -0.1312418715625552,
+        0.0359
+      ],
+      "duration_s": 0.5
+    },
+    {
+      "label": "blue cube 4/4 withdraw",
+      "target_tip_m": [
+        0.3939229578080192,
+        -0.1312418715625552,
+        0.12090000000000001
+      ],
+      "duration_s": 0.65
+    },
+    {
+      "label": "blue cube 4/4 fully open",
+      "target_tip_m": [
+        0.3939229578080192,
+        -0.1312418715625552,
+        0.12090000000000001
+      ],
+      "duration_s": 0.2
+    },
+    {
+      "label": "mid-task camera clear",
+      "target_tip_m": [
+        0.3,
+        -0.02,
+        0.245
+      ],
+      "duration_s": 1.2
+    },
+    {
+      "label": "mid-task camera settle",
+      "target_tip_m": [
+        0.3,
+        -0.02,
+        0.245
+      ],
+      "duration_s": 0.45
+    },
+    {
+      "label": "blue filled bin approach",
+      "target_tip_m": [
+        0.3780040643402435,
+        -0.1487623140281951,
+        0.1239
+      ],
+      "duration_s": 0.9
+    },
+    {
+      "label": "blue filled bin insert",
+      "target_tip_m": [
+        0.3780040643402435,
+        -0.1487623140281951,
+        0.0289
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "blue filled bin close",
+      "target_tip_m": [
+        0.3780040643402435,
+        -0.1487623140281951,
+        0.0289
+      ],
+      "duration_s": 0.9
+    },
+    {
+      "label": "blue filled bin proof lift",
+      "target_tip_m": [
+        0.3780040643402435,
+        -0.1487623140281951,
+        0.0389
+      ],
+      "duration_s": 1.5
+    },
+    {
+      "label": "blue filled bin proof dwell",
+      "target_tip_m": [
+        0.3780040643402435,
+        -0.1487623140281951,
+        0.0389
+      ],
+      "duration_s": 1.2
+    },
+    {
+      "label": "blue filled bin staged raise",
+      "target_tip_m": [
+        0.3780040643402435,
+        -0.1487623140281951,
+        0.0839
+      ],
+      "duration_s": 1.8
+    },
+    {
+      "label": "blue filled bin staged hold",
+      "target_tip_m": [
+        0.3780040643402435,
+        -0.1487623140281951,
+        0.0839
+      ],
+      "duration_s": 0.6
+    },
+    {
+      "label": "blue filled bin raise",
+      "target_tip_m": [
+        0.3780040643402435,
+        -0.1487623140281951,
+        0.1389
+      ],
+      "duration_s": 2.2
+    },
+    {
+      "label": "blue filled bin centre-preserving rotate",
+      "target_tip_m": [
+        0.3734415335459162,
+        -0.14555939945640065,
+        0.1389
+      ],
+      "duration_s": 3.0,
+      "motion": "bin-centre-preserving wall arc",
+      "yaw_delta_deg": -15.073875656127933,
+      "radius_m": 0.02125
+    },
+    {
+      "label": "blue filled bin rotation settle",
+      "target_tip_m": [
+        0.3734415335459162,
+        -0.14555939945640065,
+        0.1389
+      ],
+      "duration_s": 0.6
+    },
+    {
+      "label": "blue filled bin carry",
+      "target_tip_m": [
+        0.4607792206297583,
+        0.006816365488967427,
+        0.17259999999999998
+      ],
+      "duration_s": 3.6
+    },
+    {
+      "label": "blue filled bin pre-place",
+      "target_tip_m": [
+        0.4607792206297583,
+        0.006816365488967427,
+        0.07259999999999997
+      ],
+      "duration_s": 2.0
+    },
+    {
+      "label": "blue filled bin final lower",
+      "target_tip_m": [
+        0.4607792206297583,
+        0.006816365488967427,
+        0.06259999999999998
+      ],
+      "duration_s": 1.2
+    },
+    {
+      "label": "blue filled bin supported",
+      "target_tip_m": [
+        0.4607792206297583,
+        0.006816365488967427,
+        0.06259999999999998
+      ],
+      "duration_s": 0.8
+    },
+    {
+      "label": "blue filled bin full release",
+      "target_tip_m": [
+        0.4607792206297583,
+        0.006816365488967427,
+        0.06259999999999998
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "blue filled bin release dwell",
+      "target_tip_m": [
+        0.4607792206297583,
+        0.006816365488967427,
+        0.06259999999999998
+      ],
+      "duration_s": 0.45
+    },
+    {
+      "label": "blue filled bin vertical withdraw",
+      "target_tip_m": [
+        0.4607792206297583,
+        0.006816365488967427,
+        0.17259999999999998
+      ],
+      "duration_s": 0.85
+    },
+    {
+      "label": "red filled bin approach",
+      "target_tip_m": [
+        0.25332141039310707,
+        -0.14805376125811237,
+        0.1239
+      ],
+      "duration_s": 0.9
+    },
+    {
+      "label": "red filled bin insert",
+      "target_tip_m": [
+        0.25332141039310707,
+        -0.14805376125811237,
+        0.0289
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "red filled bin close",
+      "target_tip_m": [
+        0.25332141039310707,
+        -0.14805376125811237,
+        0.0289
+      ],
+      "duration_s": 0.9
+    },
+    {
+      "label": "red filled bin proof lift",
+      "target_tip_m": [
+        0.25332141039310707,
+        -0.14805376125811237,
+        0.0389
+      ],
+      "duration_s": 1.5
+    },
+    {
+      "label": "red filled bin proof dwell",
+      "target_tip_m": [
+        0.25332141039310707,
+        -0.14805376125811237,
+        0.0389
+      ],
+      "duration_s": 1.2
+    },
+    {
+      "label": "red filled bin staged raise",
+      "target_tip_m": [
+        0.25332141039310707,
+        -0.14805376125811237,
+        0.0839
+      ],
+      "duration_s": 1.8
+    },
+    {
+      "label": "red filled bin staged hold",
+      "target_tip_m": [
+        0.25332141039310707,
+        -0.14805376125811237,
+        0.0839
+      ],
+      "duration_s": 0.6
+    },
+    {
+      "label": "red filled bin raise",
+      "target_tip_m": [
+        0.25332141039310707,
+        -0.14805376125811237,
+        0.1389
+      ],
+      "duration_s": 2.2
+    },
+    {
+      "label": "red filled bin centre-preserving rotate",
+      "target_tip_m": [
+        0.24836355887055833,
+        -0.14465115094349337,
+        0.1389
+      ],
+      "duration_s": 3.0,
+      "motion": "bin-centre-preserving wall arc",
+      "yaw_delta_deg": -16.267691116333005,
+      "radius_m": 0.02125
+    },
+    {
+      "label": "red filled bin rotation settle",
+      "target_tip_m": [
+        0.24836355887055833,
+        -0.14465115094349337,
+        0.1389
+      ],
+      "duration_s": 0.6
+    },
+    {
+      "label": "red filled bin carry",
+      "target_tip_m": [
+        0.3775483274927719,
+        0.08548553394245845,
+        0.17259999999999998
+      ],
+      "duration_s": 3.6
+    },
+    {
+      "label": "red filled bin pre-place",
+      "target_tip_m": [
+        0.3775483274927719,
+        0.08548553394245845,
+        0.07259999999999997
+      ],
+      "duration_s": 2.0
+    },
+    {
+      "label": "red filled bin final lower",
+      "target_tip_m": [
+        0.3775483274927719,
+        0.08548553394245845,
+        0.06259999999999998
+      ],
+      "duration_s": 1.2
+    },
+    {
+      "label": "red filled bin supported",
+      "target_tip_m": [
+        0.3775483274927719,
+        0.08548553394245845,
+        0.06259999999999998
+      ],
+      "duration_s": 0.8
+    },
+    {
+      "label": "red filled bin full release",
+      "target_tip_m": [
+        0.3775483274927719,
+        0.08548553394245845,
+        0.06259999999999998
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "red filled bin release dwell",
+      "target_tip_m": [
+        0.3775483274927719,
+        0.08548553394245845,
+        0.06259999999999998
+      ],
+      "duration_s": 0.45
+    },
+    {
+      "label": "red filled bin vertical withdraw",
+      "target_tip_m": [
+        0.3775483274927719,
+        0.08548553394245845,
+        0.17259999999999998
+      ],
+      "duration_s": 0.85
+    },
+    {
+      "label": "orange filled bin approach",
+      "target_tip_m": [
+        0.5041276983973481,
+        -0.14595392961655762,
+        0.1239
+      ],
+      "duration_s": 0.9
+    },
+    {
+      "label": "orange filled bin insert",
+      "target_tip_m": [
+        0.5041276983973481,
+        -0.14595392961655762,
+        0.0289
+      ],
+      "duration_s": 0.75
+    },
+    {
+      "label": "orange filled bin close",
+      "target_tip_m": [
+        0.5041276983973481,
+        -0.14595392961655762,
+        0.0289
+      ],
+      "duration_s": 0.9
+    },
+    {
+      "label": "orange filled bin proof lift",
+      "target_tip_m": [
+        0.5041276983973481,
+        -0.14595392961655762,
+        0.0389
+      ],
+      "duration_s": 1.5
+    },
+    {
+      "label": "orange filled bin proof dwell",
+      "target_tip_m": [
+        0.5041276983973481,
+        -0.14595392961655762,
+        0.0389
+      ],
+      "duration_s": 1.2
+    },
+    {
+      "label": "orange filled bin staged raise",
+      "target_tip_m": [
+        0.5041276983973481,
+        -0.14595392961655762,
+        0.0839
+      ],
+      "duration_s": 1.8
+    },
+    {
+      "label": "orange filled bin staged hold",
+      "target_tip_m": [
+        0.5041276983973481,
+        -0.14595392961655762,
+        0.0839
+      ],
+      "duration_s": 0.6
+    },
+    {
+      "label": "orange filled bin raise",
+      "target_tip_m": [
+        0.5041276983973481,
+        -0.14595392961655762,
+        0.1389
+      ],
+      "duration_s": 2.2
+    },
+    {
+      "label": "orange filled bin centre-preserving rotate",
+      "target_tip_m": [
+        0.4779356611047777,
+        -0.14310028057748317,
+        0.1389
+      ],
+      "duration_s": 3.0,
+      "motion": "bin-centre-preserving wall arc",
+      "yaw_delta_deg": -76.6220721130371,
+      "radius_m": 0.02125
+    },
+    {
+      "label": "orange filled bin rotation settle",
+      "target_tip_m": [
+        0.4779356611047777,
+        -0.14310028057748317,
+        0.1389
+      ],
+      "duration_s": 0.6
+    },
+    {
+      "label": "orange filled bin carry",
+      "target_tip_m": [
+        0.4192361582206451,
+        0.050365348556366304,
+        0.17259999999999998
+      ],
+      "duration_s": 3.6
+    },
+    {
+      "label": "orange filled bin pre-place",
+      "target_tip_m": [
+        0.4192361582206451,
+        0.050365348556366304,
+        0.07259999999999997
+      ],
+      "duration_s": 2.0
+    },
+    {
+      "label": "orange filled bin final lower",
+      "target_tip_m": [
+        0.4192361582206451,
+        0.050365348556366304,
+        0.06259999999999998
+      ],
+      "duration_s": 1.2
+    },
+    {
+      "label": "orange filled bin supported",
+      "target_tip_m": [
+        0.4192361582206451,
+        0.050365348556366304,
+        0.06259999999999998
+      ],
+      "duration_s": 0.8
+    },
+    {
+      "label": "orange filled bin full release",
+      "target_tip_m": [
+        0.4192361582206451,
+        0.050365348556366304,
+        0.06259999999999998
+      ],
+      "duration_s": 0.7
+    },
+    {
+      "label": "orange filled bin release dwell",
+      "target_tip_m": [
+        0.4192361582206451,
+        0.050365348556366304,
+        0.06259999999999998
+      ],
+      "duration_s": 0.45
+    },
+    {
+      "label": "orange filled bin vertical withdraw",
+      "target_tip_m": [
+        0.4192361582206451,
+        0.050365348556366304,
+        0.17259999999999998
+      ],
+      "duration_s": 0.85
+    },
+    {
+      "label": "final retreat",
+      "target_tip_m": [
+        0.3,
+        -0.02,
+        0.245
+      ],
+      "duration_s": 0.7
+    }
+  ],
+  "evaluation": {
+    "cubes_in_matching_bins": 12,
+    "cubes_required": 12,
+    "bins_on_deck": 3,
+    "bins_required": 3,
+    "cube_orientation_required": false,
+    "full_task_success": true,
+    "bins": {
+      "red": {
+        "position_m": [
+          0.39253878593444824,
+          0.10251690447330475,
+          0.9284000396728516
+        ],
+        "yaw_deg": -42.23081161208712,
+        "tilt_deg": 3.225185745815544e-05,
+        "zone_error_mm": 3.8074199386865644,
+        "yaw_error_deg": 1.0943282141778639,
+        "on_deck": true
+      },
+      "orange": {
+        "position_m": [
+          0.43494829535484314,
+          0.06658749282360077,
+          0.9284000992774963
+        ],
+        "yaw_deg": -44.27955883674183,
+        "tilt_deg": 0.0003920959537111363,
+        "zone_error_mm": 0.8600689336495778,
+        "yaw_error_deg": -0.9544190104768404,
+        "on_deck": true
+      },
+      "blue": {
+        "position_m": [
+          0.4758166968822479,
+          0.023308999836444855,
+          0.9284001588821411
+        ],
+        "yaw_deg": -43.2800190095346,
+        "tilt_deg": 0.0002399255858178067,
+        "zone_error_mm": 4.780504677366884,
+        "yaw_error_deg": 0.045120816730388924,
+        "on_deck": true
+      }
+    },
+    "cubes": [
+      {
+        "cube": "Cube00",
+        "colour": "red",
+        "position_m": [
+          0.3865931034088135,
+          0.1130761206150055,
+          0.9608997702598572
+        ],
+        "local_xy_m": [
+          -0.011499488988175948,
+          0.0038222950217915268
+        ],
+        "tilt_deg": 89.9985734257757,
+        "inside_matching_bin": true
+      },
+      {
+        "cube": "Cube01",
+        "colour": "red",
+        "position_m": [
+          0.39576154947280884,
+          0.09789168834686279,
+          0.9549000263214111
+        ],
+        "local_xy_m": [
+          0.005494968584639023,
+          -0.0012586299274669438
+        ],
+        "tilt_deg": 0.0008312463163877356,
+        "inside_matching_bin": true
+      },
+      {
+        "cube": "Cube02",
+        "colour": "red",
+        "position_m": [
+          0.3998512029647827,
+          0.10311825573444366,
+          0.960900068283081
+        ],
+        "local_xy_m": [
+          0.00501025038864818,
+          0.005360079962822359
+        ],
+        "tilt_deg": 90.002666065469,
+        "inside_matching_bin": true
+      },
+      {
+        "cube": "Cube03",
+        "colour": "red",
+        "position_m": [
+          0.38207510113716125,
+          0.1073656752705574,
+          0.9548999071121216
+        ],
+        "local_xy_m": [
+          -0.011006715254155001,
+          -0.0034426003391646487
+        ],
+        "tilt_deg": 0.0033360649974070425,
+        "inside_matching_bin": true
+      },
+      {
+        "cube": "Cube04",
+        "colour": "orange",
+        "position_m": [
+          0.43135255575180054,
+          0.07740797847509384,
+          0.9608997106552124
+        ],
+        "local_xy_m": [
+          -0.010128769744886353,
+          0.005236437384532662
+        ],
+        "tilt_deg": 89.9714470751925,
+        "inside_matching_bin": true
+      },
+      {
+        "cube": "Cube05",
+        "colour": "orange",
+        "position_m": [
+          0.44280120730400085,
+          0.0600423626601696,
+          0.9549004435539246
+        ],
+        "local_xy_m": [
+          0.010191775839631139,
+          0.000796655617058919
+        ],
+        "tilt_deg": 0.03379072663386283,
+        "inside_matching_bin": true
+      },
+      {
+        "cube": "Cube06",
+        "colour": "orange",
+        "position_m": [
+          0.4436635971069336,
+          0.05988599732518196,
+          0.9669056534767151
+        ],
+        "local_xy_m": [
+          0.010918364805712798,
+          0.0012867931126216963
+        ],
+        "tilt_deg": 0.09804158643346848,
+        "inside_matching_bin": true
+      },
+      {
+        "cube": "Cube07",
+        "colour": "orange",
+        "position_m": [
+          0.43562623858451843,
+          0.07406860589981079,
+          0.9669032692909241
+        ],
+        "local_xy_m": [
+          -0.004737645269405352,
+          0.005829354782734041
+        ],
+        "tilt_deg": 0.031019268975346754,
+        "inside_matching_bin": true
+      },
+      {
+        "cube": "Cube08",
+        "colour": "blue",
+        "position_m": [
+          0.4705057144165039,
+          0.03322123736143112,
+          0.9669029116630554
+        ],
+        "local_xy_m": [
+          -0.010661936620526792,
+          0.0035752055889215705
+        ],
+        "tilt_deg": 0.03959131595324048,
+        "inside_matching_bin": true
+      },
+      {
+        "cube": "Cube09",
+        "colour": "blue",
+        "position_m": [
+          0.4818139374256134,
+          0.023562688380479813,
+          0.9549005031585693
+        ],
+        "local_xy_m": [
+          0.004192142509621312,
+          0.004296183561183945
+        ],
+        "tilt_deg": 0.007720436646049742,
+        "inside_matching_bin": true
+      },
+      {
+        "cube": "Cube10",
+        "colour": "blue",
+        "position_m": [
+          0.4724375307559967,
+          0.03311866894364357,
+          0.954902172088623
+        ],
+        "local_xy_m": [
+          -0.009185234104964843,
+          0.004824919288291073
+        ],
+        "tilt_deg": 0.03750007837650184,
+        "inside_matching_bin": true
+      },
+      {
+        "cube": "Cube11",
+        "colour": "blue",
+        "position_m": [
+          0.48111364245414734,
+          0.02689444087445736,
+          0.9669016599655151
+        ],
+        "local_xy_m": [
+          0.001398188176871608,
+          0.006241641583012073
+        ],
+        "tilt_deg": 0.03730325743227056,
+        "inside_matching_bin": true
+      }
+    ],
+    "initial_truth_evaluator_only": {
+      "Cube00": {
+        "category": "cube",
+        "colour": "red",
+        "initial_xy_m": [
+          0.37277202728212483,
+          -0.21307330216534343
+        ],
+        "initial_yaw_deg": 8.388550139233047
+      },
+      "Cube01": {
+        "category": "cube",
+        "colour": "red",
+        "initial_xy_m": [
+          0.42796754375021423,
+          -0.24551208458653467
+        ],
+        "initial_yaw_deg": -24.382537660105786
+      },
+      "Cube02": {
+        "category": "cube",
+        "colour": "red",
+        "initial_xy_m": [
+          0.30213047116815006,
+          -0.20648171213939212
+        ],
+        "initial_yaw_deg": 18.91312706297343
+      },
+      "Cube03": {
+        "category": "cube",
+        "colour": "red",
+        "initial_xy_m": [
+          0.3578073199699291,
+          -0.3000191642981801
+        ],
+        "initial_yaw_deg": -8.974811062656542
+      },
+      "Cube04": {
+        "category": "cube",
+        "colour": "orange",
+        "initial_xy_m": [
+          0.4357609649037819,
+          -0.30163712359476813
+        ],
+        "initial_yaw_deg": -40.083906932428235
+      },
+      "Cube05": {
+        "category": "cube",
+        "colour": "orange",
+        "initial_xy_m": [
+          0.22890778524794575,
+          -0.2540735416074566
+        ],
+        "initial_yaw_deg": 8.7232477957498
+      },
+      "Cube06": {
+        "category": "cube",
+        "colour": "orange",
+        "initial_xy_m": [
+          0.23568713035772326,
+          -0.20428441227916747
+        ],
+        "initial_yaw_deg": 41.755387734896644
+      },
+      "Cube07": {
+        "category": "cube",
+        "colour": "orange",
+        "initial_xy_m": [
+          0.43157213137510103,
+          -0.21154299273809637
+        ],
+        "initial_yaw_deg": -37.071471557893936
+      },
+      "Cube08": {
+        "category": "cube",
+        "colour": "blue",
+        "initial_xy_m": [
+          0.304385391216911,
+          -0.2598302310490395
+        ],
+        "initial_yaw_deg": 28.558694148490062
+      },
+      "Cube09": {
+        "category": "cube",
+        "colour": "blue",
+        "initial_xy_m": [
+          0.23262040771610615,
+          -0.30146472243661937
+        ],
+        "initial_yaw_deg": -4.226584972345023
+      },
+      "Cube10": {
+        "category": "cube",
+        "colour": "blue",
+        "initial_xy_m": [
+          0.30290860569729966,
+          -0.30773404658159614
+        ],
+        "initial_yaw_deg": -7.954616473116289
+      },
+      "Cube11": {
+        "category": "cube",
+        "colour": "blue",
+        "initial_xy_m": [
+          0.36917019721646444,
+          -0.2550717187649776
+        ],
+        "initial_yaw_deg": -23.29871018564647
+      },
+      "Bin_red": {
+        "category": "bin",
+        "colour": "red",
+        "initial_xy_m": [
+          0.26039297600048583,
+          -0.1327857618168817
+        ],
+        "initial_yaw_deg": -24.938741554715737
+      },
+      "Bin_orange": {
+        "category": "bin",
+        "colour": "orange",
+        "initial_xy_m": [
+          0.4959282839670378,
+          -0.13108261160636062
+        ],
+        "initial_yaw_deg": 32.839066267657444
+      },
+      "Bin_blue": {
+        "category": "bin",
+        "colour": "blue",
+        "initial_xy_m": [
+          0.38556362756369406,
+          -0.13380748837668607
+        ],
+        "initial_yaw_deg": -25.446319297225283
+      }
+    }
+  },
+  "error": null,
+  "frozen_plan_sha256": "2eee3c7ee54d41250524ff9fbda291af272bcda944a76654fa653f7460ac6d9c",
+  "perception_latency_ms": 465.6388719995448,
+  "gripper_checks": [
+    {
+      "label": "red cube 1/4",
+      "kind": "cube_close",
+      "jaw_gap_mm": 7.82663387991488,
+      "empty_command_gap_mm": 7.009210604404182,
+      "attempt": 1
+    },
+    {
+      "label": "red cube 2/4",
+      "kind": "cube_close",
+      "jaw_gap_mm": 7.722009567543864,
+      "empty_command_gap_mm": 7.009210604404182,
+      "attempt": 1
+    },
+    {
+      "label": "red cube 3/4",
+      "kind": "cube_close",
+      "jaw_gap_mm": 7.864501455798745,
+      "empty_command_gap_mm": 7.009210604404182,
+      "attempt": 1
+    },
+    {
+      "label": "red cube 4/4",
+      "kind": "cube_close",
+      "jaw_gap_mm": 7.836453745141625,
+      "empty_command_gap_mm": 7.009210604404182,
+      "attempt": 1
+    },
+    {
+      "label": "orange cube 1/4",
+      "kind": "cube_close",
+      "jaw_gap_mm": 7.980738778598607,
+      "empty_command_gap_mm": 7.009210604404182,
+      "attempt": 1
+    },
+    {
+      "label": "orange cube 2/4",
+      "kind": "cube_close",
+      "jaw_gap_mm": 7.942458510398865,
+      "empty_command_gap_mm": 7.009210604404182,
+      "attempt": 1
+    },
+    {
+      "label": "orange cube 3/4",
+      "kind": "cube_close",
+      "jaw_gap_mm": 7.68202649243176,
+      "empty_command_gap_mm": 7.009210604404182,
+      "attempt": 1
+    },
+    {
+      "label": "orange cube 4/4",
+      "kind": "cube_close",
+      "jaw_gap_mm": 7.956690865568817,
+      "empty_command_gap_mm": 7.009210604404182,
+      "attempt": 1
+    },
+    {
+      "label": "blue cube 1/4",
+      "kind": "cube_close",
+      "jaw_gap_mm": 8.029180707409978,
+      "empty_command_gap_mm": 7.009210604404182,
+      "attempt": 1
+    },
+    {
+      "label": "blue cube 2/4",
+      "kind": "cube_close",
+      "jaw_gap_mm": 8.105591184459627,
+      "empty_command_gap_mm": 7.009210604404182,
+      "attempt": 1
+    },
+    {
+      "label": "blue cube 3/4",
+      "kind": "cube_close",
+      "jaw_gap_mm": 7.9266651421785355,
+      "empty_command_gap_mm": 7.009210604404182,
+      "attempt": 1
+    },
+    {
+      "label": "blue cube 4/4",
+      "kind": "cube_close",
+      "jaw_gap_mm": 7.79265434294939,
+      "empty_command_gap_mm": 7.009210604404182,
+      "attempt": 1
+    },
+    {
+      "label": "blue filled bin",
+      "kind": "bin_wall_close",
+      "jaw_gap_mm": 6.5635088661219925,
+      "accepted_contact_gap_mm": [
+        5.5,
+        10.0
+      ],
+      "attempt": 1
+    },
+    {
+      "label": "red filled bin",
+      "kind": "bin_wall_close",
+      "jaw_gap_mm": 6.701887626433745,
+      "accepted_contact_gap_mm": [
+        5.5,
+        10.0
+      ],
+      "attempt": 1
+    },
+    {
+      "label": "orange filled bin",
+      "kind": "bin_wall_close",
+      "jaw_gap_mm": 6.027339271269739,
+      "accepted_contact_gap_mm": [
+        5.5,
+        10.0
+      ],
+      "attempt": 1
+    }
+  ],
+  "camera_retries": [],
+  "recovery_detector_diagnostics": {
+    "rgb_policy": "locked_calibration__rgb_hue_nearest_r1.00_k21_model_fit_inventory",
+    "rgb_latency_ms": 293.9309969997339,
+    "primary_cube_count": 0,
+    "admitted_rgb_cube_count": 0
+  },
+  "residual_cube_recovery": [],
+  "midtask_replan_sha256": "115fab28761103e2887200def14d2f218cd4fb5234cccf0b44b7c7bc0d8d4e8b",
+  "midtask_replan": {
+    "scene_id": "physics_20261118_2_before_bin_transport",
+    "latency_ms": 102.19159600001149,
+    "updated": {
+      "bin_red": {
+        "category": "bin",
+        "colour": "red",
+        "xy": [
+          0.26274606585502625,
+          -0.12900806963443756
+        ],
+        "yaw_deg": -26.3282527923584,
+        "extents_m": [
+          0.05400193855166435,
+          0.05197644606232643
+        ],
+        "height_m": 0.045926451683044434,
+        "raw_extents_m": [
+          0.05404773727059364,
+          0.051999811083078384
+        ],
+        "raw_centre_xy": [
+          0.2628176510334015,
+          -0.12898647785186768
+        ],
+        "raw_yaw_deg": -26.153085708618164,
+        "confidence": 0.7190756538510322,
+        "source": "table_depth_geometry"
+      },
+      "bin_orange": {
+        "category": "bin",
+        "colour": "orange",
+        "xy": [
+          0.4928376376628876,
+          -0.1279512345790863
+        ],
+        "yaw_deg": 32.0931282043457,
+        "extents_m": [
+          0.05265405774116516,
+          0.05049297958612442
+        ],
+        "height_m": 0.049072086811065674,
+        "raw_extents_m": [
+          0.05314808338880539,
+          0.050758298486471176
+        ],
+        "raw_centre_xy": [
+          0.49266481399536133,
+          -0.12799936532974243
+        ],
+        "raw_yaw_deg": 32.36077117919922,
+        "confidence": 0.7000964804655976,
+        "source": "table_depth_geometry"
+      },
+      "bin_blue": {
+        "category": "bin",
+        "colour": "blue",
+        "xy": [
+          0.3878267705440521,
+          -0.12991882860660553
+        ],
+        "yaw_deg": -27.532068252563477,
+        "extents_m": [
+          0.05227910727262497,
+          0.052077747881412506
+        ],
+        "height_m": 0.047363221645355225,
+        "raw_extents_m": [
+          0.05297219008207321,
+          0.052511803805828094
+        ],
+        "raw_centre_xy": [
+          0.3882341682910919,
+          -0.13001114130020142
+        ],
+        "raw_yaw_deg": -27.16706085205078,
+        "confidence": 0.9847510069608688,
+        "source": "table_depth_geometry"
+      },
+      "truck": {
+        "category": "truck",
+        "colour": "truck",
+        "xy": [
+          0.43456253255257443,
+          0.0663358313649034
+        ],
+        "yaw_deg": -43.240943908691406,
+        "extents_m": [
+          0.18085018,
+          0.04709631
+        ],
+        "height_m": 0.035341620445251465,
+        "raw_extents_m": [
+          0.3016611337661743,
+          0.07040047645568848
+        ],
+        "raw_centre_xy": [
+          0.46936142444610596,
+          0.018697619438171387
+        ],
+        "raw_yaw_deg": -43.178436279296875,
+        "confidence": 0.7829687858333334,
+        "source": "table_depth_geometry",
+        "deck_centre_xy": [
+          0.43456253255257443,
+          0.0663358313649034
+        ],
+        "deck_yaw_deg": -43.240943908691406,
+        "deck_extents_m": [
+          0.18085018,
+          0.04709631
+        ],
+        "truck_candidate_score": 0.5177777979239538
+      }
+    },
+    "fallbacks": [],
+    "gates": {
+      "bin_red": {
+        "accepted": true,
+        "shift_mm": 4.618353714502598,
+        "yaw_delta_deg": 1.3387928009033203
+      },
+      "bin_orange": {
+        "accepted": true,
+        "shift_mm": 4.568297402567257,
+        "yaw_delta_deg": 0.8428306579589844
+      },
+      "bin_blue": {
+        "accepted": true,
+        "shift_mm": 4.622720834492625,
+        "yaw_delta_deg": 2.5037841796875
+      },
+      "truck": {
+        "accepted": true,
+        "shift_mm": 0.2993663872093293,
+        "yaw_delta_deg": 0.047809600830078125
+      }
+    },
+    "zones": {
+      "red": [
+        0.39303921474082804,
+        0.10538469918337803
+      ],
+      "orange": [
+        0.43456253255257443,
+        0.0663358313649034
+      ],
+      "blue": [
+        0.47608585036432083,
+        0.027286963546428768
+      ]
+    }
+  },
+  "loaded_bin_grip_checks": [
+    {
+      "label": "blue filled bin",
+      "attempt": 1,
+      "phase": "close",
+      "jaw_gap_mm": 6.5635088661219925,
+      "accepted_contact_gap_mm": [
+        5.5,
+        10.0
+      ],
+      "insertion_mm": 20.0
+    },
+    {
+      "label": "blue filled bin",
+      "attempt": 1,
+      "phase": "proof_hold",
+      "jaw_gap_mm": 6.504260714165866,
+      "accepted": true,
+      "proof_lift_mm": 10.0
+    },
+    {
+      "label": "blue filled bin",
+      "phase": "staged_hold",
+      "jaw_gap_mm": 6.470377889228985,
+      "accepted": true
+    },
+    {
+      "label": "blue filled bin",
+      "phase": "raised_hold",
+      "jaw_gap_mm": 6.412981614004821,
+      "accepted": true
+    },
+    {
+      "label": "red filled bin",
+      "attempt": 1,
+      "phase": "close",
+      "jaw_gap_mm": 6.701887626433745,
+      "accepted_contact_gap_mm": [
+        5.5,
+        10.0
+      ],
+      "insertion_mm": 20.0
+    },
+    {
+      "label": "red filled bin",
+      "attempt": 1,
+      "phase": "proof_hold",
+      "jaw_gap_mm": 6.623469188809395,
+      "accepted": true,
+      "proof_lift_mm": 10.0
+    },
+    {
+      "label": "red filled bin",
+      "phase": "staged_hold",
+      "jaw_gap_mm": 6.5413072855444625,
+      "accepted": true
+    },
+    {
+      "label": "red filled bin",
+      "phase": "raised_hold",
+      "jaw_gap_mm": 6.454846892040223,
+      "accepted": true
+    },
+    {
+      "label": "orange filled bin",
+      "attempt": 1,
+      "phase": "close",
+      "jaw_gap_mm": 6.027339271269739,
+      "accepted_contact_gap_mm": [
+        5.5,
+        10.0
+      ],
+      "insertion_mm": 20.0
+    },
+    {
+      "label": "orange filled bin",
+      "attempt": 1,
+      "phase": "proof_hold",
+      "jaw_gap_mm": 5.962994252797216,
+      "accepted": true,
+      "proof_lift_mm": 10.0
+    },
+    {
+      "label": "orange filled bin",
+      "phase": "staged_hold",
+      "jaw_gap_mm": 5.951273325365037,
+      "accepted": true
+    },
+    {
+      "label": "orange filled bin",
+      "phase": "raised_hold",
+      "jaw_gap_mm": 5.94515942549333,
+      "accepted": true
+    }
+  ],
+  "final_camera_diagnostics": {
+    "scene_id": "physics_20261118_3_after_bin_transport",
+    "policies": {
+      "locked_calibration__depth_table_h6mm_s1_rawcube": {
+        "latency_ms": 77.46790399960446,
+        "detections": [
+          {
+            "category": "truck",
+            "colour": "truck",
+            "xy": [
+              0.519234190067091,
+              -0.014252369636837119
+            ],
+            "yaw_deg": -43.53087615966797,
+            "extents_m": [
+              0.18085018,
+              0.04709631
+            ],
+            "height_m": 0.07727855443954468,
+            "raw_extents_m": [
+              0.31938880681991577,
+              0.07031720876693726
+            ],
+            "raw_centre_xy": [
+              0.46350762248039246,
+              0.025717899203300476
+            ],
+            "raw_yaw_deg": -43.73326873779297,
+            "confidence": 0.7829687858333334,
+            "source": "table_depth_geometry",
+            "deck_centre_xy": [
+              0.519234190067091,
+              -0.014252369636837119
+            ],
+            "deck_yaw_deg": -43.53087615966797,
+            "deck_extents_m": [
+              0.18085018,
+              0.04709631
+            ],
+            "truck_candidate_score": 0.4888810942947133
+          }
+        ]
+      },
+      "locked_calibration__rgb_hue_nearest_r1.00_k21_model_fit_inventory": {
+        "latency_ms": 509.0432460001466,
+        "detections": [
+          {
+            "category": "bin",
+            "colour": "orange",
+            "xy": [
+              0.4160639629364013,
+              0.07363890063762665
+            ],
+            "yaw_deg": 41.993553161621094,
+            "extents_m": [
+              0.0748622864484787,
+              0.06547732651233673
+            ],
+            "confidence": 0.8286032903909112,
+            "source": "rgb_bin_model_fit",
+            "fit_iou": 0.8613908872901679
+          },
+          {
+            "category": "bin",
+            "colour": "blue",
+            "xy": [
+              0.4622123589515686,
+              0.025640710532665253
+            ],
+            "yaw_deg": 42.6494026184082,
+            "extents_m": [
+              0.08124805241823196,
+              0.06549794971942902
+            ],
+            "confidence": 0.8168071712901529,
+            "source": "rgb_bin_model_fit",
+            "fit_iou": 0.8586577181208054
+          },
+          {
+            "category": "bin",
+            "colour": "red",
+            "xy": [
+              0.36957980227470394,
+              0.11258059692382813
+            ],
+            "yaw_deg": -39.9106330871582,
+            "extents_m": [
+              0.06934987753629684,
+              0.06252492219209671
+            ],
+            "confidence": 0.754005047107221,
+            "source": "rgb_bin_model_fit",
+            "fit_iou": 0.7522715583747642
+          }
+        ]
+      },
+      "locked_calibration__hybrid_depth_anchor_hue_model_table_inventory_truckachromatic": {
+        "latency_ms": 591.8517159998373,
+        "detections": [
+          {
+            "category": "bin",
+            "colour": "red",
+            "xy": [
+              0.36957980227470394,
+              0.11258059692382813
+            ],
+            "yaw_deg": -39.9106330871582,
+            "extents_m": [
+              0.06934987753629684,
+              0.06252492219209671
+            ],
+            "confidence": 0.754005047107221,
+            "source": "rgb_bin_model_fit",
+            "fit_iou": 0.7522715583747642
+          },
+          {
+            "category": "bin",
+            "colour": "orange",
+            "xy": [
+              0.4160639629364013,
+              0.07363890063762665
+            ],
+            "yaw_deg": 41.993553161621094,
+            "extents_m": [
+              0.0748622864484787,
+              0.06547732651233673
+            ],
+            "confidence": 0.8286032903909112,
+            "source": "rgb_bin_model_fit",
+            "fit_iou": 0.8613908872901679
+          },
+          {
+            "category": "bin",
+            "colour": "blue",
+            "xy": [
+              0.4622123589515686,
+              0.025640710532665253
+            ],
+            "yaw_deg": 42.6494026184082,
+            "extents_m": [
+              0.08124805241823196,
+              0.06549794971942902
+            ],
+            "confidence": 0.8168071712901529,
+            "source": "rgb_bin_model_fit",
+            "fit_iou": 0.8586577181208054
+          },
+          {
+            "category": "truck",
+            "colour": "truck",
+            "xy": [
+              0.4361436339760075,
+              0.06575129775130481
+            ],
+            "yaw_deg": -43.40198516845703,
+            "extents_m": [
+              0.18085018,
+              0.04709631
+            ],
+            "height_m": 0.07727855443954468,
+            "raw_extents_m": [
+              0.29815590381622314,
+              0.055257756263017654
+            ],
+            "raw_centre_xy": [
+              0.4757833480834961,
+              0.02324579656124115
+            ],
+            "raw_yaw_deg": -43.36134719848633,
+            "confidence": 0.7829687858333334,
+            "source": "table_depth_geometry",
+            "deck_centre_xy": [
+              0.4361436339760075,
+              0.06575129775130481
+            ],
+            "deck_yaw_deg": -43.40198516845703,
+            "deck_extents_m": [
+              0.18085018,
+              0.04709631
+            ],
+            "truck_candidate_score": 0.7004974446110684
+          }
+        ]
+      }
+    }
+  },
+  "final_observed_spill_recovery": [],
+  "action_count": 162,
+  "tcp_path_length_m": 11.842069912245444,
+  "motion_wall_time_s": 26.38904837700011,
+  "frames": 0
+}

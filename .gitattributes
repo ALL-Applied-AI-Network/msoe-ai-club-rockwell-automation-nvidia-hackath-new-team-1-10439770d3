@@ -1,0 +1,19 @@
+* text=auto whitespace=trailing-space,space-before-tab,-blank-at-eof
+
+# Two trailing spaces are intentional Markdown hard breaks.
+*.md text whitespace=-trailing-space,-blank-at-eof
+
+# CAD exchange files commonly contain generator-owned trailing spaces.
+*.step text whitespace=-trailing-space,-blank-at-eof
+*.stp text whitespace=-trailing-space,-blank-at-eof
+
+# Preserve binary design, media, and evidence artifacts exactly.
+*.3mf binary
+*.stl binary
+*.obj binary
+*.ply binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.mp4 binary
+*.pdf binary

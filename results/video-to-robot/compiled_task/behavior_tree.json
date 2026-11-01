@@ -1,0 +1,75 @@
+{
+  "type": "Sequence",
+  "name": "FillGreenBin",
+  "children": [
+    {
+      "type": "SafetyGate",
+      "checks": [
+        "calibration_valid",
+        "workspace_clear",
+        "gripper_model_loaded"
+      ]
+    },
+    {
+      "type": "Perceive",
+      "outputs": [
+        "cube_instances",
+        "bin_pose",
+        "obstacle_voxels"
+      ]
+    },
+    {
+      "type": "RepeatUntil",
+      "condition": "inside_bin_count == 4",
+      "max_iterations": 8,
+      "child": {
+        "type": "Sequence",
+        "children": [
+          {
+            "type": "Select",
+            "query": "nearest_verified_unplaced_cube"
+          },
+          {
+            "type": "Approach",
+            "mode": "top_down_collision_checked"
+          },
+          {
+            "type": "Grasp",
+            "mode": "debounced_parallel_jaw"
+          },
+          {
+            "type": "ProofLift",
+            "on_fail": "redetect_and_retry_once"
+          },
+          {
+            "type": "Transfer",
+            "mode": "monotonic_safe_height"
+          },
+          {
+            "type": "RePerceive",
+            "target": "bin"
+          },
+          {
+            "type": "GuardedInsert",
+            "on_fail": "vertical_retract"
+          },
+          {
+            "type": "Release",
+            "mode": "open_once_hold"
+          },
+          {
+            "type": "VerticalRetract"
+          },
+          {
+            "type": "Verify",
+            "condition": "inside_bin_count_incremented"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Verify",
+      "condition": "all_four_unique_cubes_contained"
+    }
+  ]
+}

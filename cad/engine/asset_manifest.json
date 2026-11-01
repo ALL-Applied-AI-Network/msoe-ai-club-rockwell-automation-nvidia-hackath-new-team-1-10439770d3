@@ -1,0 +1,691 @@
+{
+  "schema": "ateam.inline_four_engine_assets.v1",
+  "units": "millimetres",
+  "coordinate_frame": "shared final assembly frame from supplied OpenSCAD model",
+  "source_directory": "cad/engine",
+  "assembled_reference_file": "assembled.3mf",
+  "assembled_reference_sha256": "ce2ccb223531887b416ff900ae94a01e2f47f7f6375fe3c675a526b186283c07",
+  "assembled_reference_bounds_mm": [
+    [
+      -66.449996,
+      -29.0,
+      0.0
+    ],
+    [
+      65.93,
+      29.0,
+      76.99
+    ]
+  ],
+  "assembled_reference_extents_mm": [
+    132.379996,
+    58.0,
+    76.99
+  ],
+  "assembly_order": [
+    "block",
+    "crankshaft",
+    "rod_1",
+    "rod_2",
+    "rod_3",
+    "rod_4",
+    "cover",
+    "head",
+    "piston_1",
+    "piston_2",
+    "piston_3",
+    "piston_4"
+  ],
+  "cylinder_x_mm": [
+    25.15,
+    1.15,
+    -22.85,
+    -46.85
+  ],
+  "groups": {
+    "block": {
+      "source_file": "block.3mf",
+      "source_sha256": "0216747e7790d9376a6dbbb21ab88d667d76abe33e8a9f2ff2a82977e664f663",
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "native_material_name": "SteelBlue",
+      "native_display_colour": "#4682B4",
+      "raw_connected_components": 1,
+      "discarded_sliver_components": 0,
+      "discarded_sliver_triangles": 0,
+      "substantive_components": 1
+    },
+    "crankshaft": {
+      "source_file": "crankshaft.3mf",
+      "source_sha256": "a5c097e23db98e38c79e89ad013fd446f96b84f10054049aea9749790c177469",
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -30.0
+      ],
+      "native_material_name": "Silver",
+      "native_display_colour": "#C0C0C0",
+      "raw_connected_components": 1,
+      "discarded_sliver_components": 0,
+      "discarded_sliver_triangles": 0,
+      "substantive_components": 1
+    },
+    "cover": {
+      "source_file": "droponcover.3mf",
+      "source_sha256": "2fce801b6658669911a167a7e7e72b140ed8f91140fe9475afd81b6d837da97e",
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -60.0
+      ],
+      "native_material_name": "DimGray",
+      "native_display_colour": "#696969",
+      "raw_connected_components": 5,
+      "discarded_sliver_components": 4,
+      "discarded_sliver_triangles": 8,
+      "substantive_components": 1
+    },
+    "head": {
+      "source_file": "cylinderhead.3mf",
+      "source_sha256": "34ca54cee0555392b844f23df88abaf680f7a5ee3219dfc886f20f050e57423e",
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -90.0
+      ],
+      "native_material_name": "Firebrick",
+      "native_display_colour": "#B22222",
+      "raw_connected_components": 1,
+      "discarded_sliver_components": 0,
+      "discarded_sliver_triangles": 0,
+      "substantive_components": 1
+    },
+    "rod": {
+      "source_file": "rodsx4.3mf",
+      "source_sha256": "ba2b2ac37daf62be5335d786b9acd0ad7366565d16b09107833aeac688a015d6",
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -145.3
+      ],
+      "native_material_name": "DarkOrange",
+      "native_display_colour": "#FF8C00",
+      "raw_connected_components": 4,
+      "discarded_sliver_components": 0,
+      "discarded_sliver_triangles": 0,
+      "substantive_components": 4
+    },
+    "piston": {
+      "source_file": "pistonsx4.3mf",
+      "source_sha256": "ff0dfe45f31e9b9aed67a45ad1585e7b3855df5cea51ee4ac7da0de16bd55188",
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -205.3
+      ],
+      "native_material_name": "Gainsboro",
+      "native_display_colour": "#DCDCDC",
+      "raw_connected_components": 4,
+      "discarded_sliver_components": 0,
+      "discarded_sliver_triangles": 0,
+      "substantive_components": 4
+    }
+  },
+  "parts": {
+    "block": {
+      "asset_file": "block.stl",
+      "asset_sha256": "7fda8f12f911eb43f70a446eff000243a27cff46070e169abd75a80716392ec2",
+      "source_group": "block",
+      "source_file": "block.3mf",
+      "cylinder": null,
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "native_material_name": "SteelBlue",
+      "native_display_colour": "#4682B4",
+      "vertices": 5006,
+      "triangles": 10048,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -64.65,
+          -29.0,
+          0.0
+        ],
+        [
+          42.95,
+          29.0,
+          42.74
+        ]
+      ],
+      "extents_mm": [
+        107.6,
+        58.0,
+        42.74
+      ],
+      "centroid_mm": [
+        -10.759837,
+        -0.080171,
+        12.599622
+      ],
+      "volume_mm3": 84132.779007,
+      "assembled_reference_crosscheck": {
+        "vertices_within_0_05_mm_fraction": 0.999400719,
+        "median_nearest_reference_error_mm": 0.0,
+        "maximum_nearest_reference_error_mm": 2.421012
+      }
+    },
+    "crankshaft": {
+      "asset_file": "crankshaft.stl",
+      "asset_sha256": "354d83954868d3a40356d35e3a562e5d59711b7a4fc738d44c4b5dc0b65a10b6",
+      "source_group": "crankshaft",
+      "source_file": "crankshaft.3mf",
+      "cylinder": null,
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -30.0
+      ],
+      "native_material_name": "Silver",
+      "native_display_colour": "#C0C0C0",
+      "vertices": 2971,
+      "triangles": 5938,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -66.449996,
+          -7.0,
+          6.5
+        ],
+        [
+          65.93,
+          7.0,
+          33.5
+        ]
+      ],
+      "extents_mm": [
+        132.379996,
+        14.0,
+        27.0
+      ],
+      "centroid_mm": [
+        -0.591584,
+        -0.0,
+        18.919926
+      ],
+      "volume_mm3": 14682.030726,
+      "assembled_reference_crosscheck": {
+        "vertices_within_0_05_mm_fraction": 1.0,
+        "median_nearest_reference_error_mm": 2e-06,
+        "maximum_nearest_reference_error_mm": 4e-06
+      }
+    },
+    "cover": {
+      "asset_file": "cover.stl",
+      "asset_sha256": "6c50ca91b115dee0fcd73cb2d7a210d1b8dcecbcbc776f795ee19ca3226aba84",
+      "source_group": "cover",
+      "source_file": "droponcover.3mf",
+      "cylinder": null,
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -60.0
+      ],
+      "native_material_name": "DimGray",
+      "native_display_colour": "#696969",
+      "vertices": 1698,
+      "triangles": 3424,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -62.65,
+          -27.0,
+          21.3
+        ],
+        [
+          40.95,
+          27.0,
+          36.0
+        ]
+      ],
+      "extents_mm": [
+        103.6,
+        54.0,
+        14.7
+      ],
+      "centroid_mm": [
+        -10.85,
+        -0.0,
+        31.649759
+      ],
+      "volume_mm3": 14995.755058,
+      "assembled_reference_crosscheck": {
+        "vertices_within_0_05_mm_fraction": 1.0,
+        "median_nearest_reference_error_mm": 0.0,
+        "maximum_nearest_reference_error_mm": 6e-06
+      }
+    },
+    "head": {
+      "asset_file": "head.stl",
+      "asset_sha256": "1f3bde6608b415dface6911887da239bf4818301ec6de2255cf6de97157349d3",
+      "source_group": "head",
+      "source_file": "cylinderhead.3mf",
+      "cylinder": null,
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -90.0
+      ],
+      "native_material_name": "Firebrick",
+      "native_display_colour": "#B22222",
+      "vertices": 2840,
+      "triangles": 5692,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -62.65,
+          -27.0,
+          36.0
+        ],
+        [
+          40.95,
+          27.0,
+          51.0
+        ]
+      ],
+      "extents_mm": [
+        103.6,
+        54.0,
+        15.0
+      ],
+      "centroid_mm": [
+        -10.821858,
+        -0.052402,
+        43.305152
+      ],
+      "volume_mm3": 67483.391002,
+      "assembled_reference_crosscheck": {
+        "vertices_within_0_05_mm_fraction": 1.0,
+        "median_nearest_reference_error_mm": 0.0,
+        "maximum_nearest_reference_error_mm": 0.01529
+      }
+    },
+    "rod_1": {
+      "asset_file": "rod_1.stl",
+      "asset_sha256": "48f764db5bf18c4bd09f5f09c619cacc40f294c4a686228f9be54d298f846e0d",
+      "source_group": "rod",
+      "source_file": "rodsx4.3mf",
+      "cylinder": 1,
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -145.3
+      ],
+      "native_material_name": "DarkOrange",
+      "native_display_colour": "#FF8C00",
+      "vertices": 837,
+      "triangles": 1670,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          18.45,
+          -8.0,
+          20.5
+        ],
+        [
+          31.85,
+          8.0,
+          58.8
+        ]
+      ],
+      "extents_mm": [
+        13.4,
+        16.0,
+        38.3
+      ],
+      "centroid_mm": [
+        25.149858,
+        -0.030815,
+        37.686767
+      ],
+      "volume_mm3": 2088.756377,
+      "assembled_reference_crosscheck": {
+        "vertices_within_0_05_mm_fraction": 1.0,
+        "median_nearest_reference_error_mm": 0.0,
+        "maximum_nearest_reference_error_mm": 1.6e-05
+      }
+    },
+    "rod_2": {
+      "asset_file": "rod_2.stl",
+      "asset_sha256": "a822d2ae7a9d55becd3024a72784a52aa80ce44c00dd0f2ee53badc9f1b1fd8f",
+      "source_group": "rod",
+      "source_file": "rodsx4.3mf",
+      "cylinder": 2,
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -145.3
+      ],
+      "native_material_name": "DarkOrange",
+      "native_display_colour": "#FF8C00",
+      "vertices": 1117,
+      "triangles": 2230,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -5.55,
+          -8.0,
+          8.5
+        ],
+        [
+          7.85,
+          8.0,
+          46.8
+        ]
+      ],
+      "extents_mm": [
+        13.4,
+        16.0,
+        38.3
+      ],
+      "centroid_mm": [
+        1.150095,
+        -0.035355,
+        25.683295
+      ],
+      "volume_mm3": 2088.351106,
+      "assembled_reference_crosscheck": {
+        "vertices_within_0_05_mm_fraction": 1.0,
+        "median_nearest_reference_error_mm": 0.0,
+        "maximum_nearest_reference_error_mm": 1.6e-05
+      }
+    },
+    "rod_3": {
+      "asset_file": "rod_3.stl",
+      "asset_sha256": "1b200c942c40f5c3218787eddfbdd0c122fac1f26178351ecf3ec332cfd0b609",
+      "source_group": "rod",
+      "source_file": "rodsx4.3mf",
+      "cylinder": 3,
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -145.3
+      ],
+      "native_material_name": "DarkOrange",
+      "native_display_colour": "#FF8C00",
+      "vertices": 1223,
+      "triangles": 2442,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -29.55,
+          -8.0,
+          8.5
+        ],
+        [
+          -16.15,
+          8.0,
+          46.8
+        ]
+      ],
+      "extents_mm": [
+        13.4,
+        16.0,
+        38.3
+      ],
+      "centroid_mm": [
+        -22.849677,
+        -0.037386,
+        25.68251
+      ],
+      "volume_mm3": 2088.348573,
+      "assembled_reference_crosscheck": {
+        "vertices_within_0_05_mm_fraction": 1.0,
+        "median_nearest_reference_error_mm": 2e-06,
+        "maximum_nearest_reference_error_mm": 1.6e-05
+      }
+    },
+    "rod_4": {
+      "asset_file": "rod_4.stl",
+      "asset_sha256": "573ed26ec8d3c5f9159dedfefa8f11a7d4b6dabba99919bf395fae5cd86356da",
+      "source_group": "rod",
+      "source_file": "rodsx4.3mf",
+      "cylinder": 4,
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -145.3
+      ],
+      "native_material_name": "DarkOrange",
+      "native_display_colour": "#FF8C00",
+      "vertices": 897,
+      "triangles": 1790,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -53.55,
+          -8.0,
+          20.5
+        ],
+        [
+          -40.15,
+          8.0,
+          58.8
+        ]
+      ],
+      "extents_mm": [
+        13.4,
+        16.0,
+        38.3
+      ],
+      "centroid_mm": [
+        -46.849543,
+        -0.037371,
+        37.682696
+      ],
+      "volume_mm3": 2088.289696,
+      "assembled_reference_crosscheck": {
+        "vertices_within_0_05_mm_fraction": 1.0,
+        "median_nearest_reference_error_mm": 0.0,
+        "maximum_nearest_reference_error_mm": 1.6e-05
+      }
+    },
+    "piston_1": {
+      "asset_file": "piston_1.stl",
+      "asset_sha256": "a1047cd027878c60fa95f78a1518983efe4258cc54913c0f4d986788408766a9",
+      "source_group": "piston",
+      "source_file": "pistonsx4.3mf",
+      "cylinder": 1,
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -205.3
+      ],
+      "native_material_name": "Gainsboro",
+      "native_display_colour": "#DCDCDC",
+      "vertices": 5887,
+      "triangles": 11770,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          17.95,
+          -8.5,
+          40.0
+        ],
+        [
+          32.349998,
+          8.5,
+          76.990016
+        ]
+      ],
+      "extents_mm": [
+        14.399998,
+        17.0,
+        36.990016
+      ],
+      "centroid_mm": [
+        25.149811,
+        -0.027978,
+        58.670673
+      ],
+      "volume_mm3": 3088.715673,
+      "assembled_reference_crosscheck": {
+        "vertices_within_0_05_mm_fraction": 1.0,
+        "median_nearest_reference_error_mm": 8e-06,
+        "maximum_nearest_reference_error_mm": 2.8e-05
+      }
+    },
+    "piston_2": {
+      "asset_file": "piston_2.stl",
+      "asset_sha256": "358195d92e8a046c5a65545295af2e78b4a86911d37200f8681eac29f7b2c6c2",
+      "source_group": "piston",
+      "source_file": "pistonsx4.3mf",
+      "cylinder": 2,
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -205.3
+      ],
+      "native_material_name": "Gainsboro",
+      "native_display_colour": "#DCDCDC",
+      "vertices": 6181,
+      "triangles": 12358,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -6.05,
+          -8.5,
+          28.0
+        ],
+        [
+          8.35,
+          8.5,
+          64.990016
+        ]
+      ],
+      "extents_mm": [
+        14.4,
+        17.0,
+        36.990016
+      ],
+      "centroid_mm": [
+        1.150092,
+        -0.032907,
+        46.678704
+      ],
+      "volume_mm3": 3087.901815,
+      "assembled_reference_crosscheck": {
+        "vertices_within_0_05_mm_fraction": 1.0,
+        "median_nearest_reference_error_mm": 8e-06,
+        "maximum_nearest_reference_error_mm": 0.017682
+      }
+    },
+    "piston_3": {
+      "asset_file": "piston_3.stl",
+      "asset_sha256": "0610fb9e9ec3bc151874366dd7f2a329105440c0ae54fdf75992c9a7a2000cba",
+      "source_group": "piston",
+      "source_file": "pistonsx4.3mf",
+      "cylinder": 3,
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -205.3
+      ],
+      "native_material_name": "Gainsboro",
+      "native_display_colour": "#DCDCDC",
+      "vertices": 6291,
+      "triangles": 12578,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -30.05,
+          -8.5,
+          28.0
+        ],
+        [
+          -15.65,
+          8.5,
+          64.990016
+        ]
+      ],
+      "extents_mm": [
+        14.4,
+        17.0,
+        36.990016
+      ],
+      "centroid_mm": [
+        -22.849703,
+        -0.034791,
+        46.682221
+      ],
+      "volume_mm3": 3087.846745,
+      "assembled_reference_crosscheck": {
+        "vertices_within_0_05_mm_fraction": 1.0,
+        "median_nearest_reference_error_mm": 8e-06,
+        "maximum_nearest_reference_error_mm": 0.017682
+      }
+    },
+    "piston_4": {
+      "asset_file": "piston_4.stl",
+      "asset_sha256": "bb9944e55c8454895a91b5e1c11ce9e5821856c8795f584247fe32b8cde3f9e3",
+      "source_group": "piston",
+      "source_file": "pistonsx4.3mf",
+      "cylinder": 4,
+      "exploded_to_assembly_translation_mm": [
+        0.0,
+        0.0,
+        -205.3
+      ],
+      "native_material_name": "Gainsboro",
+      "native_display_colour": "#DCDCDC",
+      "vertices": 5947,
+      "triangles": 11890,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -54.05,
+          -8.5,
+          40.0
+        ],
+        [
+          -39.65,
+          8.5,
+          76.990016
+        ]
+      ],
+      "extents_mm": [
+        14.4,
+        17.0,
+        36.990016
+      ],
+      "centroid_mm": [
+        -46.849228,
+        -0.032674,
+        58.678595
+      ],
+      "volume_mm3": 3088.010069,
+      "assembled_reference_crosscheck": {
+        "vertices_within_0_05_mm_fraction": 1.0,
+        "median_nearest_reference_error_mm": 8e-06,
+        "maximum_nearest_reference_error_mm": 2.8e-05
+      }
+    }
+  }
+}

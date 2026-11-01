@@ -1,0 +1,105 @@
+{
+  "PXL_20261031_165150721": {
+    "title": "TWO-GEAR DRIVE / REVIEWED ASSEMBLY TRACE",
+    "view": "overhead / recorded demonstration",
+    "kind": "gearbox",
+    "palette": "mint_yellow",
+    "compact_hud": true,
+    "source_sort": "x",
+    "v26_reviewed_seat_tracking": true,
+    "sequence_labels": ["GEAR 1", "GEAR 2", "COVER", "VERIFY"],
+    "parts": [
+      {
+        "id": "B0",
+        "name": "BASE",
+        "role": "fixed base",
+        "source_xy": [884, 706]
+      },
+      {
+        "id": "G1",
+        "name": "RIGHT GEAR",
+        "role": "right shaft",
+        "source_xy": [1368, 703],
+        "target_xy": [991, 679],
+        "verify_target_xy": [993, 623],
+        "pinch_offset_xy": [0, 34],
+        "source_radius": 116,
+        "move_radius": 120,
+        "target_radius": 120,
+        "seat_track_xy": [
+          {"time": 6.85, "xy": [994, 682]},
+          {"time": 7.25, "xy": [990, 693]},
+          {"time": 7.50, "xy": [990, 680]},
+          {"time": 8.00, "xy": [992, 663]},
+          {"time": 8.25, "xy": [992, 652]},
+          {"time": 8.75, "xy": [999, 657]},
+          {"time": 9.50, "xy": [997, 658]},
+          {"time": 14.95, "xy": [1002, 657]},
+          {"time": 17.25, "xy": [998, 657]},
+          {"time": 20.10, "xy": [998, 657]},
+          {"time": 20.80, "xy": [1040, 565]},
+          {"time": 21.20, "xy": [1007, 625]},
+          {"time": 22.00, "xy": [999, 616]},
+          {"time": 23.40, "xy": [993, 621]},
+          {"time": 23.70, "xy": [993, 625]},
+          {"time": 24.00, "xy": [993, 625]},
+          {"time": 29.71, "xy": [993, 625]}
+        ],
+        "seat_hidden_ranges": [[20.35, 20.72]],
+        "seat_radius_track": [
+          {"time": 6.85, "value": 120},
+          {"time": 20.35, "value": 120},
+          {"time": 20.72, "value": 62},
+          {"time": 29.71, "value": 62}
+        ]
+      },
+      {
+        "id": "G2",
+        "name": "LEFT GEAR",
+        "role": "left shaft",
+        "source_xy": [366, 752],
+        "target_xy": [765, 688],
+        "verify_target_xy": [755, 633],
+        "pinch_offset_xy": [0, 58],
+        "source_radius": 132,
+        "move_radius": 120,
+        "target_radius": 120,
+        "seat_track_xy": [
+          {"time": 14.95, "xy": [769, 660]},
+          {"time": 15.50, "xy": [773, 659]},
+          {"time": 16.50, "xy": [758, 659]},
+          {"time": 17.25, "xy": [754, 659]},
+          {"time": 20.10, "xy": [752, 660]},
+          {"time": 20.80, "xy": [789, 568]},
+          {"time": 21.20, "xy": [761, 617]},
+          {"time": 22.00, "xy": [755, 600]},
+          {"time": 23.40, "xy": [755, 631]},
+          {"time": 23.70, "xy": [756, 634]},
+          {"time": 24.00, "xy": [755, 631]},
+          {"time": 29.71, "xy": [755, 633]}
+        ],
+        "seat_hidden_ranges": [[20.35, 20.72]],
+        "seat_radius_track": [
+          {"time": 14.95, "value": 120},
+          {"time": 20.35, "value": 120},
+          {"time": 20.72, "value": 62},
+          {"time": 29.71, "value": 62}
+        ]
+      },
+      {
+        "id": "C1",
+        "name": "COVER",
+        "role": "locating posts",
+        "source_xy": [840, 336],
+        "target_xy": [875, 628],
+        "radius": 118
+      }
+    ],
+    "steps": [
+      {"part": "G1", "start": 0.75, "pick": 2.10, "place": 6.85, "end": 9.55, "hand_label": "right"},
+      {"part": "G2", "start": 9.55, "pick": 10.60, "place": 14.95, "end": 16.25, "hand_label": "left"},
+      {"part": "C1", "start": 16.25, "pick": 17.25, "place": 21.05, "end": 23.55, "hand_label": "left"}
+    ],
+    "verify_start": 23.55
+  }
+}

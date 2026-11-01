@@ -1,0 +1,93 @@
+{
+  "method": "mapanything_offline18_conf25_pointcloud",
+  "candidate": "private-workspace/mapanything_object.ply",
+  "reference": "evaluator-only/cad_nominal_base_plus_one_gear.ply",
+  "aligned_output": "results/reverse-engineering/mapanything_offline18_aligned.ply",
+  "runtime_s": 38.0,
+  "sample_count_each": 50000,
+  "similarity_alignment": {
+    "initial_scale": 189.1410027518877,
+    "pca_signs": [
+      1.0,
+      -1.0,
+      -1.0
+    ],
+    "icp_chamfer_mm": 2.8515088959155896,
+    "scale_to_reference_mm": 194.64481142441946,
+    "matrix": [
+      [
+        193.99928009473066,
+        6.180969504667957,
+        -14.58346848854949,
+        -23.525208692367865
+      ],
+      [
+        -3.219914434114814,
+        190.86041934096355,
+        38.05962551676445,
+        82.47029056852797
+      ],
+      [
+        15.508516634776214,
+        -37.69215514429684,
+        190.32968756033554,
+        249.782155486739
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "warning": "Post-hoc evaluation transform; scale/pose were not supplied to reconstruction."
+  },
+  "geometry_mm": {
+    "accuracy_mean": 2.7156437730354943,
+    "accuracy_median": 1.783072172086142,
+    "accuracy_p95": 9.594562849522497,
+    "completeness_mean": 2.9873740187956845,
+    "completeness_median": 1.2386284273788024,
+    "completeness_p95": 11.639368174096726,
+    "symmetric_chamfer_mean": 2.8515088959155896,
+    "fscore": {
+      "1.0": {
+        "precision": 0.2713,
+        "recall": 0.4019,
+        "fscore": 0.32393187759952463
+      },
+      "2.0": {
+        "precision": 0.5491,
+        "recall": 0.63018,
+        "fscore": 0.5868527203039143
+      },
+      "5.0": {
+        "precision": 0.89548,
+        "recall": 0.82248,
+        "fscore": 0.8574290325735173
+      }
+    },
+    "candidate_robust_extents": [
+      151.32957042794735,
+      62.382266082092116,
+      17.600249166491857
+    ],
+    "reference_robust_extents": [
+      132.77219646551117,
+      84.994972151748,
+      27.105439625997185
+    ],
+    "extent_absolute_error": [
+      18.557373962436174,
+      22.612706069655886,
+      9.505190459505329
+    ]
+  },
+  "topology": {
+    "kind": "PointCloud",
+    "vertices": 314522,
+    "faces": 0,
+    "watertight": false,
+    "components": null
+  }
+}

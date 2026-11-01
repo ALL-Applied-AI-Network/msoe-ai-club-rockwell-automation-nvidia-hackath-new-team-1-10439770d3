@@ -1,298 +1,124 @@
-<div align="center">
+# Adaptive Workcell Reconfiguration
 
-<img src="assets/a-team-hero.svg" alt="The A-Team — Physical AI for the Factory Floor" width="100%" />
+<p align="center">
+  <img src="assets/a-team-hero.svg" alt="The A-Team — Physical AI for the Factory Floor" width="100%">
+</p>
 
-<br />
+<p align="center">
+  <strong>Show a robot a new job, validate it in a digital twin, and turn the demonstration into reviewable machine actions.</strong>
+</p>
 
-[![Event](https://img.shields.io/badge/Event-Innovation_Lab_Fall_2026-76B900?style=for-the-badge)](#the-challenge)
-[![Focus](https://img.shields.io/badge/Focus-Physical_AI-22D3EE?style=for-the-badge)](#our-engineering-thesis)
-[![Status](https://img.shields.io/badge/Status-Physical_MVP_Verified-76B900?style=for-the-badge)](#execution-roadmap)
-[![Team](https://img.shields.io/badge/Team-The_A--Team-111827?style=for-the-badge)](#the-a-team)
+<p align="center">
+  <a href="https://youtu.be/5eQ3-p7v9-A">5-minute demo</a> ·
+  <a href="https://www.theateam.dev/">interactive tools</a> ·
+  <a href="docs/README.md">documentation</a> ·
+  <a href="docs/reproduction.md">reproduce</a> ·
+  <a href="results/README.md">evidence</a>
+</p>
 
-**An evidence-first Physical AI project for safer, more adaptive, and more trustworthy manufacturing.**
+The A-Team built a Physical AI workflow for high-mix manufacturing. A human can demonstrate an assembly or arrange a task in a digital twin; the system extracts the relevant hand, part, contact, and placement events; grounds them in measured geometry; validates candidate motion in NVIDIA Isaac Sim; and produces a supervised plan for a FANUC ER-4iA.
 
-[Master Reference](PROJECT_REFERENCE.md) · [Mission](#mission) · [Experiments](#three-experiments-one-decision) · [Architecture](#reference-architecture) · [Evaluation](#how-we-will-measure-success) · [Roadmap](#execution-roadmap) · [Knowledge Base](#knowledge-base)
+This is a finished hackathon prototype, not a single-purpose sorter. The repository contains the control stack, observation-only benchmark, video-to-robot compiler, digital-twin planner, reconstruction experiments, printable CAD families, tests, and compact evidence used in the final submission.
 
-</div>
+## Why this matters
 
----
+Robot cells are efficient after they have been engineered for a job. A new product or part variant can restart CAD cleanup, tooling selection, point teaching, collision review, and first-piece debugging. That delay is increasingly expensive when demand, suppliers, and product mixes change faster than conventional cell reconfiguration cycles.
 
-## Mission
+Our objective was to preserve more of the knowledge in one human demonstration and make the resulting plan inspectable, revisable, and reusable. The prototype keeps a person in the approval loop and uses simulation as a risk-reduction layer rather than presenting simulation as proof of physical reliability.
 
-The A-Team is competing in the **Rockwell Automation + NVIDIA Innovation Lab Fall 2026**, a four-week Physical AI hackathon organized with the **MSOE AI Club** and **UWM Connected Systems Institute (CSI)**.
-
-Our goal is not to build a model that looks impressive on a laptop. We are building toward a system that:
-
-1. solves a verified manufacturing pain point;
-2. operates on or meaningfully supports real equipment;
-3. improves a measured baseline;
-4. explains what it sees and where it can fail;
-5. respects plant safety and existing control boundaries; and
-6. can plausibly transfer beyond one clean demonstration.
-
-> **Our standard:** inspect the real process, understand the cause, act safely, and prove the result.
-
-**Selected direction:** **The Adaptive Workcell: Show the Job, Generate the
-Tool**, built on Dataset 3. On October 20, the official supervised testbed
-executed our real FANUC policy twice and recorded complete camera and telemetry
-evidence, with an official 2/2 success score and zero faults or interventions.
-The first run verified home→A motion and exposed one measurable
-waypoint-tolerance issue before A→B; see the
-**[first physical run report](docs/FIRST_PHYSICAL_RUN_REPORT.md)**.
-
-## The challenge
-
-CSI operates a high-mix, low-volume pilot manufacturing environment built with Rockwell Automation technology. The line produces vials containing stacked components or mixed-color liquids, while a separate FANUC cell supports grasping and sorting experiments. Teams can combine real evaluation data, digital twins, synthetic-data generation, NVIDIA compute, and sponsor mentorship.
-
-The final system should address one of three real experiments:
-
-| Experiment | Operational question | Primary output | Hardest constraint |
-|---|---|---|---|
-| **1 · Final Vial Inspection** | Did a visible defect or missed placement escape the existing inspection process? | Defect class and fixture-level decision | Rare defects, transparency, glare, fill-state context |
-| **2 · Fluid Mixing Station 3** | Does the vial match its recipe, and what process state likely caused a mismatch? | Anomaly, cause, and transition risk | Only 30 labeled vials; synchronized causal context |
-| **3 · Grasping and Sorting** | Can the robot find, grasp, place, and recover under variation? | Safe closed-loop robot action | Calibration, sim-to-real transfer, physical access |
-
-Read the full evidence-backed analysis in **[Three Experiments: Dataset & Validation Strategy](knowledge-base-kickoff/THREE_EXPERIMENTS_DATASET_STRATEGY.md)**.
-
-## Our engineering thesis
-
-Winning will require more than peak aggregate accuracy. Manufacturing errors have unequal costs: an escaped defect can be far more damaging than a good part sent for reinspection. A useful system must therefore combine **perception**, **process context**, **cost-aware decisions**, and **operator trust**.
-
-We will optimize for five properties:
-
-- **Grounded:** every feature maps to a real workflow or failure mode.
-- **Measurable:** every claim has a baseline, metric, and held-out test.
-- **Context-aware:** recipe order, fixture sequence, camera timing, and prior state matter.
-- **Safe:** AI remains outside protected PLC, safety, and control boundaries unless explicitly supervised.
-- **Deployable:** latency, legacy equipment, calibration, and operator interpretation are first-class requirements.
-
-## Three experiments, one decision
-
-### Experiment 1 — Final Vial Inspection
-
-Two 30-position fixtures receive accepted and scrapped vials. The overhead system must identify `pass`, `missing_cap`, `crooked_cap`, `damaged_vial`, and `no_vial` at a numbered target aperture. Because fixtures fill in a known sequence, an empty position is not automatically a defect.
-
-**Fastest defensible baseline**
-
-- Reconstruct all 60 fixture targets from the provided coordinates.
-- Generate labeled synthetic examples for every class and position.
-- Train a compact crop-level classifier or Visual ChangeNet baseline.
-- Add a fixture-level state machine using placement count or order completion.
-- Evaluate on untouched real scenes with per-class recall and explicit escaped-defect counts.
-
-**Why it remains a strong fallback:** the target is clear, the supporting assets
-are mature, and its evaluation is defensible. The team selected Dataset 3 for
-the main entry because it better supports the adaptive-workcell thesis and a
-physical demonstration.
-
-### Experiment 2 — Fluid Mixing Station 3
-
-Three usable tanks feed one shared mixing path. Residual liquid from the previous recipe can discolor the first vial after changeover. A useful system must connect synchronized visual evidence to recipe order, tank state, dispense sequence, and carryover—not merely report that a color looks unusual.
-
-**Strongest differentiated baseline**
-
-- Align `tank_level`, `vial_fill`, and `cap_seal` by timestamp.
-- Measure vial color and fill using transparent-container-aware image processing.
-- Use the last vial of a recipe as its clean reference.
-- Predict risky transitions from previous/current recipe and dispense order.
-- Evaluate anomaly detection and causal explanation separately using leave-one-recipe-out testing.
-
-**Why it is compelling:** it supports a sophisticated multimodal story—detect, explain, and potentially warn before the next bad fill—but demands careful validation because only 30 vials are labeled.
-
-### Experiment 3 — Grasping and Sorting
-
-A FANUC ER-4iA, SMC MHZL2-16D2 pneumatic parallel gripper with custom aluminium fingers, and table, side, and wrist cameras create a full closed-loop robotics task. The public evaluation client also exposes optional table and wrist depth, calibrated camera-to-robot geometry, TCP or joint actions, and approved custom hardware. The real objective is repeatable whole-task performance under variation, not one scripted successful pick.
-
-**Minimum credible baseline**
-
-- Make the supplied object and fingers work reliably in simulation.
-- Validate camera-to-robot calibration and pose estimation.
-- Measure repeated picks across randomized starting positions.
-- Move one source of variation at a time into the test.
-- Compare simulation with supervised physical trials.
-- Add re-observation and safe retry after a failed or uncertain grasp.
-
-**Why it is high-risk/high-reward:** it offers the most dramatic live demonstration, but integration, calibration, custom-hardware approval, and testbed scheduling can consume the project window. See the **[SIDC Lab platform intelligence report](research/physical-ai-platform/SIDCLAB_PLATFORM_INTELLIGENCE_REPORT.md)** for the exact policy interface, limits, calibration, scoring, CAD assets, and strategic implications.
-
-**Working point-to-point MVP:** [`robot-mvp/`](robot-mvp/) provides a tested
-local MCP planner, a separate human approval gate, a drop-in TCP policy for the
-official SIDC client, Isaac Sim 6.0 evidence on DGX Spark, and the first
-supervised physical FANUC recording. AI tools can draft and validate motion,
-but cannot approve it or bypass the official operator-controlled execution
-path.
-
-## Reference architecture
+## System at a glance
 
 ```mermaid
 flowchart LR
-    A[Real cameras & process state] --> B[Timestamp / geometry alignment]
-    S[Digital twin & synthetic data] --> C[Training and augmentation]
-    B --> D[Perception baseline]
-    C --> D
-    D --> E[Context and causal reasoning]
-    R[Recipe, fixture, or robot state] --> E
-    E --> F{Cost-aware decision}
-    F -->|Confident pass| G[Continue process]
-    F -->|Defect / anomaly| H[Flag, explain, or rework]
-    F -->|Uncertain| I[Reinspect or request operator review]
-    H --> J[Error analysis]
-    I --> J
-    J --> S
+    A[Human video or twin move] --> B[Hand, part and contact grounding]
+    B --> C[Typed task and motion primitives]
+    D[Measured parts, fingers and camera geometry] --> C
+    C --> E[Isaac Sim / PhysX validation]
+    E --> F[Supervised FANUC execution]
+    F --> G[RGB-D re-observation, grip checks and recovery]
+    G --> H[Evidence package]
 ```
 
-This is a reference pattern, not a commitment to unnecessary complexity. We will begin with the smallest useful baseline and add reasoning, simulation, or automation only when an observed failure justifies it.
-
-## How we will measure success
-
-### Evaluation rules
-
-- Keep a fixed, untouched test set.
-- Split by scene, production run, recipe, or trial—not by nearly identical neighboring frames.
-- Report per-class and per-condition results, not only one aggregate number.
-- Separate false alarms from missed defects.
-- Measure explanation/cause accuracy separately from detection.
-- Report inference latency and hardware assumptions.
-- Show representative successes **and** failures.
-- Record model version, data version, threshold, random seed, and simulation settings.
-
-### Shared scorecard
-
-| Dimension | Evidence we expect |
+| Capability | What is in this repository |
 |---|---|
-| **Technical** | Held-out metrics, confidence intervals where possible, latency, ablations |
-| **Operational** | Workflow integration, decision threshold, fail-safe behavior |
-| **Business** | Scrap, rework, downtime, labor, changeover, or quality impact |
-| **Generalization** | New recipe, new position, lighting shift, or unseen object test |
-| **Trust** | Interpretable result, uncertainty path, visible failure analysis |
-| **Deployment** | Hardware/runtime assumptions and legacy-system considerations |
+| **Video to robot** | Hand landmarks, object tracks, contact states, assembly timelines, a typed behavior tree, and robot-instruction schemas. [Read more](docs/video-to-robot.md) |
+| **Perception and control** | Table/side/wrist RGB-D fusion, safety envelopes, phase control, gripper checks, active re-observation, and bounded recovery. [Read more](docs/perception-and-control.md) |
+| **Simulation and evaluation** | A 48-candidate observation-only perception suite, randomized scenes, physics execution, scoring, and reproducible final reports. [Read more](docs/simulation-and-benchmarks.md) |
+| **Robot-ready CAD** | Two- and four-gear assemblies, an inline-four demonstrator, a five-part badge, truck-task geometry, and quick-change finger concepts. [Browse CAD](cad/README.md) |
+| **Reverse engineering** | Synthetic RGB-D and real RGB orbit pipelines with classical, neural, visual-hull, and geometry-evaluation tools. [Read more](docs/reverse-engineering.md) |
+| **Digital twin control** | Drag-to-command planning, MCP integration, analytical reach checks, and generated TCP plans. [Browse app](apps/digital-twin/README.md) |
 
-## Data discipline
+## Demonstrations
 
-The event specifically asks teams to inspect real data but generate training data with the provided digital twins. We will treat real-line samples as evaluation and domain-understanding evidence unless organizers explicitly approve another use.
+| Demonstration | Physical | Simulation | Repository evidence |
+|---|:---:|:---:|---|
+| Cubes into color-matched bins | yes | yes | [physical runs](docs/physical-experiments.md), [truck benchmark](results/truck-loading/) |
+| Filled bins loaded onto a truck | supervised trials | yes | [final 6-run matrix](results/truck-loading/FINAL_REPORT.md) |
+| Two-gear and four-gear assembly | supervised physical trials | yes | [CAD](cad/gearboxes/), [simulation demo](software/simulation-demos/gearbox/) |
+| Inline-four engine demonstrator | partial supervised assembly | yes | [CAD](cad/engine/), [simulation demo](software/simulation-demos/engine-block/VALIDATION_SUMMARY.md) |
+| Five-part Brewers badge | design artifact | yes | [CAD](cad/brewers-badge/), [simulation demo](software/simulation-demos/brewers-badge/) |
+| Push-push interchangeable fingers | physical prototype | geometry checks | [tooling models and source](cad/quick-change-tooling/) |
+| Object reconstruction from an orbit | physical capture | synthetic benchmark | [results](results/reverse-engineering/), [methods](software/reverse-engineering/) |
+| Drag-to-command digital twin | yes, supervised | yes | [digital twin](apps/digital-twin/) |
 
-Our minimum provenance record will include:
+See [Demonstrations and status](docs/demonstrations.md) for the exact evidence boundary behind each row.
 
-- source and license/usage restriction;
-- real versus synthetic origin;
-- generator/twin version and parameters;
-- label-generation method;
-- train/validation/test assignment;
-- augmentation history; and
-- known visual or simulation gaps.
+## Results snapshot
 
-No model result is credible if the same scene, production sequence, or near-duplicate frames leak across the split.
+### Physical evidence
 
-## Execution roadmap
+- Ten approved robot-access runs were documented from October 20–31, 2026.
+- Seven complete three-camera exports contain 23 recordings, 142,335 timestamped robot state/action rows, 237.5 minutes of robot operation, and 69 table/side/wrist videos (11.9 camera-hours).
+- The organizer-scored wall-grasp test produced a successful bin lift. A later supervised window completed four consecutive cube-to-bin transfers.
+- Physical trials also recorded loaded-bin transport and multi-part assembly, including failures and operator corrections. Those are engineering evidence, not a production reliability claim.
 
-```mermaid
-gantt
-    title The A-Team delivery path
-    dateFormat  YYYY-MM-DD
-    axisFormat  %b %d
-    section Discover
-    Verify assets and access          :a1, 2026-10-09, 2d
-    Select problem and metric         :a2, after a1, 2d
-    Team plan                         :milestone, 2026-10-14, 0d
-    section Build
-    Reproducible baseline             :b1, 2026-10-12, 6d
-    Synthetic-data iteration          :b2, after b1, 5d
-    Context / reasoning layer         :b3, after b1, 6d
-    section Prove
-    Held-out evaluation               :c1, 2026-10-23, 5d
-    Supervised hardware validation    :c2, 2026-10-26, 4d
-    Final video and one-pager         :c3, 2026-10-28, 5d
-    Submission                        :milestone, 2026-11-01, 0d
-    Finals                            :milestone, 2026-11-05, 0d
+### Simulation evidence
+
+The final observation-only truck controller completed **6/6** independently randomized physics episodes, improving over the preceding controller's **3/6**. Every final successful run placed all **12/12 cubes** into their matching bins and all **3/3 bins** on the truck. The controller received RGB, depth, reported calibration, joint/gripper state, and timestamps; simulator object transforms remained evaluator-only.
+
+The reliability improvement cost additional observation and recovery actions: mean perception latency increased from 274.8 ms to 1066.2 ms, mean actions from 157.3 to 174.0, and mean simulated motion time from 22.1 s to 28.9 s. Full metrics and the six episode records are in [results/truck-loading](results/truck-loading/).
+
+## Quick start
+
+The hardware-free tests require Python 3.12 or newer.
+
+```bash
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# Linux/macOS: source .venv/bin/activate
+python -m pip install -e "software/robot-control" pytest
+python -m pytest software/robot-control/tests software/truck_benchmark/test_benchmark.py -q
 ```
 
-The photographed kickoff slide listed October 13 for the initial plan, while the current event workspace and article list **October 14 at 11:59 PM CT**. The workspace and `#hackathon-announcements` are the operational source of truth.
+Run the public-release integrity check:
 
-## The A-Team
+```bash
+python scripts/check_public_release.py
+```
 
-| Member | Role in workspace | Initial responsibility |
-|---|---|---|
-| **Abdallah Benelmadjat** | Lead | Product direction, integration, repository quality |
-| **Pablo Camarillo** | Participant | To be assigned during experiment selection |
-| **Benjamin Hess** | Participant | To be assigned during experiment selection |
-| **Tar Meh** | Participant | To be assigned during experiment selection |
-| **Nathan Baker** | Participant | To be assigned during experiment selection |
-
-Responsibilities will be converted into named owners after the data-access audit. We prefer explicit ownership of data, modeling, hardware/integration, evaluation, and presentation over everyone working on everything.
-
-## Knowledge base
-
-The kickoff has been converted into a searchable evidence package:
-
-| Entry | What it contains |
-|---|---|
-| **[Master project reference](PROJECT_REFERENCE.md)** | Complete project history, current status, verified evidence, CAD/hardware findings, infrastructure, security actions, and next milestones |
-| **[Access reference](docs/ACCESS_REFERENCE.md)** | Security-safe SSH, VPN, YAAD, Git, token-location, rotation, and recovery runbook |
-| **[Kickoff brief](knowledge-base-kickoff/THE_A_TEAM_KICKOFF_REPORT.md)** | Executive summary, resources, rules, deliverables, deadlines, and immediate actions |
-| **[Three-experiment strategy](knowledge-base-kickoff/THREE_EXPERIMENTS_DATASET_STRATEGY.md)** | Dataset structure, hypotheses, baselines, risks, validation plans, and selection gate |
-| **[Complete transcripts](knowledge-base-kickoff/ALL_TRANSCRIPTS.md)** | Timestamped machine transcription of all eight kickoff recordings |
-| **[Photo context](knowledge-base-kickoff/ALL_IMAGE_CONTEXT.md)** | Detailed interpretation of all 27 photographed slides |
-| **[Official-resource audit](research/official-resource-audit/README.md)** | Full crawl of every public resource linked by the official event pages, with provenance, hashes, extracted evidence, access gaps, and follow-up queue |
-| **[Strategic don't-miss brief](research/official-resource-audit/STRATEGIC_DONT_MISS_BRIEF.md)** | Deadlines, dataset decisions, compute requests, Slack routing, live-test rules, competitive strategy, and authenticated blind spots |
-| **[Physical-AI platform audit](research/physical-ai-platform/README.md)** | FANUC/SMC hardware, policy API, safety envelope, calibration, custom-hardware rules, scoring, public CAD/media archive, and implementation brief |
-| **[First physical run](docs/FIRST_PHYSICAL_RUN_REPORT.md)** | Two recorded FANUC commissioning episodes, measured TCP residual, evidence boundary, correction, and next acceptance test |
-
-Machine transcripts are working notes, not quote-ready records. Check the source recording before attributing exact wording to a speaker.
+Isaac Sim experiments require NVIDIA Isaac Sim and the environment-specific setup described in [Reproduction](docs/reproduction.md). Physical motion additionally requires the approved CSI client, verified calibration, safety review, and operator authorization.
 
 ## Repository map
 
 ```text
-.
-├── PROJECT_REFERENCE.md
-├── assets/
-│   └── a-team-hero.svg
-├── knowledge-base-kickoff/
-│   ├── ALL_IMAGE_CONTEXT.md
-│   ├── ALL_TRANSCRIPTS.md
-│   ├── THE_A_TEAM_KICKOFF_REPORT.md
-│   └── THREE_EXPERIMENTS_DATASET_STRATEGY.md
-├── research/
-│   ├── official-resource-audit/
-│   │   ├── ACCESS_GAPS_AND_FOLLOW_UP.md
-│   │   ├── COMPREHENSIVE_RESOURCE_EVIDENCE.md
-│   │   ├── RESOURCE_INDEX.csv
-│   │   ├── RESOURCE_INDEX.json
-│   │   ├── STRATEGIC_DONT_MISS_BRIEF.md
-│   │   └── README.md
-│   └── physical-ai-platform/
-│       ├── README.md
-│       ├── RESOURCE_MANIFEST.csv
-│       ├── SIDCLAB_PLATFORM_INTELLIGENCE_REPORT.md
-│       └── THE_A_TEAM_IMPLEMENTATION_BRIEF.md
-├── docs/
-│   ├── PHYSICAL_ROLLOUT_RUNBOOK.md
-│   └── FIRST_PHYSICAL_RUN_REPORT.md
-├── robot-mvp/
-│   ├── policy.py
-│   ├── robot_control/
-│   ├── tests/
-│   └── evidence/
-└── README.md
+apps/                 Digital-twin planning and integration boundary
+cad/                  Printable assemblies, task geometry and tool concepts
+docs/                 Architecture, methods, experiments, limits and reproduction
+media/                Small representative images only
+results/              Compact reports, metrics, plans and selected reconstructions
+software/             Robot control, benchmarks, video compiler and simulation demos
+scripts/              Release-integrity and maintenance checks
 ```
 
-## Working agreement
+Raw camera recordings, voice recordings, browser profiles, credentials, generated frame caches, cloned upstream models, and multi-gigabyte reconstruction workspaces are intentionally not committed. [Data and evidence](docs/data-and-evidence.md) explains what is preserved and how claims map to artifacts.
 
-1. Open an issue for every experiment or decision.
-2. Define the hypothesis, metric, dataset version, and expected artifact before implementation.
-3. Keep pull requests small enough to review and reproduce.
-4. Never commit credentials, private datasets, model secrets, or restricted plant information.
-5. Include tests or a reproducible evaluation command with every modeling change.
-6. Record failed experiments; negative evidence prevents repeated work.
-7. Do not send commands to physical equipment or alter control/safety systems without the plant manager and assigned mentor.
+## Safety and limits
 
-## Definition of done
+This repository does not bypass the robot controller, safety system, or CSI operator process. Plans are drafts until a qualified operator approves them. The prototype remains calibration-dependent; assemblies near 0.5 mm tolerance need better depth and metrology than the tested cameras consistently provided. Simulation reduces risk but does not reproduce every pneumatic, friction, compliance, exposure, or contact effect. See [Limitations](docs/limitations.md).
 
-We are done when another engineer can clone the repository, reproduce the baseline, understand the data lineage, run the final evaluation, see the system operate on supervised real hardware, and explain both where it works and where it does not.
+## Team
 
----
+**The A-Team:** Abdallah Benelmadjat (team lead), Pablo Camarillo, Benjamin Hess, Tar Meh, and Nathan Baker.
 
-<div align="center">
+Built and tested at the UWM Connected Systems Institute/SIDC Lab for the MSOE AI Club Rockwell Automation + NVIDIA Hackathon. See [Credits and third-party notices](docs/credits.md).
 
-**The A-Team** · MSOE AI Club × UWM CSI × Rockwell Automation × NVIDIA<br>
-*Build the smallest system that proves the biggest manufacturing value.*
-
-</div>

@@ -1,0 +1,36 @@
+{
+  "PXL_20261020_165201912": {
+    "view": "wide_overhead_fast",
+    "placements": [[1.0, 3.0], [3.2, 5.2], [5.4, 7.2], [7.4, 9.3]],
+    "other_events": [{"start_s": 9.4, "end_s": 11.3, "label": "BIN REPOSITION"}]
+  },
+  "PXL_20261020_165226075": {
+    "view": "low_side_fast",
+    "placements": [[0.5, 2.5], [2.7, 4.5], [4.5, 5.9], [6.0, 7.5]],
+    "other_events": []
+  },
+  "PXL_20261020_165240667": {
+    "view": "close_overhead_fast",
+    "placements": [[0.0, 1.8], [1.9, 3.4], [3.4, 4.9], [5.0, 6.9]],
+    "other_events": []
+  },
+  "PXL_20261020_165311341": {
+    "view": "wide_overhead_deliberate",
+    "placements": [[8.8, 10.4], [10.5, 14.2], [14.5, 17.4], [17.5, 20.0]],
+    "other_events": [
+      {"start_s": 0.0, "end_s": 8.8, "label": "EXPLANATION / FIRST CUBE PRE-HELD"},
+      {"start_s": 20.0, "end_s": 23.8, "label": "GOAL-STATE PRESENTATION"}
+    ]
+  },
+  "PXL_20261020_165355671": {
+    "view": "low_side_deliberate",
+    "placements": [[0.5, 3.9], [4.0, 7.2], [7.4, 10.3], [10.5, 12.7]],
+    "other_events": []
+  },
+  "PXL_20261020_165414567": {
+    "view": "close_overhead_deliberate",
+    "placements": [[0.5, 5.3], [5.5, 8.3], [8.5, 10.4], [10.5, 12.3]],
+    "other_events": [{"start_s": 12.7, "end_s": 15.499, "label": "FILLED-BIN PROOF / FINAL REVEAL"}]
+  }
+}
+

@@ -1,0 +1,21 @@
+{
+  "PXL_20261029_045557002": {
+    "title": "TWO-GEAR DRIVE / REVIEWED ASSEMBLY TRACE",
+    "view": "overhead / recorded demonstration",
+    "kind": "gearbox",
+    "source_sort": "x",
+    "sequence_labels": ["GEAR 1", "GEAR 2", "COVER", "VERIFY"],
+    "parts": [
+      {"id": "B0", "name": "CHASSIS", "role": "fixed base"},
+      {"id": "G1", "name": "INPUT GEAR", "role": "shaft 1", "source_xy": [758, 185], "target_xy": [1112, 588], "radius": 66},
+      {"id": "G2", "name": "OUTPUT GEAR", "role": "shaft 2", "source_xy": [1444, 220], "target_xy": [1370, 588], "radius": 66},
+      {"id": "C1", "name": "DROP-ON COVER", "role": "locating posts", "source_xy": [470, 588], "target_xy": [1240, 588], "radius": 118}
+    ],
+    "steps": [
+      {"part": "G1", "start": 0.4, "pick": 1.0, "place": 5.9, "end": 7.3},
+      {"part": "G2", "start": 7.3, "pick": 8.1, "place": 13.4, "end": 14.8},
+      {"part": "C1", "start": 14.8, "pick": 15.5, "place": 18.0, "end": 19.2}
+    ],
+    "verify_start": 19.2
+  }
+}

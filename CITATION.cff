@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If this project helps your work, please cite the repository."
+title: "Adaptive Workcell Reconfiguration"
+type: software
+version: 1.0.0
+date-released: 2026-11-01
+authors:
+  - family-names: Benelmadjat
+    given-names: Abdallah
+  - family-names: Camarillo
+    given-names: Pablo
+  - family-names: Hess
+    given-names: Benjamin
+  - family-names: Meh
+    given-names: Tar
+  - family-names: Baker
+    given-names: Nathan
+repository-code: "https://github.com/ALL-Applied-AI-Network/msoe-ai-club-rockwell-automation-nvidia-hackath-new-team-1-10439770d3"
+url: "https://www.theateam.dev/"
+license: MIT
+keywords:
+  - physical-ai
+  - robotics
+  - digital-twin
+  - manufacturing
+  - isaac-sim
+

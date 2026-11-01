@@ -1,0 +1,2 @@
+policy,controller,episodes,completed,failed_to_complete,full_successes,full_success_rate,mean_cubes_in_matching_bins,mean_bins_on_deck,perception_latency_ms_mean,action_count_mean,tcp_path_length_m_mean,motion_wall_time_s_mean,perception_ranking_score,physics_score,efficiency_score,combined_score,balanced_score
+locked_calibration__depth_table_h6mm_s1_rawcube,vision_recovery_v3,6,6,0,6,1.0,12.0,3.0,1066.1633678331175,174.0,12.814109212551054,28.912946740333535,0.0,1.0,0.42125654358312054,0.72,0.7921256543583121

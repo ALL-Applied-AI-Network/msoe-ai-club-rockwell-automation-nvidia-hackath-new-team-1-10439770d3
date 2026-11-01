@@ -1,0 +1,2186 @@
+{
+  "task_id": "four_cubes_into_green_bin_v1",
+  "title": "Transfer four red/brown cubes into one green open-top bin",
+  "evidence_scope": {
+    "observed": [
+      "six independent demonstrations",
+      "four placements per demonstration (24 total)",
+      "hand trajectories in image coordinates",
+      "action order and qualitative approach/transfer/release phases",
+      "successful final state with four cubes contained"
+    ],
+    "not_observed": [
+      "synchronized multiview geometry",
+      "camera intrinsics/extrinsics",
+      "depth or robot-base coordinates",
+      "jaw width, gripping force, collision margins, release height",
+      "robot execution telemetry"
+    ]
+  },
+  "objects": [
+    {
+      "class": "cube",
+      "count": 4,
+      "appearance": "red/brown",
+      "persistent_identity_required": true
+    },
+    {
+      "class": "open_top_bin",
+      "count": 1,
+      "appearance": "green",
+      "role": "target"
+    }
+  ],
+  "steps": [
+    {
+      "id": "S00_observe",
+      "primitive": "observe",
+      "preconditions": [],
+      "observed_evidence": [
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            1.0,
+            3.0
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            0.5,
+            2.5
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            0.0,
+            1.8
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            8.8,
+            10.4
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            0.5,
+            3.9
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            0.5,
+            5.3
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            3.2,
+            5.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            2.7,
+            4.5
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            1.9,
+            3.4
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            14.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            4.0,
+            7.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            5.5,
+            8.3
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            5.4,
+            7.2
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            4.5,
+            5.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            3.4,
+            4.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            14.5,
+            17.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            7.4,
+            10.3
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            8.5,
+            10.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            7.4,
+            9.3
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            6.0,
+            7.5
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            5.0,
+            6.9
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            17.5,
+            20.0
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            10.5,
+            12.7
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            12.3
+          ],
+          "claim": "human placement 4 of 4"
+        }
+      ],
+      "robot_parameters": {
+        "detector": "instance masks + persistent IDs",
+        "required_inputs": [
+          "live RGB-D",
+          "camera calibration",
+          "gripper state"
+        ]
+      },
+      "verification": {
+        "pass": "four separate cubes and one upright open target bin are localized",
+        "fail": "pause and acquire another view"
+      },
+      "confidence": 0.98,
+      "requires_calibration": true
+    },
+    {
+      "id": "S01_approach_cube",
+      "primitive": "approach",
+      "preconditions": [
+        "one unplaced cube selected",
+        "collision-free top-down corridor exists"
+      ],
+      "observed_evidence": [
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            1.0,
+            3.0
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            0.5,
+            2.5
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            0.0,
+            1.8
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            8.8,
+            10.4
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            0.5,
+            3.9
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            0.5,
+            5.3
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            3.2,
+            5.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            2.7,
+            4.5
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            1.9,
+            3.4
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            14.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            4.0,
+            7.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            5.5,
+            8.3
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            5.4,
+            7.2
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            4.5,
+            5.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            3.4,
+            4.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            14.5,
+            17.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            7.4,
+            10.3
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            8.5,
+            10.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            7.4,
+            9.3
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            6.0,
+            7.5
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            5.0,
+            6.9
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            17.5,
+            20.0
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            10.5,
+            12.7
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            12.3
+          ],
+          "claim": "human placement 4 of 4"
+        }
+      ],
+      "robot_parameters": {
+        "direction": "top_down",
+        "xy": "live_perception(cube_instance)",
+        "z_safe": "workcell_calibration_required",
+        "speed": "controller_validated"
+      },
+      "verification": {
+        "pass": "gripper projection is centered over the selected cube and obstacle clearance is valid"
+      },
+      "confidence": 0.91,
+      "requires_calibration": true
+    },
+    {
+      "id": "S02_grasp_cube",
+      "primitive": "grasp",
+      "preconditions": [
+        "approach verified",
+        "gripper open"
+      ],
+      "observed_evidence": [
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            1.0,
+            3.0
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            0.5,
+            2.5
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            0.0,
+            1.8
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            8.8,
+            10.4
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            0.5,
+            3.9
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            0.5,
+            5.3
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            3.2,
+            5.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            2.7,
+            4.5
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            1.9,
+            3.4
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            14.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            4.0,
+            7.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            5.5,
+            8.3
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            5.4,
+            7.2
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            4.5,
+            5.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            3.4,
+            4.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            14.5,
+            17.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            7.4,
+            10.3
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            8.5,
+            10.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            7.4,
+            9.3
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            6.0,
+            7.5
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            5.0,
+            6.9
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            17.5,
+            20.0
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            10.5,
+            12.7
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            12.3
+          ],
+          "claim": "human placement 4 of 4"
+        }
+      ],
+      "robot_parameters": {
+        "grasp_type": "parallel_jaw",
+        "jaw_gap": "installed_finger_geometry_required",
+        "force": "part/material validation required"
+      },
+      "verification": {
+        "pass": "gripper state changes and the cube follows during a short proof lift",
+        "retry": "open, retreat, re-detect, re-center once"
+      },
+      "confidence": 0.88,
+      "requires_calibration": true
+    },
+    {
+      "id": "S03_lift",
+      "primitive": "lift",
+      "preconditions": [
+        "grasp proof passed"
+      ],
+      "observed_evidence": [
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            1.0,
+            3.0
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            0.5,
+            2.5
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            0.0,
+            1.8
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            8.8,
+            10.4
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            0.5,
+            3.9
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            0.5,
+            5.3
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            3.2,
+            5.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            2.7,
+            4.5
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            1.9,
+            3.4
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            14.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            4.0,
+            7.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            5.5,
+            8.3
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            5.4,
+            7.2
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            4.5,
+            5.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            3.4,
+            4.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            14.5,
+            17.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            7.4,
+            10.3
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            8.5,
+            10.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            7.4,
+            9.3
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            6.0,
+            7.5
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            5.0,
+            6.9
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            17.5,
+            20.0
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            10.5,
+            12.7
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            12.3
+          ],
+          "claim": "human placement 4 of 4"
+        }
+      ],
+      "robot_parameters": {
+        "direction": "table_normal",
+        "distance": "clear tallest observed obstacle plus margin"
+      },
+      "verification": {
+        "pass": "cube remains latched and no obstacle intersects gripper keep-out"
+      },
+      "confidence": 0.9,
+      "requires_calibration": true
+    },
+    {
+      "id": "S04_transfer",
+      "primitive": "transfer",
+      "preconditions": [
+        "cube secure",
+        "bin pose current"
+      ],
+      "observed_evidence": [
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            1.0,
+            3.0
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            0.5,
+            2.5
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            0.0,
+            1.8
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            8.8,
+            10.4
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            0.5,
+            3.9
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            0.5,
+            5.3
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            3.2,
+            5.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            2.7,
+            4.5
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            1.9,
+            3.4
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            14.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            4.0,
+            7.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            5.5,
+            8.3
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            5.4,
+            7.2
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            4.5,
+            5.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            3.4,
+            4.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            14.5,
+            17.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            7.4,
+            10.3
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            8.5,
+            10.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            7.4,
+            9.3
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            6.0,
+            7.5
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            5.0,
+            6.9
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            17.5,
+            20.0
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            10.5,
+            12.7
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            12.3
+          ],
+          "claim": "human placement 4 of 4"
+        }
+      ],
+      "robot_parameters": {
+        "target": "above_bin_opening",
+        "path": "collision_checked_monotonic",
+        "relocalize_before_descent": true
+      },
+      "verification": {
+        "pass": "cube and complete finger envelope project inside the bin opening with margin"
+      },
+      "confidence": 0.94,
+      "requires_calibration": true
+    },
+    {
+      "id": "S05_insert",
+      "primitive": "insert",
+      "preconditions": [
+        "above-bin alignment passed"
+      ],
+      "observed_evidence": [
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            1.0,
+            3.0
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            0.5,
+            2.5
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            0.0,
+            1.8
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            8.8,
+            10.4
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            0.5,
+            3.9
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            0.5,
+            5.3
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            3.2,
+            5.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            2.7,
+            4.5
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            1.9,
+            3.4
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            14.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            4.0,
+            7.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            5.5,
+            8.3
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            5.4,
+            7.2
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            4.5,
+            5.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            3.4,
+            4.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            14.5,
+            17.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            7.4,
+            10.3
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            8.5,
+            10.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            7.4,
+            9.3
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            6.0,
+            7.5
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            5.0,
+            6.9
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            17.5,
+            20.0
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            10.5,
+            12.7
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            12.3
+          ],
+          "claim": "human placement 4 of 4"
+        }
+      ],
+      "robot_parameters": {
+        "direction": "bin_opening_axis",
+        "release_height": "depth_or_geometry_required",
+        "descent": "guarded"
+      },
+      "verification": {
+        "pass": "cube clears rim; no finger/bin-wall intersection",
+        "fail": "stop, retract vertically, re-estimate bin pose"
+      },
+      "confidence": 0.82,
+      "requires_calibration": true
+    },
+    {
+      "id": "S06_release",
+      "primitive": "release",
+      "preconditions": [
+        "rim clearance passed"
+      ],
+      "observed_evidence": [
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            1.0,
+            3.0
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            0.5,
+            2.5
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            0.0,
+            1.8
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            8.8,
+            10.4
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            0.5,
+            3.9
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            0.5,
+            5.3
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            3.2,
+            5.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            2.7,
+            4.5
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            1.9,
+            3.4
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            14.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            4.0,
+            7.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            5.5,
+            8.3
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            5.4,
+            7.2
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            4.5,
+            5.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            3.4,
+            4.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            14.5,
+            17.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            7.4,
+            10.3
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            8.5,
+            10.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            7.4,
+            9.3
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            6.0,
+            7.5
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            5.0,
+            6.9
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            17.5,
+            20.0
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            10.5,
+            12.7
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            12.3
+          ],
+          "claim": "human placement 4 of 4"
+        }
+      ],
+      "robot_parameters": {
+        "command": "open_once_and_hold",
+        "debounce": true
+      },
+      "verification": {
+        "pass": "cube remains in bin after the hand/gripper clears; inside-bin count increments by one"
+      },
+      "confidence": 0.96,
+      "requires_calibration": true
+    },
+    {
+      "id": "S07_retract",
+      "primitive": "retract",
+      "preconditions": [
+        "release issued"
+      ],
+      "observed_evidence": [
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            1.0,
+            3.0
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            0.5,
+            2.5
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            0.0,
+            1.8
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            8.8,
+            10.4
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            0.5,
+            3.9
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            0.5,
+            5.3
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            3.2,
+            5.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            2.7,
+            4.5
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            1.9,
+            3.4
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            14.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            4.0,
+            7.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            5.5,
+            8.3
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            5.4,
+            7.2
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            4.5,
+            5.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            3.4,
+            4.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            14.5,
+            17.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            7.4,
+            10.3
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            8.5,
+            10.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            7.4,
+            9.3
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            6.0,
+            7.5
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            5.0,
+            6.9
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            17.5,
+            20.0
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            10.5,
+            12.7
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            12.3
+          ],
+          "claim": "human placement 4 of 4"
+        }
+      ],
+      "robot_parameters": {
+        "direction": "vertical_first",
+        "path": "monotonic"
+      },
+      "verification": {
+        "pass": "gripper clears rim and target occupancy remains stable"
+      },
+      "confidence": 0.97,
+      "requires_calibration": true
+    },
+    {
+      "id": "S08_verify_repeat",
+      "primitive": "repeat",
+      "preconditions": [
+        "post-release verification passed"
+      ],
+      "observed_evidence": [
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            1.0,
+            3.0
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            0.5,
+            2.5
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            0.0,
+            1.8
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            8.8,
+            10.4
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            0.5,
+            3.9
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            0.5,
+            5.3
+          ],
+          "claim": "human placement 1 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            3.2,
+            5.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            2.7,
+            4.5
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            1.9,
+            3.4
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            14.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            4.0,
+            7.2
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            5.5,
+            8.3
+          ],
+          "claim": "human placement 2 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            5.4,
+            7.2
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            4.5,
+            5.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            3.4,
+            4.9
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            14.5,
+            17.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            7.4,
+            10.3
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            8.5,
+            10.4
+          ],
+          "claim": "human placement 3 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165201912",
+          "view": "wide_overhead_fast",
+          "time_range_s": [
+            7.4,
+            9.3
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165226075",
+          "view": "low_side_fast",
+          "time_range_s": [
+            6.0,
+            7.5
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165240667",
+          "view": "close_overhead_fast",
+          "time_range_s": [
+            5.0,
+            6.9
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165311341",
+          "view": "wide_overhead_deliberate",
+          "time_range_s": [
+            17.5,
+            20.0
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165355671",
+          "view": "low_side_deliberate",
+          "time_range_s": [
+            10.5,
+            12.7
+          ],
+          "claim": "human placement 4 of 4"
+        },
+        {
+          "episode": "PXL_20261020_165414567",
+          "view": "close_overhead_deliberate",
+          "time_range_s": [
+            10.5,
+            12.3
+          ],
+          "claim": "human placement 4 of 4"
+        }
+      ],
+      "robot_parameters": {
+        "until": "inside_bin_count == 4",
+        "max_attempts_per_cube": 2
+      },
+      "verification": {
+        "pass": "four unique cube IDs are contained and none remain in source region"
+      },
+      "confidence": 0.99,
+      "requires_calibration": false
+    }
+  ],
+  "safety_gates": [
+    {
+      "id": "G1",
+      "requirement": "calibrate RGB-D to robot base before resolving any pixel coordinate into motion"
+    },
+    {
+      "id": "G2",
+      "requirement": "model the complete installed fingers, not only TCP or jaw-center clearance"
+    },
+    {
+      "id": "G3",
+      "requirement": "proof-lift after closing; abort if tracked cube does not follow"
+    },
+    {
+      "id": "G4",
+      "requirement": "re-detect bin immediately before loaded descent"
+    },
+    {
+      "id": "G5",
+      "requirement": "use one debounced open/close command; reject oscillating command streams"
+    },
+    {
+      "id": "G6",
+      "requirement": "post-release occupancy increment is mandatory before advancing"
+    }
+  ],
+  "cross_take_consensus": {
+    "episodes": 6,
+    "successful_placements": 24,
+    "expected_sequence_repeated": 6
+  }
+}

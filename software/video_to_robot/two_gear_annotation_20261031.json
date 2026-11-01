@@ -1,0 +1,23 @@
+{
+  "PXL_20261031_165150721": {
+    "title": "TWO-GEAR DRIVE / REVIEWED ASSEMBLY TRACE",
+    "view": "overhead / recorded demonstration",
+    "kind": "gearbox",
+    "palette": "mint_yellow",
+    "compact_hud": true,
+    "source_sort": "x",
+    "sequence_labels": ["GEAR 1", "GEAR 2", "COVER", "VERIFY"],
+    "parts": [
+      {"id": "B0", "name": "BASE", "role": "fixed base", "source_xy": [884, 706]},
+      {"id": "G1", "name": "RIGHT GEAR", "role": "right shaft", "source_xy": [1368, 703], "target_xy": [991, 679], "verify_target_xy": [993, 623], "pinch_offset_xy": [0, 34], "source_radius": 116, "move_radius": 120, "target_radius": 120},
+      {"id": "G2", "name": "LEFT GEAR", "role": "left shaft", "source_xy": [366, 752], "target_xy": [765, 688], "verify_target_xy": [755, 633], "pinch_offset_xy": [0, 58], "source_radius": 132, "move_radius": 120, "target_radius": 120},
+      {"id": "C1", "name": "COVER", "role": "locating posts", "source_xy": [840, 336], "target_xy": [875, 628], "radius": 118}
+    ],
+    "steps": [
+      {"part": "G1", "start": 0.75, "pick": 2.10, "place": 6.85, "end": 9.55, "hand_label": "right"},
+      {"part": "G2", "start": 9.55, "pick": 10.60, "place": 14.95, "end": 16.25, "hand_label": "left"},
+      {"part": "C1", "start": 16.25, "pick": 17.25, "place": 21.05, "end": 23.55, "hand_label": "left"}
+    ],
+    "verify_start": 23.55
+  }
+}

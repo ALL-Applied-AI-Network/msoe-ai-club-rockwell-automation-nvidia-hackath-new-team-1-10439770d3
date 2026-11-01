@@ -3,3 +3,52 @@ PRIVATE_ACCESS_REFERENCE.local.md
 .secrets/
 *.private-key
 *.token
+
+# Python and test caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# JavaScript and build output
+node_modules/
+dist/
+build/
+
+# Local configuration, credentials, and browser state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.cookies
+Cookies*
+Local State
+
+# Generated experiment material
+runs/
+frames/
+renders/
+cache/
+checkpoints/
+*.log
+*.tar
+*.tar.gz
+*.zip
+
+# Raw audiovisual capture is retained outside Git. Curated clips may be
+# force-added only after consent and size review.
+raw-media/
+recordings/
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+~$*
+

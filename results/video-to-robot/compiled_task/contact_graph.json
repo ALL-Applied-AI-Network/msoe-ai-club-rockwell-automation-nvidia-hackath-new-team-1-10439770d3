@@ -1,0 +1,119 @@
+{
+  "graph_type": "symbolic_4d_contact_graph",
+  "metric_pose_available": false,
+  "nodes": [
+    {
+      "id": "hand_actor",
+      "type": "human_hand",
+      "tracked_as": "2d_landmarks"
+    },
+    {
+      "id": "cube_i",
+      "type": "part_instance",
+      "cardinality": 4
+    },
+    {
+      "id": "green_bin",
+      "type": "open_top_container",
+      "cardinality": 1
+    },
+    {
+      "id": "table",
+      "type": "support_surface"
+    }
+  ],
+  "states": [
+    {
+      "phase": "initial",
+      "edges": [
+        [
+          "cube_i",
+          "supported_by",
+          "table"
+        ],
+        [
+          "green_bin",
+          "supported_by",
+          "table"
+        ]
+      ]
+    },
+    {
+      "phase": "approach",
+      "edges": [
+        [
+          "hand_actor",
+          "near",
+          "cube_i"
+        ]
+      ]
+    },
+    {
+      "phase": "grasp",
+      "edges": [
+        [
+          "hand_actor",
+          "contact",
+          "cube_i"
+        ],
+        [
+          "hand_actor",
+          "holds",
+          "cube_i"
+        ]
+      ]
+    },
+    {
+      "phase": "transfer",
+      "edges": [
+        [
+          "hand_actor",
+          "holds",
+          "cube_i"
+        ],
+        [
+          "cube_i",
+          "approaches",
+          "green_bin"
+        ]
+      ]
+    },
+    {
+      "phase": "insert",
+      "edges": [
+        [
+          "cube_i",
+          "crosses_opening",
+          "green_bin"
+        ]
+      ],
+      "uncertainty": "contact partly occluded"
+    },
+    {
+      "phase": "release",
+      "edges": [
+        [
+          "hand_actor",
+          "not_holding",
+          "cube_i"
+        ],
+        [
+          "cube_i",
+          "contained_by",
+          "green_bin"
+        ]
+      ]
+    },
+    {
+      "phase": "verified",
+      "edges": [
+        [
+          "cube_i",
+          "contained_by",
+          "green_bin"
+        ]
+      ],
+      "postcondition": "inside-bin count increments after hand-clear"
+    }
+  ]
+}
