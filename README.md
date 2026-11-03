@@ -26,6 +26,11 @@ Robot cells are efficient after they have been engineered for a job. A new produ
 
 Our objective was to preserve more of the knowledge in one human demonstration and make the resulting plan inspectable, revisable, and reusable. The prototype keeps a person in the approval loop and uses simulation as a risk-reduction layer rather than presenting simulation as proof of physical reliability.
 
+<p align="center">
+  <img src="media/images/presentation-video-to-robot.jpg" alt="Human demonstration with tracked hands, cube, and destination bin" width="92%">
+</p>
+<p align="center"><em>A human demonstration is grounded into hand, object, pickup, and destination events.</em></p>
+
 ## System at a glance
 
 ```mermaid
@@ -48,6 +53,11 @@ flowchart LR
 | **Reverse engineering** | Synthetic RGB-D and real RGB orbit pipelines with classical, neural, visual-hull, and geometry-evaluation tools. [Read more](docs/reverse-engineering.md) |
 | **Digital twin control** | Drag-to-command planning, MCP integration, analytical reach checks, and generated TCP plans. [Browse app](apps/digital-twin/README.md) |
 
+<p align="center">
+  <img src="media/images/presentation-digital-twin.jpg" alt="Drag-to-move digital twin beside the live FANUC workcell" width="92%">
+</p>
+<p align="center"><em>A drag-to-move plan is reviewed in the digital twin alongside the live physical cell.</em></p>
+
 ## Demonstrations
 
 | Demonstration | Physical | Simulation | Repository evidence |
@@ -63,6 +73,11 @@ flowchart LR
 
 See [Demonstrations and status](docs/demonstrations.md) for the exact evidence boundary behind each row.
 
+<p align="center">
+  <img src="media/images/presentation-four-gear-trace.jpg" alt="Annotated four-gear assembly demonstration with tracked hand and parts" width="92%">
+</p>
+<p align="center"><em>The reviewed four-gear trace preserves part identities, assembly state, and the next intended placement.</em></p>
+
 ## Results snapshot
 
 ### Physical evidence
@@ -72,11 +87,26 @@ See [Demonstrations and status](docs/demonstrations.md) for the exact evidence b
 - The organizer-scored wall-grasp test produced a successful bin lift. A later supervised window completed four consecutive cube-to-bin transfers.
 - Physical trials also recorded loaded-bin transport and multi-part assembly, including failures and operator corrections. Those are engineering evidence, not a production reliability claim.
 
+<p align="center">
+  <img src="media/images/presentation-engine-physical.jpg" alt="FANUC robot assembling the 3D-printed inline-four engine demonstrator" width="92%">
+</p>
+<p align="center"><em>The FANUC assembles the printed inline-four demonstrator using top-access grasp features.</em></p>
+
 ### Simulation evidence
 
 The final observation-only truck controller completed **6/6** independently randomized physics episodes, improving over the preceding controller's **3/6**. Every final successful run placed all **12/12 cubes** into their matching bins and all **3/3 bins** on the truck. The controller received RGB, depth, reported calibration, joint/gripper state, and timestamps; simulator object transforms remained evaluator-only.
 
+<p align="center">
+  <img src="media/images/presentation-sim-to-real-truck.jpg" alt="Isaac Sim and physical FANUC loaded-bin transfer shown side by side" width="92%">
+</p>
+<p align="center"><em>The same loaded-bin transfer is rehearsed in Isaac Sim and then executed in the physical cell.</em></p>
+
 The reliability improvement cost additional observation and recovery actions: mean perception latency increased from 274.8 ms to 1066.2 ms, mean actions from 157.3 to 174.0, and mean simulated motion time from 22.1 s to 28.9 s. Full metrics and the six episode records are in [results/truck-loading](results/truck-loading/).
+
+<p align="center">
+  <img src="media/images/presentation-quick-change.jpg" alt="Push-push quick-change finger receiver and interchangeable tooling" width="92%">
+</p>
+<p align="center"><em>The push-push receiver turns finger changes into a latch operation instead of a gripper rebuild.</em></p>
 
 ## Quick start
 
@@ -111,6 +141,11 @@ scripts/              Release-integrity and maintenance checks
 ```
 
 Raw camera recordings, voice recordings, browser profiles, credentials, generated frame caches, cloned upstream models, and multi-gigabyte reconstruction workspaces are intentionally not committed. [Data and evidence](docs/data-and-evidence.md) explains what is preserved and how claims map to artifacts.
+
+<p align="center">
+  <img src="media/images/presentation-reconstruction.jpg" alt="Recovered 3D surface reconstructed from a wrist-camera orbit" width="92%">
+</p>
+<p align="center"><em>A wrist-camera orbit is fused into recovered surface geometry when usable CAD is missing.</em></p>
 
 ## Safety and limits
 
