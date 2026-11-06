@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <strong>Show a robot a new job, validate it in a digital twin, and turn the demonstration into reviewable machine actions.</strong>
+  <strong>Show a robot a new job, validate it in a digital twin, and then turn the demonstration into reviewable machine actions.</strong>
 </p>
 
 <p align="center">
